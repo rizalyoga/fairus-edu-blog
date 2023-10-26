@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import clsx from "clsx";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
+import Navbar from "@/components/navbar/Navbar";
 
 const Login = () => {
   const [isShowPassword, setIsShowPassword] = useState(false);
@@ -11,6 +13,9 @@ const Login = () => {
     username: "",
     password: "",
   });
+
+  const router = useRouter();
+  const pathname = usePathname();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -24,6 +29,7 @@ const Login = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading((loading) => !loading);
+    router.push("/dashboard");
   };
 
   const showPasswordComponents = (style: string) => {

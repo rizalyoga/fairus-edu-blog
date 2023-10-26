@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import clsx from "clsx";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Link from "next/link";
+import Navbar from "@/components/navbar/Navbar";
 
 const Register = () => {
   const [isShowPassword, setIsShowPassword] = useState(false);
