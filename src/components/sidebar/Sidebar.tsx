@@ -5,6 +5,7 @@ import { routes } from "@/app/routes/sidebarRoute";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SidebarSubMenu from "./SidebarSubMenu";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Sidebar = () => {
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
@@ -20,30 +21,18 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="drawer-side lg:drawer-open">
+    <div className="drawer-side z-20">
       <label htmlFor="left-sidebar-drawer" className="drawer-overlay"></label>
-      <ul className="menu  pt-2 w-80 bg-base-100 text-base-content">
+      <ul className="menu pt-2 w-80 bg-base-100 text-base-content min-h-screen">
         <button
-          className="btn btn-ghost bg-base-300  btn-circle z-50 top-0 right-0 mt-4 mr-2 absolute lg:hidden"
+          className="btn btn-ghost bg-base-300 btn-circle z-50 top-0 right-0 mt-1.5 mr-2 absolute lg:hidden"
           onClick={() => close()}
         >
-          <svg
-            className="w-6 h-6"
-            aria-hidden="true"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clipRule="evenodd"
-              fillRule="evenodd"
-              d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
-            ></path>
-          </svg>
+          <AiOutlineClose />
         </button>
 
         <li className="mb-2 font-semibold text-xl">
-          <Link href={"/dashboard"}>RizalYoga</Link>
+          <Link href={"/dashboard"}>Rizal Yoga</Link>
         </li>
         {routes.map((route, k) => {
           return (
@@ -54,11 +43,11 @@ const Sidebar = () => {
                 <Link
                   href={route.path}
                   className={`
-                      link ${
-                        pathname == route.path
-                          ? "font-semibold  bg-base-200"
-                          : "font-normal"
-                      } 
+                       ${
+                         pathname == route.path
+                           ? "font-bold bg-base-200"
+                           : "font-normal"
+                       } 
                     `}
                 >
                   {route.icon} {route.name}

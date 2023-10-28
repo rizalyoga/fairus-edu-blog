@@ -18,7 +18,7 @@ const SidebarSubMenu = ({ submenu, name, icon }: any) => {
   }, [pathname]);
 
   return (
-    <div className="flex-col">
+    <div className="flex flex-col">
       {/** Route header */}
       <div className="w-full" onClick={() => setIsExpanded(!isExpanded)}>
         {icon} {name}
@@ -36,11 +36,14 @@ const SidebarSubMenu = ({ submenu, name, icon }: any) => {
           {submenu.map((m: any, k: any) => {
             return (
               <li key={k}>
-                <Link href={m.path}>
+                <Link
+                  href={m.path}
+                  className={`${pathname === m.path ? "font-bold" : ""}`}
+                >
                   {m.icon} {m.name}
-                  {pathname == m.path ? (
+                  {pathname === m.path ? (
                     <span
-                      className="absolute mt-1 mb-1 inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary "
+                      className="absolute mt-1 mb-1 inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary-violet"
                       aria-hidden="true"
                     ></span>
                   ) : null}

@@ -1,10 +1,13 @@
 import React from "react";
-import Sidebar from "@/components/sidebar/Sidebar";
+import HeaderDashboard from "@/components/navbar/HeaderDashboard";
 
 const Dashboard = () => {
   return (
-    <div className="w-full min-h-screen">
-      <Sidebar />
+    <div className="drawer-content flex flex-col">
+      {/* <HeaderDashboard /> */}
+      <div>
+        <h1>Dashboard pages</h1>
+      </div>
     </div>
   );
 };

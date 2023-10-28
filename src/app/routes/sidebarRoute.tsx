@@ -13,12 +13,12 @@ export const routes = [
     name: "Tuna Rungu",
     submenu: [
       {
-        path: "/budek", //url
+        path: "/dashboard/budek", //url
         icon: <BsFillEarFill />, // icon component
         name: "Budek", // name that appear in Sidebar
       },
       {
-        path: "/bisu",
+        path: "/dashboard/bisu",
         icon: <RiSpeakFill />,
         name: "Bisu",
       },
