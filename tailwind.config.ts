@@ -16,6 +16,12 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontSize: {
+        title: "4rem",
+        "title-section": "2.5rem",
+        "title-sub-section": "1.4rem",
+        "base-text": "1.2rem",
+      },
       colors: {
         // Configure your color palette here
         ...colors,

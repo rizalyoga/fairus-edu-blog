@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useRouter, usePathname } from "next/navigation";
+import { IoLogOutOutline, IoLogOutSharp } from "react-icons/io5";
 
 const HeaderDashboard = () => {
   const router = useRouter();
@@ -27,10 +28,10 @@ const HeaderDashboard = () => {
   }
 
   return (
-    <div className="navbar sticky top-0 flex justify-between bg-base-100 z-10 shadow-md">
+    <div className="navbar sticky top-0 flex justify-between bg-white z-10 shadow-md dark:bg-base-100">
       <label
         htmlFor="left-sidebar-drawer"
-        className="btn btn-primary drawer-button lg:hidden"
+        className="btn bg-primary-violet text-white drawer-button lg:hidden hover:text-primary-text"
       >
         <svg
           className="w-6 h-6"
@@ -51,10 +52,11 @@ const HeaderDashboard = () => {
       </h1>
       <div>
         <button
-          className="btn btn-ghost bg-primary-violet text-white font-bold hover:text-primary-text"
+          className="btn btn-ghost bg-primary-violet text-white font-bold hover:text-primary-text dark:hover:text-white"
           onClick={() => logoutHandler()}
+          title="logout"
         >
-          Logout
+          <IoLogOutOutline className="text-2xl" />
         </button>
       </div>
     </div>

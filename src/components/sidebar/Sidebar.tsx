@@ -1,19 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import clsx from "clsx";
-import { routes } from "@/app/routes/sidebarRoute";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
-import SidebarSubMenu from "./SidebarSubMenu";
+import clsx from "clsx";
+import Link from "next/link";
 import { AiOutlineClose } from "react-icons/ai";
+import { BsPersonCircle } from "react-icons/bs";
+import SidebarSubMenu from "./SidebarSubMenu";
+import { routes } from "@/app/routes/sidebarRoute";
 
 const Sidebar = () => {
-  const [isOpenSidebar, setIsOpenSidebar] = useState(false);
   const pathname = usePathname();
-
-  // const openSidebar = () => {
-  //   setIsOpenSidebar((open) => !open);
-  // };
 
   const close = () => {
     const maybeMyElement = document.getElementById("left-sidebar-drawer");
@@ -25,24 +21,26 @@ const Sidebar = () => {
       <label htmlFor="left-sidebar-drawer" className="drawer-overlay"></label>
       <ul className="menu pt-2 w-80 bg-base-100 text-base-content min-h-screen">
         <button
-          className="btn btn-ghost bg-base-300 btn-circle z-50 top-0 right-0 mt-1.5 mr-2 absolute lg:hidden"
+          className="btn btn-ghost bg-base-300 btn-circle z-50 top-0 right-0 mt-2 mr-2 absolute lg:hidden"
           onClick={() => close()}
         >
           <AiOutlineClose />
         </button>
 
-        <li className="mb-2 font-semibold text-xl">
-          <Link href={"/dashboard"}>Rizal Yoga</Link>
+        <li className="mb-2 mt-1 font-bold text-xl">
+          <Link href={"/dashboard"} className="hover:bg-base-100">
+            <BsPersonCircle className="text-3xl" /> Rizal Yoga
+          </Link>
         </li>
-        {routes.map((route, k) => {
+        {routes.map((route, idx) => {
           return (
-            <li className="" key={k}>
+            <li key={idx}>
               {route.submenu ? (
                 <SidebarSubMenu {...route} />
               ) : (
                 <Link
                   href={route.path}
-                  className={`
+                  className={`text-lg py-4
                        ${
                          pathname == route.path
                            ? "font-bold bg-base-200"
@@ -53,7 +51,7 @@ const Sidebar = () => {
                   {route.icon} {route.name}
                   {pathname === route.path ? (
                     <span
-                      className="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary "
+                      className="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary-violet "
                       aria-hidden="true"
                     ></span>
                   ) : null}

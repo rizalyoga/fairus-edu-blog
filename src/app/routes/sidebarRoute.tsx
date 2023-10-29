@@ -11,15 +11,23 @@ export const routes = [
   {
     path: "",
     name: "Tuna Rungu",
+    icon: <BsFillEarFill />,
     submenu: [
       {
-        path: "/dashboard/budek", //url
-        icon: <BsFillEarFill />, // icon component
-        name: "Budek", // name that appear in Sidebar
+        path: "/dashboard/budek",
+        icon: "",
+        name: "Budek",
       },
+    ],
+  },
+  {
+    path: "",
+    name: "Tuna Wicara",
+    icon: <RiSpeakFill />,
+    submenu: [
       {
         path: "/dashboard/bisu",
-        icon: <RiSpeakFill />,
+        icon: "",
         name: "Bisu",
       },
     ],

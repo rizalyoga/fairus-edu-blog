@@ -3,28 +3,34 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { RoutesInterfaces } from "@/app/types/types";
 
-const SidebarSubMenu = ({ submenu, name, icon }: any) => {
+const SidebarSubMenu = ({ submenu, name, icon }: RoutesInterfaces) => {
   const pathname = usePathname();
   const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     if (
-      submenu.filter((m: any) => {
-        return m.path === pathname;
+      submenu.filter((menu) => {
+        return menu.path === pathname;
       })[0]
     )
       setIsExpanded(true);
-  }, [pathname]);
+  }, [pathname, submenu]);
 
   return (
     <div className="flex flex-col">
       {/** Route header */}
-      <div className="w-full" onClick={() => setIsExpanded(!isExpanded)}>
-        {icon} {name}
+      <div
+        className="w-full text-lg flex items-center justify-between"
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
+        <p className="flex items-center gap-2 py-2">
+          {icon} {name}
+        </p>
         <MdKeyboardArrowDown
           className={
-            "w-5 h-5 mt-1 float-right delay-400 duration-500 transition-all  " +
+            "w-5 h-5 mt-1 float-right delay-400 duration-500 transition-all text-xl " +
             (isExpanded ? "rotate-180" : "")
           }
         />
@@ -33,15 +39,22 @@ const SidebarSubMenu = ({ submenu, name, icon }: any) => {
       {/** Submenu list */}
       <div className={` w-full ` + (isExpanded ? "" : "hidden")}>
         <ul className={`menu menu-compact`}>
-          {submenu.map((m: any, k: any) => {
+          {submenu.map((menu, idx) => {
             return (
-              <li key={k}>
+              <li key={idx}>
                 <Link
-                  href={m.path}
-                  className={`${pathname === m.path ? "font-bold" : ""}`}
+                  href={menu.path}
+                  className={`text-lg ${
+                    pathname === menu.path ? "font-bold bg-base-200" : ""
+                  }`}
                 >
-                  {m.icon} {m.name}
-                  {pathname === m.path ? (
+                  <input
+                    type="checkbox"
+                    checked={true}
+                    className="checkbox checkbox-primary rounded-full border-2"
+                  />
+                  {menu.icon} {menu.name}
+                  {pathname === menu.path ? (
                     <span
                       className="absolute mt-1 mb-1 inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary-violet"
                       aria-hidden="true"

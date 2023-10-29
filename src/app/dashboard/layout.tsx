@@ -19,7 +19,7 @@ export default function DashboardLayout({
         {/* Content  */}
         <div className="drawer-content flex flex-col">
           <HeaderDashboard />
-          <div className="min-h-screen overflow-y-auto pt-8 px-6 bg-base-200">
+          <div className="min-h-screen overflow-y-auto pt-5 px-5 bg-base-200">
             {children}
           </div>
         </div>

@@ -45,20 +45,26 @@ const Register = () => {
   return (
     <div
       className={clsx(
-        "flex justify-center items-center flex-col h-screen bg-primary-violet"
+        "flex justify-center items-center flex-col h-screen bg-primary-violet",
+        "dark:bg-slate-700"
       )}
     >
       <div
         className={clsx(
-          "mx-4 bg-white border border-slate-300 flex justify-center items-center flex-col rounded-md py-12 px-4 w-[90%]",
+          "mx-4 bg-base-100 border border-slate-300 flex justify-center items-center flex-col rounded-md py-12 px-4 w-[90%]",
           "md:w-[48%]",
           "lg:w-[40%]",
           "xl:w-[28%]",
           "2xl:w-[24%]",
-          "dark:bg-dark_background"
+          "dark:border-slate-500"
         )}
       >
-        <h1 className={clsx("font-bold text-4xl text-primary-text")}>
+        <h1
+          className={clsx(
+            "font-bold text-4xl text-primary-text",
+            "dark:text-slate-400"
+          )}
+        >
           Register
         </h1>
         <p className="text-sm text-secondary-text mb-8 mt-2 text-center">
@@ -123,7 +129,8 @@ const Register = () => {
             <input
               className={clsx(
                 "bg-blue-500 rounded-md py-4 font-semibold text-white cursor-pointer mt-1",
-                "hover:bg-blue-700"
+                "hover:bg-blue-700",
+                "dark:bg-slate-600 dark:hover:bg-slate-500"
               )}
               type="submit"
               value="Log In"

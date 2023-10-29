@@ -3,6 +3,7 @@ import React from "react";
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FaSchoolFlag } from "react-icons/fa6";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -13,36 +14,37 @@ const Navbar = () => {
           <Link
             href="/"
             className={clsx(
-              "btn btn-ghost normal-case text-xl text-primary-green",
-              "hover:bg-white"
+              "btn btn-ghost normal-case text-3xl text-primary-green flex items-center",
+              "hover:bg-white",
+              "dark:hover:bg-base-100"
             )}
           >
-            Tuna Bisa
+            <FaSchoolFlag /> <p className="mt-1.5">School</p>
           </Link>
         </div>
         <div className="navbar-center gap-6">
           <Link
             href={"/"}
-            className={clsx("cursor-pointer", "hover:underline")}
+            className={clsx("cursor-pointer text-base-text", "hover:underline")}
           >
             Home
           </Link>
 
           <Link
             href={"/"}
-            className={clsx("cursor-pointer", "hover:underline")}
+            className={clsx("cursor-pointer text-base-text", "hover:underline")}
           >
             About
           </Link>
           <Link
             href={"/"}
-            className={clsx("cursor-pointer", "hover:underline")}
+            className={clsx("cursor-pointer text-base-text", "hover:underline")}
           >
             Lessons
           </Link>
           <Link
             href={"/"}
-            className={clsx("cursor-pointer", "hover:underline")}
+            className={clsx("cursor-pointer text-base-text", "hover:underline")}
           >
             Contact
           </Link>
