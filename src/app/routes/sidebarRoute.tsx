@@ -6,12 +6,12 @@ export const routes = [
   {
     path: "/dashboard",
     name: "Dashboard",
-    icon: <AiFillHome />,
+    icon: <AiFillHome className="-mt-1" />,
   },
   {
     path: "",
     name: "Tuna Rungu",
-    icon: <BsFillEarFill />,
+    icon: <BsFillEarFill className="-mt-1" />,
     submenu: [
       {
         path: "/dashboard/budek",
@@ -23,7 +23,7 @@ export const routes = [
   {
     path: "",
     name: "Tuna Wicara",
-    icon: <RiSpeakFill />,
+    icon: <RiSpeakFill className="-mt-1" />,
     submenu: [
       {
         path: "/dashboard/bisu",

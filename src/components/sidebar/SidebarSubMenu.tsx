@@ -50,8 +50,10 @@ const SidebarSubMenu = ({ submenu, name, icon }: RoutesInterfaces) => {
                 >
                   <input
                     type="checkbox"
-                    checked={true}
-                    className="checkbox checkbox-primary rounded-full border-2"
+                    // checked={true}
+                    readOnly
+                    defaultChecked={false}
+                    className="checkbox checkbox-primary rounded-full border-2 w-4 h-4 -mt-[1.6px]"
                   />
                   {menu.icon} {menu.name}
                   {pathname === menu.path ? (

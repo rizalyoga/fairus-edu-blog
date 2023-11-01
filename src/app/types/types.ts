@@ -10,3 +10,17 @@ export interface RoutesInterfaces {
   icon: React.ReactNode;
   submenu: RoutesType[];
 }
+
+type QuestionVideoType = {
+  second: number;
+  point: number;
+  question: string;
+  choices: string[];
+  trueAnswer: string;
+};
+
+export interface QuestionVideoInterface {
+  path: string;
+  videoUrl: string;
+  questions: QuestionVideoType[];
+}

@@ -1,20 +1,24 @@
-import React from "react";
-import HeaderDashboard from "@/components/navbar/HeaderDashboard";
+"use client";
+import React, { useRef, useState, useEffect } from "react";
+import ReactPlayer from "react-player";
+import ModalQuiz from "@/components/modal/ModalQuiz";
 
 const Dashboard = () => {
   return (
-    <div className="drawer-content flex flex-col">
-      {/* <HeaderDashboard /> */}
-      <div>
-        <h1 className="text-title-sub-section">Dashboard pages</h1>
-        <p className="text-base-text mt-2">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab facere
-          autem, mollitia cupiditate cum accusamus repellat laboriosam corrupti.
-          Quas voluptas minus distinctio! Neque sint nulla expedita placeat
-          voluptatum odio blanditiis.
+    <>
+      <div className="dashboard-content-container">
+        <h1 className="text-title-sub-section font-bold">Dashboarad Page</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+          impedit asperiores voluptates, quis eveniet cupiditate voluptatibus
+          ullam laudantium! Cupiditate rerum minima eaque necessitatibus nihil,
+          illo quaerat voluptas possimus nostrum atque. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Dicta, odit quo. Voluptatibus
+          quaerat, nostrum sit sequi excepturi id, reiciendis ipsa deserunt
+          minus, eaque numquam repellat aliquid magni esse perspiciatis debitis.
         </p>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -9,7 +9,6 @@ export default function DashboardLayout({
   return (
     <section>
       {/* Include shared UI here e.g. a header or sidebar */}
-      {/* <HeaderDashboard /> */}
       <div className="drawer lg:drawer-open">
         <input
           id="left-sidebar-drawer"
@@ -19,7 +18,7 @@ export default function DashboardLayout({
         {/* Content  */}
         <div className="drawer-content flex flex-col">
           <HeaderDashboard />
-          <div className="min-h-screen overflow-y-auto pt-5 px-5 bg-base-200">
+          <div className="min-h-screen overflow-y-auto pt-5 px-3 bg-base-200">
             {children}
           </div>
         </div>

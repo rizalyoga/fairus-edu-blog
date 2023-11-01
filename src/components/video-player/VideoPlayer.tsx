@@ -1,0 +1,72 @@
+import React, { useState, useRef, useEffect } from "react";
+import ReactPlayer from "react-player";
+import ModalQuiz from "../modal/ModalQuiz";
+
+const VideoPlayer = ({ videoUrl }: { videoUrl: string }) => {
+  const videoRef = useRef<ReactPlayer | null>(null);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const handleTimeUpdate = (e: any) => {
+    setCurrentTime(e.playedSeconds);
+  };
+
+  const closeModal = () => {
+    setIsOpenModal(false);
+  };
+
+  const setContinuePlayVideo = () => {
+    setIsPlaying(true);
+  };
+
+  useEffect(() => {
+    if (currentTime >= 5 && currentTime <= 6 && isPlaying) {
+      // Berhenti otomatis pada 5 detik
+      if (videoRef.current) {
+        videoRef.current.seekTo(5, "seconds");
+        setIsPlaying(false);
+        setIsOpenModal(true);
+      }
+    } else if (currentTime >= 10 && currentTime <= 11 && isPlaying) {
+      // Berhenti otomatis pada 10 detik
+      if (videoRef.current) {
+        videoRef.current.seekTo(10, "seconds");
+        setIsPlaying(false);
+        setIsOpenModal(true);
+      }
+    }
+  }, [currentTime, isPlaying]);
+
+  return (
+    <>
+      <ModalQuiz
+        isOpen={isOpenModal}
+        closeModal={closeModal}
+        setContinuePlayVideo={setContinuePlayVideo}
+      />
+      <div className="w-full flex justify-center items-center flex-col">
+        <h1 className="my-2">Quiz VIdeo</h1>
+        <div className="player-wrapper">
+          <ReactPlayer
+            ref={videoRef}
+            url={videoUrl}
+            controls
+            width="100%"
+            height="100%"
+            onProgress={handleTimeUpdate}
+            playing={isPlaying}
+            className="react-player"
+          />
+        </div>
+      </div>
+      <div className="flex justify-center items-center">
+        <p className="font-bold text-center mt-4">
+          Current Time: {currentTime.toFixed(2)} seconds
+        </p>
+      </div>
+    </>
+  );
+};
+
+export default VideoPlayer;
