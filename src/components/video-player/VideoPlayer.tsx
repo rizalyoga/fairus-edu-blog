@@ -7,6 +7,7 @@ const VideoPlayer = ({ videoUrl }: { videoUrl: string }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isDomLoad, setIsDomLoad] = useState(false);
 
   const handleTimeUpdate = (e: any) => {
     setCurrentTime(e.playedSeconds);
@@ -19,6 +20,10 @@ const VideoPlayer = ({ videoUrl }: { videoUrl: string }) => {
   const setContinuePlayVideo = () => {
     setIsPlaying(true);
   };
+
+  useEffect(() => {
+    setIsDomLoad(true);
+  }, []);
 
   useEffect(() => {
     if (currentTime >= 5 && currentTime <= 6 && isPlaying) {
@@ -45,26 +50,34 @@ const VideoPlayer = ({ videoUrl }: { videoUrl: string }) => {
         closeModal={closeModal}
         setContinuePlayVideo={setContinuePlayVideo}
       />
-      <div className="w-full flex justify-center items-center flex-col">
-        <h1 className="my-2">Quiz VIdeo</h1>
-        <div className="player-wrapper">
-          <ReactPlayer
-            ref={videoRef}
-            url={videoUrl}
-            controls
-            width="100%"
-            height="100%"
-            onProgress={handleTimeUpdate}
-            playing={isPlaying}
-            className="react-player"
-          />
-        </div>
-      </div>
-      <div className="flex justify-center items-center">
-        <p className="font-bold text-center mt-4">
-          Current Time: {currentTime.toFixed(2)} seconds
-        </p>
-      </div>
+      {isDomLoad && (
+        <>
+          <div className="w-full flex justify-center items-center flex-col">
+            <h1 className="my-2">Quiz VIdeo</h1>
+            <div className="player-wrapper">
+              <ReactPlayer
+                ref={videoRef}
+                url={
+                  videoUrl?.includes("/watch?v=")
+                    ? videoUrl.replace("/watch?v=", "/embed/")
+                    : videoUrl
+                }
+                controls
+                width="100%"
+                height="100%"
+                onProgress={handleTimeUpdate}
+                playing={isPlaying}
+                className="react-player"
+              />
+            </div>
+          </div>
+          <div className="flex justify-center items-center">
+            <p className="font-bold text-center mt-4">
+              Current Time: {currentTime.toFixed(2)} seconds
+            </p>
+          </div>
+        </>
+      )}
     </>
   );
 };

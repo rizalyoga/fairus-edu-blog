@@ -4,13 +4,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div
-      className="hero min-h-[50rem]"
-      style={{
-        backgroundImage:
-          "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
-      }}
-    >
+    <div className="flex justify-center items-center flex-col min-h-[50rem] bg-primary-violet">
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-6xl">
