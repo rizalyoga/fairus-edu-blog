@@ -1,7 +1,7 @@
-import { RegisterProps } from "../types/types";
+import { StudentDataProps } from "../types/types";
 const url = process.env.NEXT_PUBLIC_APP_LINK_API;
 
-export const addNewStudent = async (payload: RegisterProps) => {
+export const addNewStudent = async (payload: StudentDataProps) => {
   const response = await fetch(`${url}?action=addNewStudent`, {
     method: "POST",
     body: JSON.stringify(payload),

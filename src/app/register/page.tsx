@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Link from "next/link";
@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import { addNewStudent } from "../data/studentRegister";
 import SuccessToast from "@/components/toast/SuccessToast";
 import ErrorToast from "@/components/toast/ErrorToast";
-import { off } from "process";
 
 const Register = () => {
   const router = useRouter();
@@ -31,6 +30,13 @@ const Register = () => {
       [e.target.name]: value,
     });
   };
+
+  useEffect(() => {
+    const auth = sessionStorage.getItem("student");
+    if (auth) {
+      router.push("/dashboard");
+    }
+  }, [router]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -71,11 +77,11 @@ const Register = () => {
 
   const showPasswordComponents = (style: string) => {
     if (!isShowPassword) {
+      return <AiFillEye onClick={showPasswordVisible} className={style} />;
+    } else {
       return (
         <AiFillEyeInvisible onClick={showPasswordVisible} className={style} />
       );
-    } else {
-      return <AiFillEye onClick={showPasswordVisible} className={style} />;
     }
   };
 

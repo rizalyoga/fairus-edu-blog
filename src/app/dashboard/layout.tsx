@@ -1,11 +1,23 @@
+"use client";
+
 import Sidebar from "@/components/sidebar/Sidebar";
 import HeaderDashboard from "@/components/navbar/HeaderDashboard";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function DashboardLayout({
   children, // will be a page or nested layout
 }: {
   children: React.ReactNode;
 }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const auth = sessionStorage.getItem("student");
+    if (!auth) {
+      router.push("/login");
+    }
+  }, [router]);
   return (
     <section>
       {/* Include shared UI here e.g. a header or sidebar */}

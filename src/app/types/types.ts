@@ -25,7 +25,7 @@ export interface QuestionVideoInterface {
   questions: QuestionVideoType[];
 }
 
-export interface RegisterProps {
+export interface StudentDataProps {
   username: string;
   firstname: string;
   lastname: string;

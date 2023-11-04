@@ -8,7 +8,10 @@ const HeaderDashboard = () => {
   const pathname = usePathname();
 
   const logoutHandler = () => {
-    router.push("/login");
+    if (confirm("Anda yakin ingin keluar ?")) {
+      sessionStorage.clear();
+      router.push("/login");
+    }
   };
 
   function getPathnamePage(link: string): string {
