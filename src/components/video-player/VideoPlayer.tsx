@@ -45,39 +45,34 @@ const VideoPlayer = ({ videoUrl }: { videoUrl: string }) => {
 
   return (
     <>
+      {isDomLoad && (
+        <div className="player-wrapper">
+          <ReactPlayer
+            ref={videoRef}
+            url={
+              videoUrl?.includes("/watch?v=")
+                ? videoUrl.replace("/watch?v=", "/embed/")
+                : videoUrl
+            }
+            controls
+            width="100%"
+            height="100%"
+            onProgress={handleTimeUpdate}
+            playing={isPlaying}
+            className="react-player"
+          />
+        </div>
+      )}
+      <div className="flex justify-center items-center">
+        <p className="font-bold text-center mt-4">
+          Current Time: {currentTime.toFixed(2)} seconds
+        </p>
+      </div>
       <ModalQuiz
         isOpen={isOpenModal}
         closeModal={closeModal}
         setContinuePlayVideo={setContinuePlayVideo}
       />
-      {isDomLoad && (
-        <>
-          <div className="w-full flex justify-center items-center flex-col">
-            <h1 className="my-2">Quiz VIdeo</h1>
-            <div className="player-wrapper">
-              <ReactPlayer
-                ref={videoRef}
-                url={
-                  videoUrl?.includes("/watch?v=")
-                    ? videoUrl.replace("/watch?v=", "/embed/")
-                    : videoUrl
-                }
-                controls
-                width="100%"
-                height="100%"
-                onProgress={handleTimeUpdate}
-                playing={isPlaying}
-                className="react-player"
-              />
-            </div>
-          </div>
-          <div className="flex justify-center items-center">
-            <p className="font-bold text-center mt-4">
-              Current Time: {currentTime.toFixed(2)} seconds
-            </p>
-          </div>
-        </>
-      )}
     </>
   );
 };

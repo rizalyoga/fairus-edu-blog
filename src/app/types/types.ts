@@ -24,3 +24,18 @@ export interface QuestionVideoInterface {
   videoUrl: string;
   questions: QuestionVideoType[];
 }
+
+export interface RegisterProps {
+  username: string;
+  firstname: string;
+  lastname: string;
+  password: string;
+  email: string;
+  id: number;
+  date: string;
+}
+
+export interface LoginProps {
+  username: string;
+  password: string;
+}

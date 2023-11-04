@@ -7,8 +7,11 @@ import { useRouter } from "next/navigation";
 import { addNewStudent } from "../data/studentRegister";
 import SuccessToast from "@/components/toast/SuccessToast";
 import ErrorToast from "@/components/toast/ErrorToast";
+import { off } from "process";
 
 const Register = () => {
+  const router = useRouter();
+
   const [isShowPassword, setIsShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [registerMessage, setRegisterMessage] = useState("");
@@ -19,8 +22,6 @@ const Register = () => {
     password: "",
     email: "",
   });
-
-  const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -33,20 +34,39 @@ const Register = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     setIsLoading((loading) => !loading);
     const newDataStudent = {
-      ...register,
+      username: register.username.replace(/\s/g, ""),
+      firstname: register.firstname,
+      lastname: register.lastname,
+      password: register.password,
+      email: register.email.replace(/\s/g, ""),
       id: Date.now(),
       date: new Date().toISOString().slice(0, 10),
     };
 
-    addNewStudent(newDataStudent).then((e) => {
-      setRegisterMessage(e);
+    if (newDataStudent.username.length < 6) {
+      setRegisterMessage("Mohon maaf panjang username minimal 6 karakter");
       setIsLoading(false);
-      setTimeout(() => {
-        router.push("/login");
-      }, 3000);
-    });
+    } else if (newDataStudent.firstname.length < 3) {
+      setRegisterMessage("Mohon maaf panjang fistname minimal 3 karakter");
+      setIsLoading(false);
+    } else if (newDataStudent.lastname.length < 3) {
+      setRegisterMessage("Mohon maaf panjang lastname minimal 3 karakter");
+      setIsLoading(false);
+    } else if (newDataStudent.password.length < 8) {
+      setRegisterMessage("Mohon maaf panjang password minimal 8 karakter");
+      setIsLoading(false);
+    } else {
+      addNewStudent(newDataStudent).then((e) => {
+        setRegisterMessage(e);
+        setIsLoading(false);
+        setTimeout(() => {
+          router.push("/login");
+        }, 2500);
+      });
+    }
   };
 
   const showPasswordComponents = (style: string) => {
@@ -68,7 +88,7 @@ const Register = () => {
       {registerMessage.includes("berhasil") && (
         <SuccessToast message={registerMessage} />
       )}
-      {registerMessage.includes("gagal") && (
+      {registerMessage.includes("maaf") && (
         <ErrorToast message={registerMessage} />
       )}
       <div
@@ -122,7 +142,7 @@ const Register = () => {
                 <input
                   className={clsx(
                     "input input-bordered rounded-md placeholder:text-base text-primary-text py-3 px-2 mt-2",
-                    " dark:bg-dark_background dark:text-white"
+                    "dark:bg-dark_background dark:text-white"
                   )}
                   name="firstname"
                   type="text"
@@ -136,7 +156,7 @@ const Register = () => {
                 <input
                   className={clsx(
                     "input input-bordered rounded-md placeholder:text-base text-primary-text py-3 px-2 mt-2",
-                    " dark:bg-dark_background dark:text-white"
+                    "dark:bg-dark_background dark:text-white"
                   )}
                   name="lastname"
                   type="text"
@@ -174,6 +194,7 @@ const Register = () => {
                   type={isShowPassword ? "text" : "password"}
                   placeholder="Password"
                   required
+                  autoComplete={"off"}
                   onChange={handleChange}
                 />
                 {showPasswordComponents(
