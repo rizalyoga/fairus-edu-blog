@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { IoLogOutOutline, IoLogOutSharp } from "react-icons/io5";
+import { IoLogOutOutline } from "react-icons/io5";
 
 const HeaderDashboard = () => {
   const router = useRouter();

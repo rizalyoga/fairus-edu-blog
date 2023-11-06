@@ -12,7 +12,7 @@ const Dashboard = () => {
           {length.map((length) => (
             <div
               key={length}
-              className="bg-gradient-to-br from-primary-violet to-primary-cyan text-slate-200 rounded-xl shadow-md min-h-[300px] p-4 relative"
+              className="bg-gradient-to-br from-primary-violet to-violet-500 text-slate-200 rounded-xl shadow-md min-h-[300px] p-4 relative"
             >
               <h1 className="font-bold text-title-sub-section">Tuna Rungu</h1>
               <span className="flex gap-2">

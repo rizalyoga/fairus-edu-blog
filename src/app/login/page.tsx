@@ -5,8 +5,7 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { getDataStudent } from "../data/getDataStudent";
-import SuccessToast from "@/components/toast/SuccessToast";
-import ErrorToast from "@/components/toast/ErrorToast";
+import Toast from "@/components/toast/Toast";
 
 const Login = () => {
   const router = useRouter();
@@ -47,13 +46,16 @@ const Login = () => {
           );
           setTimeout(() => {
             router.push("/dashboard");
-          }, 2500);
+          }, 2200);
         } else {
           setLoginMessage("Mohon periksa kembali username atau password anda");
         }
       })
       .finally(() => {
         setIsLoading((loading) => !loading);
+        setTimeout(() => {
+          setLoginMessage("");
+        }, 2500);
       });
   };
 
@@ -73,10 +75,8 @@ const Login = () => {
 
   return (
     <>
-      {loginMessage.includes("Selamat") && (
-        <SuccessToast message={loginMessage} />
-      )}
-      {loginMessage.includes("Mohon") && <ErrorToast message={loginMessage} />}
+      {loginMessage && <Toast message={loginMessage} />}
+      {/* {loginMessage.includes("Mohon") && <ErrorToast message={loginMessage} />} */}
       <div
         className={clsx(
           "flex justify-center items-center flex-col h-screen bg-primary-violet",
@@ -144,8 +144,9 @@ const Login = () => {
                 )}
               </div>
             </span>
+
             {isLoading ? (
-              <p className="mt-4 text-center">Loading...</p>
+              <span className="loading loading-spinner text-success m-auto mt-5"></span>
             ) : (
               <input
                 className={clsx(

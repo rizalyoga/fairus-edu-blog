@@ -5,8 +5,7 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { addNewStudent } from "../data/studentRegister";
-import SuccessToast from "@/components/toast/SuccessToast";
-import ErrorToast from "@/components/toast/ErrorToast";
+import Toast from "@/components/toast/Toast";
 
 const Register = () => {
   const router = useRouter();
@@ -40,7 +39,6 @@ const Register = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     setIsLoading((loading) => !loading);
     const newDataStudent = {
       username: register.username.replace(/\s/g, ""),
@@ -54,20 +52,20 @@ const Register = () => {
 
     if (newDataStudent.username.length < 6) {
       setRegisterMessage("Mohon maaf panjang username minimal 6 karakter");
-      setIsLoading(false);
+      setIsLoading((loading) => !loading);
     } else if (newDataStudent.firstname.length < 3) {
       setRegisterMessage("Mohon maaf panjang fistname minimal 3 karakter");
-      setIsLoading(false);
+      setIsLoading((loading) => !loading);
     } else if (newDataStudent.lastname.length < 3) {
       setRegisterMessage("Mohon maaf panjang lastname minimal 3 karakter");
-      setIsLoading(false);
+      setIsLoading((loading) => !loading);
     } else if (newDataStudent.password.length < 8) {
       setRegisterMessage("Mohon maaf panjang password minimal 8 karakter");
-      setIsLoading(false);
+      setIsLoading((loading) => !loading);
     } else {
       addNewStudent(newDataStudent).then((e) => {
         setRegisterMessage(e);
-        setIsLoading(false);
+        setIsLoading((loading) => !loading);
         setTimeout(() => {
           router.push("/login");
         }, 2500);
@@ -91,12 +89,7 @@ const Register = () => {
 
   return (
     <>
-      {registerMessage.includes("berhasil") && (
-        <SuccessToast message={registerMessage} />
-      )}
-      {registerMessage.includes("maaf") && (
-        <ErrorToast message={registerMessage} />
-      )}
+      {registerMessage && <Toast message={registerMessage} />}
       <div
         className={clsx(
           "flex justify-center items-center flex-col min-h-screen bg-primary-violet",
@@ -209,7 +202,7 @@ const Register = () => {
               </div>
             </span>
             {isLoading ? (
-              <p className="mt-4 text-center">Loading...</p>
+              <span className="loading loading-spinner text-success m-auto mt-5"></span>
             ) : (
               <input
                 className={clsx(

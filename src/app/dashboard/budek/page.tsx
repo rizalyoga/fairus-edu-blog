@@ -23,7 +23,7 @@ const Budek = () => {
   return (
     <div className="dashboard-content-container">
       <h1>Budek Page</h1>
-      <VideoPlayer videoUrl={questions?.videoUrl as string} />
+      <VideoPlayer contentVideo={questions} />
     </div>
   );
 };

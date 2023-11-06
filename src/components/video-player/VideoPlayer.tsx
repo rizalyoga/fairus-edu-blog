@@ -1,8 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
 import ReactPlayer from "react-player";
 import ModalQuiz from "../modal/ModalQuiz";
+import { QuestionVideoInterface } from "@/app/types/types";
 
-const VideoPlayer = ({ videoUrl }: { videoUrl: string }) => {
+const VideoPlayer = ({
+  contentVideo,
+}: {
+  contentVideo: QuestionVideoInterface | null;
+}) => {
   const videoRef = useRef<ReactPlayer | null>(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -50,9 +55,9 @@ const VideoPlayer = ({ videoUrl }: { videoUrl: string }) => {
           <ReactPlayer
             ref={videoRef}
             url={
-              videoUrl?.includes("/watch?v=")
-                ? videoUrl.replace("/watch?v=", "/embed/")
-                : videoUrl
+              contentVideo?.videoUrl?.includes("/watch?v=")
+                ? contentVideo?.videoUrl?.replace("/watch?v=", "/embed/")
+                : contentVideo?.videoUrl
             }
             controls
             width="100%"

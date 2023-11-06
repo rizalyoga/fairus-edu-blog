@@ -1,20 +1,31 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
 import Link from "next/link";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsPersonCircle } from "react-icons/bs";
 import SidebarSubMenu from "./SidebarSubMenu";
 import { routes } from "@/app/routes/sidebarRoute";
+import { StudentDataProps } from "@/app/types/types";
+
+interface StudentData extends StudentDataProps {
+  token: string;
+}
 
 const Sidebar = () => {
   const pathname = usePathname();
+  const [studentData, setStudentData] = useState<StudentData>();
 
   const close = () => {
     const maybeMyElement = document.getElementById("left-sidebar-drawer");
     maybeMyElement && maybeMyElement.click();
   };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setStudentData(JSON.parse(sessionStorage.getItem("student") as string));
+    }
+  }, []);
 
   return (
     <div className="drawer-side z-20">
@@ -29,7 +40,8 @@ const Sidebar = () => {
 
         <li className="mb-2 mt-1 font-bold text-xl">
           <Link href={"/dashboard"} className="hover:bg-base-100">
-            <BsPersonCircle className="text-3xl -mt-1" /> Rizal Yoga
+            <BsPersonCircle className="text-3xl -mt-1" />{" "}
+            {`${studentData?.firstname} ${studentData?.lastname}`}
           </Link>
         </li>
         {routes.map((route, idx) => {
