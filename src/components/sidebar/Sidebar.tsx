@@ -40,7 +40,7 @@ const Sidebar = () => {
 
         <li className="mb-2 mt-1 font-bold text-xl">
           <Link href={"/dashboard"} className="hover:bg-base-100">
-            <BsPersonCircle className="text-3xl -mt-1" />{" "}
+            <BsPersonCircle className="text-3xl -mt-1" />
             {`${studentData?.firstname} ${studentData?.lastname}`}
           </Link>
         </li>

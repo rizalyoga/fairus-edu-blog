@@ -11,7 +11,7 @@ export interface RoutesInterfaces {
   submenu: RoutesType[];
 }
 
-type QuestionVideoType = {
+export type QuestionVideoType = {
   second: number;
   point: number;
   question: string;

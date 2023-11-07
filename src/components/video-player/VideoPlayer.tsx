@@ -31,22 +31,25 @@ const VideoPlayer = ({
   }, []);
 
   useEffect(() => {
-    if (currentTime >= 5 && currentTime <= 6 && isPlaying) {
-      // Berhenti otomatis pada 5 detik
-      if (videoRef.current) {
-        videoRef.current.seekTo(5, "seconds");
-        setIsPlaying(false);
-        setIsOpenModal(true);
-      }
-    } else if (currentTime >= 10 && currentTime <= 11 && isPlaying) {
-      // Berhenti otomatis pada 10 detik
-      if (videoRef.current) {
-        videoRef.current.seekTo(10, "seconds");
-        setIsPlaying(false);
+    if (contentVideo) {
+      const currentQuestion = contentVideo.questions.find((question) => {
+        return (
+          currentTime >= question.second && currentTime <= question.second + 1
+        );
+      });
+
+      if (currentQuestion && isPlaying) {
+        // Pause video otomatis
+        if (videoRef.current) {
+          videoRef.current.seekTo(currentQuestion.second, "seconds");
+          videoRef.current.getInternalPlayer().pauseVideo();
+        }
+
+        // Tampilkan modal dengan pertanyaan dari currentQuestion
         setIsOpenModal(true);
       }
     }
-  }, [currentTime, isPlaying]);
+  }, [currentTime, isPlaying, contentVideo]);
 
   return (
     <>
@@ -77,6 +80,8 @@ const VideoPlayer = ({
         isOpen={isOpenModal}
         closeModal={closeModal}
         setContinuePlayVideo={setContinuePlayVideo}
+        questions={contentVideo?.questions}
+        currentTime={currentTime}
       />
     </>
   );
