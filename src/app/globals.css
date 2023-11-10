@@ -45,3 +45,15 @@ body {
   top: 0;
   left: 0;
 }
+
+.content-container {
+  margin: auto;
+  max-width: 1200px;
+}
+
+/* @media (max-width: 885px) {
+  .content-container {
+    padding: 0 10px;
+    overflow: hidden;
+  }
+} */

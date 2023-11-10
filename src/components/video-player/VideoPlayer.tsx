@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import ReactPlayer from "react-player";
 import ModalQuiz from "../modal/ModalQuiz";
-import { QuestionVideoInterface } from "@/app/types/types";
+import { QuestionVideoInterface } from "@/types/types";
 
 const VideoPlayer = ({
   contentVideo,
@@ -10,7 +10,7 @@ const VideoPlayer = ({
 }) => {
   const videoRef = useRef<ReactPlayer | null>(null);
   const [currentTime, setCurrentTime] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isDomLoad, setIsDomLoad] = useState(false);
 
@@ -23,7 +23,7 @@ const VideoPlayer = ({
   };
 
   const setContinuePlayVideo = () => {
-    setIsPlaying(true);
+    setIsPlaying((playing) => !playing);
   };
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const VideoPlayer = ({
         );
       });
 
-      if (currentQuestion && isPlaying) {
+      if (currentQuestion && !isPlaying) {
         // Pause video otomatis
         if (videoRef.current) {
           videoRef.current.seekTo(currentQuestion.second, "seconds");
@@ -68,6 +68,9 @@ const VideoPlayer = ({
             onProgress={handleTimeUpdate}
             playing={isPlaying}
             className="react-player"
+            config={{
+              youtube: { playerVars: { origin: "https://www.youtube.com" } },
+            }}
           />
         </div>
       )}

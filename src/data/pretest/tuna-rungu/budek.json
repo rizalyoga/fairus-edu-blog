@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "question": "Apa nama ibu kota Jawa Timur ?",
+    "choices": ["Jakarta", "Surabaya", "Malang", "Yogyakarta"],
+    "answer": "Surabaya",
+    "score": 25
+  },
+  {
+    "id": 2,
+    "question": "Bagian tubuh yang digunakan untuk mendengar adalah ?",
+    "choices": ["Kulit", "Tangan", "Telinga", "Mulut"],
+    "answer": "Tellinga",
+    "score": 25
+  },
+  {
+    "id": 3,
+    "question": "Fungsi utama kursi adalah ?",
+    "choices": ["Dilempar", "Rebahan", "Duduk", "Tidur"],
+    "answer": "Duduk",
+    "score": 25
+  },
+  {
+    "id": 4,
+    "question": "Jika kita haus, maka kita harus ?",
+    "choices": ["Minum", "Marah", "Makan", "Mancing"],
+    "answer": "Surabaya",
+    "score": 25
+  }
+]

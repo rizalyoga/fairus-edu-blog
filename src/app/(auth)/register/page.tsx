@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { addNewStudent } from "../data/studentRegister";
+import { addNewStudent } from "@/data/studentRegister";
 import Toast from "@/components/toast/Toast";
 
 const Register = () => {

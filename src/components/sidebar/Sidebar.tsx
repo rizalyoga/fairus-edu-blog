@@ -5,8 +5,8 @@ import Link from "next/link";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsPersonCircle } from "react-icons/bs";
 import SidebarSubMenu from "./SidebarSubMenu";
-import { routes } from "@/app/routes/sidebarRoute";
-import { StudentDataProps } from "@/app/types/types";
+import { routes } from "@/routes/sidebarRoute";
+import { StudentDataProps } from "@/types/types";
 
 interface StudentData extends StudentDataProps {
   token: string;

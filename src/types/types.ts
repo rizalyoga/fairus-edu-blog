@@ -39,3 +39,11 @@ export interface LoginProps {
   username: string;
   password: string;
 }
+
+export interface PrestestProps {
+  id: number;
+  question: string;
+  choices: string[];
+  answer: string;
+  score: number;
+}

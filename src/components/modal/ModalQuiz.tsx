@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { QuestionVideoType } from "@/app/types/types";
+import { QuestionVideoType } from "@/types/types";
 import clsx from "clsx";
 
 interface ModalQuizProps {
