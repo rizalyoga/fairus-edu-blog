@@ -1,13 +1,8 @@
 import React from "react";
+import LessonsPage from "@/components/pages/LessonsPage";
 
 const Lessons = () => {
-  return (
-    <div className="min-h-screen bg-base-100">
-      <div className="content-container bg-red-500">
-        <p>Lesons page</p>
-      </div>
-    </div>
-  );
+  return <LessonsPage />;
 };
 
 export default Lessons;

@@ -2,11 +2,11 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="bg-base-100">
-      <div className="content-container">
+    <div className="bg-base-100 pt-20">
+      <div className="content-container px-4 lg:px-0">
         <div className="about w-[80%] m-auto pb-16">
           <div className="about-us pt-12">
-            <h1 className="text-title-sub-section font-bold text-base-content text-center">
+            <h1 className="text-title-section font-bold text-primary-green text-center">
               About Us
             </h1>
             <p className="py-10 text-center text-base-content text-lg">

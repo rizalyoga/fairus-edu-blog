@@ -9,8 +9,8 @@ const Navbar = () => {
   const pathname = usePathname();
   return (
     !pathname.includes("dashboard") && (
-      <div className="bg-base-100">
-        <div className=" navbar content-container w-full flex justify-between items-center">
+      <div className="bg-base-100 fixed top-0 w-full z-30 shadow">
+        <div className=" navbar h-24 content-container w-full flex justify-between items-center px-4 lg:px-0">
           <div className="navbar-start">
             <Link
               href="/"

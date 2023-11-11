@@ -79,7 +79,7 @@ const Login = () => {
       {/* {loginMessage.includes("Mohon") && <ErrorToast message={loginMessage} />} */}
       <div
         className={clsx(
-          "flex justify-center items-center flex-col h-screen bg-primary-violet",
+          "flex justify-center items-center flex-col h-screen bg-primary-violet mt-20",
           "dark:bg-slate-700"
         )}
       >

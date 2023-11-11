@@ -92,7 +92,7 @@ const Register = () => {
       {registerMessage && <Toast message={registerMessage} />}
       <div
         className={clsx(
-          "flex justify-center items-center flex-col min-h-screen bg-primary-violet",
+          "flex justify-center items-center flex-col min-h-screen bg-primary-violet mt-20",
           "dark:bg-slate-700"
         )}
       >
