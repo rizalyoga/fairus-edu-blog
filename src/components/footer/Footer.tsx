@@ -11,10 +11,10 @@ const Footer = () => {
 
   return (
     !exceptionRoute.some((route) => pathname.includes(route)) && (
-      <div className="bg-base-200">
-        <footer className="footer py-10 bg-base-200 text-base-content content-container px-4 lg:px-0">
-          <nav>
-            <header className="footer-title">Lessons</header>
+      <div className="bg-primary-violet">
+        <footer className="footer py-10 bg-primary-violet text-base-content content-container px-4 lg:px-0">
+          <nav className="text-white">
+            <header className="font-extrabold text-white">LESSONS</header>
             <Link href="/lessons" className="link link-hover">
               Pembentukan Suara
             </Link>
@@ -28,8 +28,8 @@ const Footer = () => {
               Latihan Pengucapan Huruf Konsonan
             </Link>
           </nav>
-          <nav>
-            <header className="footer-title">Company</header>
+          <nav className="text-white">
+            <header className="font-extrabold text-white">COMPANY</header>
             <Link href="/" className="link link-hover">
               Home
             </Link>
@@ -60,7 +60,7 @@ const Footer = () => {
               </svg>
               <p>
                 Fairus Edu. <br />
-                Providing reliable tech since 2023
+                Providing reliable materials since 2023
               </p>
             </aside>
             <nav className="md:place-self-center md:justify-self-end">

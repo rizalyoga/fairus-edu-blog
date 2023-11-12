@@ -140,7 +140,7 @@ const Register = () => {
                 <label className="text-base">FIRSTNAME</label>
                 <input
                   className={clsx(
-                    "input input-bordered rounded-md placeholder:text-base text-primary-text py-3 px-2 mt-2",
+                    "input input-bordered rounded-md placeholder:text-base text-primary-text py-3 px-2 mt-2 w-full",
                     "dark:bg-dark_background dark:text-white"
                   )}
                   name="firstname"
@@ -154,7 +154,7 @@ const Register = () => {
                 <label className="text-base">LASTNAME</label>
                 <input
                   className={clsx(
-                    "input input-bordered rounded-md placeholder:text-base text-primary-text py-3 px-2 mt-2",
+                    "input input-bordered rounded-md placeholder:text-base text-primary-text py-3 px-2 mt-2 w-full",
                     "dark:bg-dark_background dark:text-white"
                   )}
                   name="lastname"

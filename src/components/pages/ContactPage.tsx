@@ -10,9 +10,9 @@ const ContactPage = () => {
             Contact Us
           </h1>
           <p className="text-center text-lg">
-            Hubungi kami untuk setiap pertanyaan atau bantuan dengan pendidikan
-            dan kursus kami. Tim kami siap membantu dan dapat dihubungi melalui
-            informasi kontak yang tersedia.
+            Contact us for any questions or help with our education and courses.
+            Our team is ready to help and can be contacted via the contact
+            information provided.
           </p>
         </div>
         <div className="flex flex-col gap-4 min-h-[400px] mt-16 text-base-content font-bold ">

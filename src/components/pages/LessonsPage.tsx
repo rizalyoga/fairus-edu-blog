@@ -1,6 +1,14 @@
-import React from "react";
+"use client";
+
+import ReactPlayer from "react-player";
+import React, { useState, useEffect } from "react";
 
 const LessonsPage = () => {
+  const [isDomLoad, setIsDomLoad] = useState(false);
+
+  useEffect(() => {
+    setIsDomLoad(true);
+  }, []);
   return (
     <div className="bg-base-100 pt-20">
       <div className="content-container px-4 lg:px-0 flex justify-center flex-col items-center">
@@ -14,7 +22,22 @@ const LessonsPage = () => {
           Mauris facilisis diam nulla. Nam fringilla imperdiet feugiat.
         </p>
 
-        <h4 className="text-center font-bold text-title-sub-section">
+        {isDomLoad && (
+          <div className="player-wrapper mb-10">
+            <ReactPlayer
+              url="https://www.youtube.com/watch?v=NujCjQj5Xes"
+              controls
+              width="100%"
+              height="100%"
+              className="react-player bg-slate-300"
+              config={{
+                youtube: { playerVars: { origin: "https://www.youtube.com" } },
+              }}
+            />
+          </div>
+        )}
+
+        <h4 className="text-center font-bold text-3xl">
           The steps to start class
         </h4>
 

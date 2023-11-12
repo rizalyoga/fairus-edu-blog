@@ -4,19 +4,25 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="flex justify-center items-center flex-col min-h-[50rem] bg-primary-violet">
-      <div className="hero-overlay bg-opacity-60"></div>
+    <div
+      className="hero min-h-[50rem]"
+      style={{
+        backgroundImage:
+          "url(https://i0.wp.com/senmagazine.co.uk/wp-content/uploads/2021/11/Depositphotos_307977302_XL-scaled-e1637008981212.jpg?fit=1159%2C559&ssl=1)",
+      }}
+    >
+      <div className="hero-overlay bg-opacity-70"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-6xl">
-          <h1 className="mb-5 text-title font-bold text-white ">
-            Athalia&apos;s Blessing
+          <h1 className="mb-5 text-title font-bold text-white tracking-tight">
+            Fairus Edu.
           </h1>
           <p className="mb-5 text-base-text text-white ">
-            Kami mendampingi dan memberi terapi bagi anak-anak dan individu yang
-            membutuhkan. Mulai dengan guru pendamping di sekolah dan berkembang
-            dengan terapi perilaku, remidial teaching, home program, dan asesmen
-            khusus. Kami juga menawarkan workshop, konsultasi pembelajaran, dan
-            dukungan parenting. Cek layanan kami di sini!
+            We accompany and provide therapy for children and individuals who
+            need it. Starting with an accompanying teacher at school and
+            progressing to behavioral therapy, remedial teaching, home programs,
+            and special assessments. We also offer workshops, learning
+            consultations, and parenting support. Check our services here!
           </p>
           <Link href={"/login"}>
             <button

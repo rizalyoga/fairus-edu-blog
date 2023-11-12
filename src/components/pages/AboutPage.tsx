@@ -4,21 +4,20 @@ const About = () => {
   return (
     <div className="bg-base-100 pt-20">
       <div className="content-container px-4 lg:px-0">
-        <div className="about w-[80%] m-auto pb-16">
+        <div className="about w-full m-auto pb-16 lg:w-[80%]">
           <div className="about-us pt-12">
             <h1 className="text-title-section font-bold text-primary-green text-center">
               About Us
             </h1>
             <p className="py-10 text-center text-base-content text-lg">
-              Berdiri sejak tahun 2010 dan disahkan menjadi Lembaga resmi
-              Yayasan Athalia Berkat Anugerah pada tahun 2022. Pelayanan kami
-              diawali dari memberikan pelayanan tenaga Shadow Teacher atau
-              pelayanan guru pendamping anak berkebutuhan khusus di sekolah,
-              kemudian berkembang sesuai kebutuhan masyarakat dengan memberikan
-              pelayanan terapi perilaku, remidial teaching dan home program,
-              dilanjutan saat ini mengembangkan pelayanan asesmen bagi anak
-              berkebutuhan khusus, workshop, parenting, serta konsultasi
-              pembelajaran.
+              Established in 2010 and approved as an official institution of the
+              Athalia Berkat Anugerah Foundation in 2022. Our services started
+              by providing Shadow Teacher services or teacher support services
+              for children with special needs in schools, then developed
+              according to community needs by providing behavioral therapy
+              services, remedial teaching and home program, currently continuing
+              to develop assessment services for children with special needs,
+              workshops, parenting, and learning consultations.
             </p>
           </div>
           <div className="vision text-lg">
@@ -26,8 +25,8 @@ const About = () => {
               Vision
             </h1>
             <p className="text-center py-10 px-10 text-base-content">
-              Menjadi sahabat orang tua mendampingi anak berkebutuhan khusus
-              untuk mencapai level terbaik anak
+              Become a friend of parents accompanying children with special
+              needs to reach the child&apos;s best level
             </p>
           </div>
           <div className="Mission text-lg">
@@ -36,29 +35,29 @@ const About = () => {
             </h1>
             <ol className="list-decimal text-base-content">
               <li>
-                Melayani konsultasi anak berkebutuhan khusus dan memberikan
-                intervensi yang tepat sesuai kebutuhan anak.
+                Provide consultations for children with special needs and
+                provide appropriate intervention according to the child&apos;s
+                needs.
               </li>
 
               <li>
-                Melayani pendampingan anak berkebutuhan khusus di sekolah,
-                dengan menjembatani orang tua dengan sekolah.
+                Provide assistance to children with special needs at school, by
+                bridging parents with schools.
               </li>
 
               <li>
-                Melayani home program yang sesuai dengan kebutuhan anak di
-                rumah.
+                Serving home programs that suit the needs of children at home.
               </li>
 
               <li>
-                Melayani remidial teaching untuk anak berkebutuhan khusus secara
-                akademik dan life skill.
+                Provides remedial teaching for children with special needs
+                academics and life skills.
               </li>
 
               <li>
-                Melayani terapi perilaku anak berekebutuhan khusus untuk
-                meningkatkan keterampilan komunikasi, mengurangi perilaku
-                bermasalah agar memperoleh keterampilan adaptif.
+                Provides behavioral therapy for children with special needs
+                improve communication skills, reduce behavior problematic in
+                order to acquire adaptive skills.
               </li>
             </ol>
           </div>
