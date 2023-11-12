@@ -30,7 +30,7 @@ const Sidebar = () => {
   return (
     <div className="drawer-side z-20">
       <label htmlFor="left-sidebar-drawer" className="drawer-overlay"></label>
-      <ul className="menu pt-2 w-80 bg-base-100 text-base-content min-h-screen">
+      <ul className="menu pt-2 w-80 bg-base-100 text-base-content min-h-screen overflow-hidden">
         <button
           className="btn btn-ghost bg-base-300 btn-circle z-50 top-0 right-0 mt-2 mr-2 absolute lg:hidden"
           onClick={() => close()}

@@ -10,7 +10,7 @@
     "id": 2,
     "question": "Bagian tubuh yang digunakan untuk mendengar adalah ?",
     "choices": ["Kulit", "Tangan", "Telinga", "Mulut"],
-    "answer": "Tellinga",
+    "answer": "Telinga",
     "score": 25
   },
   {
@@ -24,7 +24,7 @@
     "id": 4,
     "question": "Jika kita haus, maka kita harus ?",
     "choices": ["Minum", "Marah", "Makan", "Mancing"],
-    "answer": "Surabaya",
+    "answer": "Minum",
     "score": 25
   }
 ]

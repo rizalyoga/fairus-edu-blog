@@ -68,7 +68,7 @@ const Register = () => {
         setIsLoading((loading) => !loading);
         setTimeout(() => {
           router.push("/login");
-        }, 2500);
+        }, 2000);
       });
     }
   };
@@ -206,9 +206,8 @@ const Register = () => {
             ) : (
               <input
                 className={clsx(
-                  "bg-blue-500 rounded-md py-4 font-semibold text-white cursor-pointer mt-1",
-                  "hover:bg-blue-700",
-                  "dark:bg-slate-600 dark:hover:bg-slate-500"
+                  "bg-primary-green rounded-md py-4 font-semibold text-white cursor-pointer mt-1 transition",
+                  "hover:bg-slate-500"
                 )}
                 type="submit"
                 value="Register"

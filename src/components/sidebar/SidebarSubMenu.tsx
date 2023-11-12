@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { RoutesInterfaces } from "@/app/types/types";
+import { RoutesInterfaces } from "@/types/types";
 
 const SidebarSubMenu = ({ submenu, name, icon }: RoutesInterfaces) => {
   const pathname = usePathname();

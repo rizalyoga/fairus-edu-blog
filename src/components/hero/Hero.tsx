@@ -5,7 +5,7 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <div
-      className="hero min-h-[50rem]"
+      className="hero min-h-[50rem] w-full mt-10"
       style={{
         backgroundImage:
           "url(https://i0.wp.com/senmagazine.co.uk/wp-content/uploads/2021/11/Depositphotos_307977302_XL-scaled-e1637008981212.jpg?fit=1159%2C559&ssl=1)",
@@ -14,8 +14,8 @@ const Hero = () => {
       <div className="hero-overlay bg-opacity-70"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-6xl">
-          <h1 className="mb-5 text-title font-bold text-white tracking-tight">
-            Fairus Edu.
+          <h1 className="mb-5 text-title font-bold text-white tracking-tight leading-[60px]">
+            FAIRUS EDU.
           </h1>
           <p className="mb-5 text-base-text text-white ">
             We accompany and provide therapy for children and individuals who

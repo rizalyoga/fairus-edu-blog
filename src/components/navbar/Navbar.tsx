@@ -25,12 +25,13 @@ const Navbar = () => {
               <Link
                 href="/"
                 className={clsx(
-                  "normal-case text-3xl text-primary-green flex items-center gap-2 ",
+                  "normal-case text-4xl text-primary-green flex items-center gap-2 ",
                   "hover:bg-white",
                   "dark:hover:bg-base-100"
                 )}
               >
-                <FaSchoolFlag /> <p className="mt-1.5 font-bold">School</p>
+                {/* <FaSchoolFlag className="-mt-2.5" />{" "} */}
+                <p className=" font-bold">Fairus.</p>
               </Link>
             </div>
             <div className="navbar-center gap-6 hidden lg:flex">

@@ -1,11 +1,12 @@
-import { AiFillHome, AiOutlineMedium } from "react-icons/ai";
-import { TiDownload } from "react-icons/ti";
 import {
   SiAdobeillustrator,
   SiAdobelightroom,
   SiAzurepipelines,
   SiHomeassistant,
+  SiPlausibleanalytics,
 } from "react-icons/si";
+
+import { BsPersonVideo3 } from "react-icons/bs";
 
 export const routes = [
   {
@@ -16,7 +17,7 @@ export const routes = [
   {
     path: "",
     name: "Pengenalan",
-    icon: <SiAzurepipelines className="-mt-1" />,
+    icon: <BsPersonVideo3 className="-mt-1" />,
     submenu: [
       {
         path: "/dashboard/budek",
@@ -33,7 +34,17 @@ export const routes = [
         icon: "",
         name: "Pernapasan",
       },
+      {
+        path: "/dashboard/pelemasan-organ-bicara",
+        icon: "",
+        name: "Pelemasan Organ Bicara",
+      },
     ],
+  },
+  {
+    path: "/dashboard/pretest",
+    name: "Pretest",
+    icon: <SiPlausibleanalytics className="-mt-1" />,
   },
   {
     path: "",
@@ -73,9 +84,59 @@ export const routes = [
     icon: <SiAdobelightroom className="-mt-1" />,
     submenu: [
       {
-        path: "/dashboard/bisu",
+        path: "/dashboard/konsonan-b",
         icon: "",
-        name: "Bisu",
+        name: "Konsonan B",
+      },
+      {
+        path: "/dashboard/konsonan-c",
+        icon: "",
+        name: "Konsonan C",
+      },
+      {
+        path: "/dashboard/konsonan-d",
+        icon: "",
+        name: "Konsonan D",
+      },
+      {
+        path: "/dashboard/konsonan-j",
+        icon: "",
+        name: "Konsonan J",
+      },
+      {
+        path: "/dashboard/konsonan-k",
+        icon: "",
+        name: "Konsonan K",
+      },
+      {
+        path: "/dashboard/konsonan-m",
+        icon: "",
+        name: "Konsonan M",
+      },
+      {
+        path: "/dashboard/konsonan-n",
+        icon: "",
+        name: "Konsonan N",
+      },
+      {
+        path: "/dashboard/konsonan-p",
+        icon: "",
+        name: "Konsonan P",
+      },
+      {
+        path: "/dashboard/konsonan-s",
+        icon: "",
+        name: "Konsonan S",
+      },
+      {
+        path: "/dashboard/konsonan-t",
+        icon: "",
+        name: "Konsonan T",
+      },
+      {
+        path: "/dashboard/konsonan-ng",
+        icon: "",
+        name: "Konsonan NG",
       },
     ],
   },

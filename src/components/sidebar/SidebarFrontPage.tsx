@@ -14,8 +14,8 @@ const SidebarFrontPage = ({ isOpen, onClose }: any) => {
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
 
       <label
-        htmlFor="right-sidebar-drawer"
-        className="drawer-overlay"
+        htmlFor="my-drawer-4"
+        className="drawer-overlay bg-slate-700 opacity-40"
         onClick={onClose}
       ></label>
       <div className="drawer-side mt-24 ">

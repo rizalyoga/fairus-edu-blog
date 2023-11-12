@@ -55,7 +55,7 @@ const LessonsPage = () => {
           </span>
           <span>
             <h4 className="font-bold text-primary-green text-xl">
-              2 – Login With Account that Already Registered
+              2 – Do The Pretest
             </h4>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
@@ -66,7 +66,7 @@ const LessonsPage = () => {
           </span>
           <span>
             <h4 className="font-bold text-primary-green text-xl">
-              3 – Do The Pretest
+              3 – Learn from the videos that are available
             </h4>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt

@@ -30,13 +30,6 @@ const Budek = () => {
   return (
     <div className="dashboard-content-container">
       <h1>Budek Page</h1>
-      <div className="collapse collapse-arrow bg-base-200 my-2">
-        <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">Pre-Test</div>
-        <div className="collapse-content">
-          <PretestComponent PretestQuestions={PretestBudek} />
-        </div>
-      </div>
       <div className="collapse collapse-arrow bg-base-200">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">Materi video</div>

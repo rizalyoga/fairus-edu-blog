@@ -46,7 +46,7 @@ const Login = () => {
           );
           setTimeout(() => {
             router.push("/dashboard");
-          }, 2200);
+          }, 2000);
         } else {
           setLoginMessage("Mohon periksa kembali username atau password anda");
         }
@@ -150,9 +150,8 @@ const Login = () => {
             ) : (
               <input
                 className={clsx(
-                  "bg-blue-500 rounded-md py-4 font-semibold text-white cursor-pointer mt-1",
-                  "hover:bg-blue-700",
-                  "dark:bg-slate-600 dark:hover:bg-slate-500"
+                  "bg-primary-green rounded-md py-4 font-semibold text-white cursor-pointer mt-1 transition",
+                  "hover:bg-slate-500"
                 )}
                 type="submit"
                 value="Log In"
