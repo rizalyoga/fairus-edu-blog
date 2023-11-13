@@ -3,6 +3,7 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import clsx from "clsx";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -12,7 +13,13 @@ const Footer = () => {
   return (
     !exceptionRoute.some((route) => pathname.includes(route)) && (
       <div className="bg-primary-violet">
-        <footer className="footer py-10 bg-primary-violet text-base-content content-container px-4 lg:px-0">
+        <footer
+          className={clsx(
+            "footer py-10 bg-primary-violet text-base-content content-container px-4",
+            "lg:px-2",
+            "xl:px-0"
+          )}
+        >
           <nav className="text-white">
             <header className="font-extrabold text-white">LESSONS</header>
             <Link href="/lessons" className="link link-hover">
@@ -45,7 +52,13 @@ const Footer = () => {
           </nav>
         </footer>
         <div className="bg-base-300">
-          <footer className="footer py-4 border-t bg-base-300 text-base-content border-base-300 content content-container px-4 lg:px-0">
+          <footer
+            className={clsx(
+              "footer py-4 border-t bg-base-300 text-base-content border-base-300 content content-container px-4",
+              "lg:px-2",
+              "xl:px-0"
+            )}
+          >
             <aside className="items-center grid-flow-col">
               <svg
                 width="24"

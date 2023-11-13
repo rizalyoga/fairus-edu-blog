@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import QuizData from "@/data/pretest/tuna-rungu/budek.json";
+import QuizData from "@/data/pretest/budek.json";
 import clsx from "clsx";
 
 interface UserAnswers {
@@ -24,12 +24,11 @@ const Pretest = () => {
 
     for (let i = 0; i < QuizData.length; i++) {
       if (userAnswers[i + 1] === QuizData[i].answer) {
-        totalScore += QuizData[i].score;
+        setScore((totalScore += QuizData[i].score));
       }
     }
 
-    setScore(totalScore);
-    alert(`Your score : ${score}`);
+    alert(`Your score : ${totalScore}`);
   };
 
   const choiceAlpabhet = (index: number) => {
@@ -49,8 +48,15 @@ const Pretest = () => {
   };
 
   return (
-    <div className="dashboard-content-container">
-      <h2 className="text-xl font-bold mb-2">Pretest Page</h2>
+    <div className="dashboard-content-container mb-4">
+      <div className="flex justify-between">
+        <h2 className="text-xl font-bold mb-2">Pretest Page</h2>
+        {score > 0 && (
+          <p>
+            Your Score: <span className="font-bold">{score}</span>
+          </p>
+        )}
+      </div>
       {QuizData.map((question) => (
         <div key={question.id} className="my-4">
           <span className="flex">
@@ -63,7 +69,9 @@ const Pretest = () => {
                 key={index}
                 onClick={() => handleAnswer(question.id, choice)}
                 className={clsx(
-                  "ml-2 p-2 w-full cursor-pointer transition my-1 rounded-md",
+                  "ml-4 p-2 w-[95%] cursor-pointer transition my-1 rounded-md",
+                  "md:w-[97%]",
+                  "lg:w-[98%]",
                   userAnswers[question.id] === choice
                     ? " bg-primary-green text-white"
                     : " hover:bg-slate-100 dark:hover:bg-base-300"
@@ -85,7 +93,6 @@ const Pretest = () => {
       >
         Submit
       </button>
-      {score > 0 && <p>Your Score: {score}</p>}
     </div>
   );
 };

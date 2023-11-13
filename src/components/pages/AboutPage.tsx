@@ -33,7 +33,7 @@ const About = () => {
             <h1 className="text-title-sub-section py-10 font-bold text-base-content text-center">
               Missions
             </h1>
-            <ol className="list-decimal text-base-content">
+            <ol className="list-decimal text-base-content px-4">
               <li>
                 Provide consultations for children with special needs and
                 provide appropriate intervention according to the child&apos;s

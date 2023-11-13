@@ -1,11 +1,12 @@
 import React from "react";
 import { HiMail, HiLocationMarker, HiPhone } from "react-icons/hi";
+import clsx from "clsx";
 
 const ContactPage = () => {
   return (
     <div className="bg-base-100 pt-20">
-      <div className="content-container px-4 lg:px-0">
-        <div className="md:w-[70%] m-auto">
+      <div className={clsx("content-container px-4", "lg:px-2", "xl:px-0")}>
+        <div className="m-auto md:w-[70%]">
           <h1 className="text-title-section pt-12 pb-10 font-bold text-primary-green text-center">
             Contact Us
           </h1>
@@ -17,7 +18,7 @@ const ContactPage = () => {
         </div>
         <div className="flex flex-col gap-4 min-h-[400px] mt-16 text-base-content font-bold ">
           <div className="w-full bg-base-200 p-12 flex items-center gap-4 rounded-3xl shadow-lg">
-            <HiLocationMarker className="text-6xl sm:text-2xl " />
+            <HiLocationMarker className="text-6xl sm:text-2xl" />
             <p className="text-base-content">
               Jl. Ngagel Madya V No.17, Baratajaya, Kec. Gubeng, Kota SBY, Jawa
               Timur 60284

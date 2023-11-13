@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 
 const SidebarFrontPage = ({ isOpen, onClose }: any) => {
   const pathname = usePathname();
+  const activeLinkStyle = "bg-primary-green text-white";
 
   return (
     <div
@@ -22,19 +23,14 @@ const SidebarFrontPage = ({ isOpen, onClose }: any) => {
         <ul className="menu p-4 w-80 min-h-screen bg-base-100 text-base-content overscroll-none">
           {/* Your sidebar content */}
           <li className="text-2xl py-2" onClick={onClose}>
-            <Link
-              href="/"
-              className={pathname == "/" ? "bg-primary-green text-white" : ""}
-            >
+            <Link href="/" className={pathname == "/" ? activeLinkStyle : ""}>
               Home
             </Link>
           </li>
           <li className="text-2xl py-2" onClick={onClose}>
             <Link
               href="/about"
-              className={
-                pathname == "/about" ? "bg-primary-green text-white" : ""
-              }
+              className={pathname == "/about" ? activeLinkStyle : ""}
             >
               About
             </Link>
@@ -42,9 +38,7 @@ const SidebarFrontPage = ({ isOpen, onClose }: any) => {
           <li className="text-2xl py-2" onClick={onClose}>
             <Link
               href="/lessons"
-              className={
-                pathname == "/lessons" ? "bg-primary-green text-white" : ""
-              }
+              className={pathname == "/lessons" ? activeLinkStyle : ""}
             >
               Lessons
             </Link>
@@ -52,9 +46,7 @@ const SidebarFrontPage = ({ isOpen, onClose }: any) => {
           <li className="text-2xl py-2" onClick={onClose}>
             <Link
               href="/contact"
-              className={
-                pathname == "/contact" ? "bg-primary-green text-white" : ""
-              }
+              className={pathname == "/contact" ? activeLinkStyle : ""}
             >
               Contact
             </Link>
@@ -62,9 +54,7 @@ const SidebarFrontPage = ({ isOpen, onClose }: any) => {
           <li className="text-2xl py-2" onClick={onClose}>
             <Link
               href="/login"
-              className={
-                pathname == "/login" ? "bg-primary-green text-white" : ""
-              }
+              className={pathname == "/login" ? activeLinkStyle : ""}
             >
               Login
             </Link>

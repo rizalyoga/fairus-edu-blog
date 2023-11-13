@@ -11,11 +11,11 @@ const LessonsPage = () => {
   }, []);
   return (
     <div className="bg-base-100 pt-20">
-      <div className="content-container px-4 lg:px-0 flex justify-center flex-col items-center">
+      <div className="content-container px-4 flex justify-center flex-col items-center lg:px-0">
         <h1 className="font-bold text-title-section text-center pt-12 pb-10 text-primary-green">
           Lessons
         </h1>
-        <p className="text-center text-base-text pb-10 md:w-[80%] ">
+        <p className="text-center text-base-text pb-10 md:w-[80%]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
           consectetur nibh sed facilisis efficitur. Nam fringilla imperdiet
           feugiat. Mauris facilisis diam nulla. Nam fringilla imperdiet feugiat.
@@ -41,7 +41,7 @@ const LessonsPage = () => {
           The steps to start class
         </h4>
 
-        <div className="grid gap-6 sm:grid-cols-2 py-10 ">
+        <div className="grid gap-6 py-10 sm:grid-cols-2">
           <span>
             <h4 className="font-bold text-primary-green text-xl">
               1 – Register Account

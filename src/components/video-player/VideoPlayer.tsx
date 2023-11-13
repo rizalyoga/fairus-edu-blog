@@ -67,7 +67,7 @@ const VideoPlayer = ({
             height="100%"
             onProgress={handleTimeUpdate}
             playing={isPlaying}
-            className="react-player"
+            className="react-player bg-slate-300"
             config={{
               youtube: { playerVars: { origin: "https://www.youtube.com" } },
             }}

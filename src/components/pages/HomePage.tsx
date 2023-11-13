@@ -4,21 +4,35 @@ import { BsPersonWorkspace, BsPersonVcardFill } from "react-icons/bs";
 import { PiExamFill } from "react-icons/pi";
 import Image from "next/image";
 import Link from "next/link";
+import AboutImage from "public/assets/home-first.webp";
+import BreathingImage from "public/assets/home-second.webp";
+import VowelImage from "public/assets/home-third.webp";
+import clsx from "clsx";
 
 const HomePage = () => {
   return (
     <>
       <div className="bg-base-100">
         <Hero />
-        <div className="content-container py-16 px-4 lg:px-2">
-          <h2 className="text-center font-bold text-title-section md:text-title text-primary-violet tracking-tighter">
+        <div
+          className={clsx("content-container py-16 px-4", "lg:px-2", "xl:px-0")}
+        >
+          <h2
+            className={clsx(
+              "text-center font-bold text-title-section text-primary-violet tracking-tighter",
+              "md:text-title"
+            )}
+          >
             We Are Experts in Elearning
           </h2>
-          <div className="py-10 flex gap-12 justify-center items-center flex-col lg:items-start lg:justify-between lg:flex-row ">
+          <div
+            className={clsx(
+              "py-10 flex gap-12 justify-center items-center flex-col",
+              "lg:items-start lg:justify-between lg:flex-row"
+            )}
+          >
             <Image
-              src={
-                "https://assets.gatesnotes.com/8a5ac0b3-6095-00af-c50a-89056fbe4642/d1d37394-ff7d-43d9-8bc2-3f4fd2b1b59d/6-tools-for-teachers_2014_800px_v1.jpg"
-              }
+              src={AboutImage}
               width={600}
               height={600}
               alt="ilustration"
@@ -35,7 +49,10 @@ const HomePage = () => {
               </p>
               <Link
                 href="/about"
-                className="btn btn-secondary-content font-bold text-primary-green hover:bg-white"
+                className={clsx(
+                  "btn btn-secondary-content font-bold text-primary-green",
+                  "hover:bg-white"
+                )}
               >
                 EXPLORE
               </Link>
@@ -45,10 +62,21 @@ const HomePage = () => {
       </div>
       <div className="bg-primary-violet py-28">
         <div className="content-container">
-          <h2 className="text-center font-bold text-title-section md:text-title text-white tracking-tighter">
+          <h2
+            className={clsx(
+              "text-center font-bold text-title-section text-white tracking-tighter",
+              "md:text-title"
+            )}
+          >
             Getting started online
           </h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 py-10 px-4">
+          <div
+            className={clsx(
+              "grid gap-8 py-10 px-4",
+              "sm:grid-cols-2",
+              "lg:grid-cols-3"
+            )}
+          >
             <div className="flex items-center gap-6">
               <BsPersonVcardFill className="text-7xl text-white lg:text-8xl" />
               <span>
@@ -72,7 +100,7 @@ const HomePage = () => {
               </span>
             </div>
             <div className="flex items-center  gap-6">
-              <PiExamFill className="text-7xl lg:text-8xl text-white" />
+              <PiExamFill className="text-7xl text-white lg:text-8xl" />
               <span>
                 <h5 className="font-bold text-white text-title-sub-section">
                   Do the Test
@@ -87,8 +115,15 @@ const HomePage = () => {
       </div>
       {/* rd */}
       <div className="bg-base-100">
-        <div className="content-container py-16 px-4 lg:px-0">
-          <div className="py-10 flex gap-12 justify-center items-center flex-col-reverse lg:items-start lg:justify-between lg:flex-row">
+        <div
+          className={clsx("content-container py-16 px-4", "lg:px-2", "xl:px-0")}
+        >
+          <div
+            className={clsx(
+              "py-10 flex gap-12 justify-center items-center flex-col-reverse",
+              "lg:items-start lg:justify-between lg:flex-row"
+            )}
+          >
             <div className="lg:basis-1/2">
               <h2 className="font-bold text-title-section text-primary-violet tracking-tighter mb-6">
                 Breathing Training
@@ -109,9 +144,7 @@ const HomePage = () => {
               </Link>
             </div>
             <Image
-              src={
-                "https://www.iinn.com/wp-content/uploads/2019/12/Insight-_-Blog-Types-of-Speech-Disoders-featured-image-626373794-1.jpg"
-              }
+              src={BreathingImage}
               width={600}
               height={600}
               alt="ilustration"
@@ -119,11 +152,14 @@ const HomePage = () => {
             />
           </div>
           {/* all */}
-          <div className="py-16 flex gap-12 justify-center items-center flex-col lg:items-start lg:justify-between lg:flex-row ">
+          <div
+            className={clsx(
+              "py-16 flex gap-12 justify-center items-center flex-col",
+              "lg:items-start lg:justify-between lg:flex-row"
+            )}
+          >
             <Image
-              src={
-                "https://shodair.org/wp-content/uploads/2023/07/woman-doing-speech-therapy-with-little-blonde-boy-scaled.jpg"
-              }
+              src={VowelImage}
               width={600}
               height={600}
               alt="ilustration"

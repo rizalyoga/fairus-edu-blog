@@ -2,6 +2,7 @@
 import React from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { IoLogOutOutline } from "react-icons/io5";
+import clsx from "clsx";
 
 const HeaderDashboard = () => {
   const router = useRouter();
@@ -31,10 +32,19 @@ const HeaderDashboard = () => {
   }
 
   return (
-    <div className="navbar sticky top-0 flex justify-between bg-white z-10 shadow-md dark:bg-base-100">
+    <div
+      className={clsx(
+        "navbar sticky top-0 flex justify-between bg-white z-10 shadow-md",
+        "dark:bg-base-100"
+      )}
+    >
       <label
         htmlFor="left-sidebar-drawer"
-        className="btn bg-primary-violet text-white drawer-button lg:hidden hover:text-primary-text"
+        className={clsx(
+          "btn bg-primary-violet text-white drawer-button",
+          "hover:text-primary-text",
+          "lg:hidden"
+        )}
       >
         <svg
           className="w-6 h-6"
@@ -55,7 +65,11 @@ const HeaderDashboard = () => {
       </h1>
       <div>
         <button
-          className="btn btn-ghost bg-primary-violet text-white font-bold hover:text-primary-text dark:hover:text-white"
+          className={clsx(
+            "btn btn-ghost bg-primary-violet text-white font-bold",
+            "hover:text-primary-text",
+            "dark:hover:text-white"
+          )}
           onClick={() => logoutHandler()}
           title="logout"
         >

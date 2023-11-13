@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaSchoolFlag } from "react-icons/fa6";
 import { CgMenuRightAlt } from "react-icons/cg";
 import SidebarFrontPage from "../sidebar/SidebarFrontPage";
 
@@ -20,7 +19,13 @@ const Navbar = () => {
       <>
         <SidebarFrontPage isOpen={isSidebarOpen} onClose={toggleSidebar} />
         <div className="bg-base-100 fixed top-0 w-full z-30 shadow">
-          <div className=" navbar h-24 content-container w-full flex justify-between items-center px-4 lg:px-0">
+          <div
+            className={clsx(
+              "navbar h-24 content-container w-full flex justify-between items-center px-4",
+              "lg:px-2 ",
+              "xl:px-0"
+            )}
+          >
             <div className="navbar-start">
               <Link
                 href="/"

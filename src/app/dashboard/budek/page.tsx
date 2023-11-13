@@ -5,15 +5,12 @@ import VideoPlayer from "@/components/video-player/VideoPlayer";
 import { usePathname } from "next/navigation";
 import { VideoQuestion } from "@/data/VideoQuestion";
 import { QuestionVideoInterface } from "@/types/types";
-import PretestBudek from "@/data/pretest/tuna-rungu/budek.json";
-import PretestComponent from "@/components/multiple-choice-compnents/pretest/Pretest";
 
 const Budek = () => {
   const pathname = usePathname();
   const [questions, setQuestions] = useState<QuestionVideoInterface | null>(
     null
   );
-  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
   useEffect(() => {
     const videoContent = VideoQuestion.filter((question) => {
@@ -22,10 +19,6 @@ const Budek = () => {
 
     setQuestions(videoContent[0]);
   }, [pathname]);
-
-  const accordionHandler = () => {
-    setIsAccordionOpen((open) => !open);
-  };
 
   return (
     <div className="dashboard-content-container">
