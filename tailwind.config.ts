@@ -34,6 +34,20 @@ const config: Config = {
         "secondary-text": "#929199",
         "sub-page": "#FBF8FE",
       },
+      animation: {
+        "show-content-animation": "zoom 0.3s",
+        "close-content-animation": "unzoom 0.3s",
+      },
+      keyframes: {
+        zoom: {
+          from: { transform: "scale(0)" },
+          to: { transform: "scale(1)" },
+        },
+        unzoom: {
+          from: { transform: "scale(1)" },
+          to: { transform: "scale(0)" },
+        },
+      },
     },
   },
   plugins: [require("daisyui")],

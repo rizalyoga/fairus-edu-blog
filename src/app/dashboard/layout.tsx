@@ -1,9 +1,10 @@
 "use client";
 
+import { useEffect, Suspense } from "react";
+import { useRouter } from "next/navigation";
 import Sidebar from "@/components/sidebar/Sidebar";
 import HeaderDashboard from "@/components/navbar/HeaderDashboard";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import Loading from "./loading";
 
 export default function DashboardLayout({
   children, // will be a page or nested layout
@@ -31,7 +32,7 @@ export default function DashboardLayout({
         <div className="drawer-content flex flex-col">
           <HeaderDashboard />
           <div className="min-h-screen overflow-y-auto pt-5 px-3 bg-base-200">
-            {children}
+            <Suspense fallback={<Loading />}>{children}</Suspense>
           </div>
         </div>
         <Sidebar />
