@@ -11,12 +11,29 @@ const Dashboard = () => {
   const length = [1, 2, 3, 4, 5, 6];
 
   useEffect(() => {
-    const dataStundet = JSON.parse(sessionStorage.getItem("student") as string);
+    const dataStundent = JSON.parse(
+      sessionStorage.getItem("student") as string
+    );
 
-    if (dataStundet.id) {
-      getDataScoreStudent(dataStundet.id)
-        .then((res) => setStudentScores(res))
+    const stundentScoreData = JSON.parse(
+      sessionStorage.getItem("student-score") as string
+    );
+
+    if (dataStundent.id && !stundentScoreData) {
+      getDataScoreStudent(dataStundent.id)
+        .then((res) => {
+          setStudentScores(res);
+          sessionStorage.setItem("student-score", JSON.stringify(res));
+        })
+
         .then(() => setIsLoading(false));
+    } else {
+      const stundentScoreData = JSON.parse(
+        sessionStorage.getItem("student-score") as string
+      );
+
+      setStudentScores(stundentScoreData);
+      setIsLoading(false);
     }
   }, []);
 

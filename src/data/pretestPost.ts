@@ -1,3 +1,5 @@
+import { getDataScoreStudent } from "./getDataStudentScoreById";
+
 const url = process.env.NEXT_PUBLIC_APP_LINK_API;
 
 interface PretestSubmitProps {
@@ -13,6 +15,10 @@ export const pretestPost = async (payload: PretestSubmitProps) => {
   });
 
   if (response.ok) {
+    getDataScoreStudent(payload.id).then((res) => {
+      sessionStorage.setItem("student-score", JSON.stringify(res));
+    });
+
     return "Hasil pretest anda telah berhasil disimpan.";
   } else {
     return "Maaf terjadi kesalahan. Silahkan coba lagi.";

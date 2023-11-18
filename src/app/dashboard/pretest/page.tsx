@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import QuizData from "@/data/pretest/budek.json";
 import clsx from "clsx";
 import ConfirmationModal from "@/components/modal/ConfirmationModal";
 import Toast from "@/components/toast/Toast";
 import Loading from "../loading";
 import { pretestPost } from "@/data/pretestPost";
+import ScoreComponents from "./ScoreComponents";
 
 interface UserAnswers {
   [questionId: number]: string;
@@ -16,8 +17,19 @@ const Pretest = () => {
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
   const [score, setScore] = useState<number>(0);
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [responseSubmit, setResponseSubmit] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isThereIsScore, setIsThereIsScore] = useState(false);
+  const [responseSubmit, setResponseSubmit] = useState("");
+
+  useEffect(() => {
+    const studentScore = JSON.parse(
+      sessionStorage.getItem("student-score") as string
+    );
+
+    if (studentScore[0].pretest_score) {
+      setIsThereIsScore(true);
+    }
+  }, []);
 
   const handleAnswer = (questionId: number, selectedAnswer: string) => {
     setUserAnswers((prevAnswers) => ({
@@ -71,15 +83,20 @@ const Pretest = () => {
 
     pretestPost(payload)
       .then((res) => {
-        setResponseSubmit(res);
+        setResponseSubmit(res!);
       })
       .then(() => setIsLoading((loading) => !loading));
+    // .then(() => setIsThereIsScore(true));
 
     isOpenModalHandler();
   };
 
   if (isLoading) {
     return <Loading />;
+  }
+
+  if (isThereIsScore) {
+    return <ScoreComponents setPretestButton={setIsThereIsScore} />;
   }
 
   return (
