@@ -1,33 +1,24 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import QuizData from "@/data/pretest/budek.json";
+import React, { useState } from "react";
 import clsx from "clsx";
 import ConfirmationModal from "@/components/modal/ConfirmationModal";
 import Toast from "@/components/toast/Toast";
-import Loading from "../loading";
-import { pretestPost } from "@/data/pretestPost";
-import ScoreComponents from "./ScoreComponents";
+import Loading from "@/components/loading/Loading";
+import DataFinalTest from "@/data/final-test/vokal-a.json";
+import { finalTstPost } from "@/data/finalTestPost";
+import VokalAFinalTest from "@/data/final-test/vokal-a.json";
 
 interface UserAnswers {
   [questionId: number]: string;
 }
 
-const Pretest = () => {
+const FinalTest = () => {
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
   const [score, setScore] = useState<number>(0);
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isThereIsScore, setIsThereIsScore] = useState(-1);
   const [responseSubmit, setResponseSubmit] = useState("");
-
-  useEffect(() => {
-    const dataStudentScore = JSON.parse(
-      sessionStorage.getItem("student-score") as string
-    );
-
-    setIsThereIsScore(dataStudentScore?.[0].pretest_score);
-  }, []);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleAnswer = (questionId: number, selectedAnswer: string) => {
     setUserAnswers((prevAnswers) => ({
@@ -65,36 +56,45 @@ const Pretest = () => {
     let totalScore = 0;
     const dataStudent = JSON.parse(sessionStorage.getItem("student") as string);
 
-    for (let i = 0; i < QuizData.length; i++) {
-      if (userAnswers[i + 1] === QuizData[i].answer) {
-        setScore((totalScore += QuizData[i].score));
+    for (let i = 0; i < VokalAFinalTest.length; i++) {
+      if (userAnswers[i + 1] === VokalAFinalTest[i].answer) {
+        setScore((totalScore += VokalAFinalTest[i].score));
       }
     }
-
-    // alert(`Your score : ${totalScore}`);
 
     const payload = {
       id: dataStudent?.id,
       username: dataStudent?.username,
-      pretest_score: totalScore,
+      final_test_score: totalScore,
+      course_name: "vokal-a",
+      code_column: "vokal_a_final_score",
     };
 
-    pretestPost(payload)
+    finalTstPost(payload)
       .then((res) => {
-        setResponseSubmit(res!);
+        setResponseSubmit(res);
+
+        const studentScoreData = JSON.parse(
+          sessionStorage.getItem("student-score") as string
+        );
+
+        sessionStorage.setItem(
+          "student-score",
+          JSON.stringify([
+            {
+              ...studentScoreData[0],
+              vokal_a_final_score: payload.final_test_score,
+            },
+          ])
+        );
       })
-      .then(() => setIsLoading((loading) => !loading))
-      .then(() => setIsThereIsScore(totalScore));
+      .then(() => setIsLoading((loading) => !loading));
 
     isOpenModalHandler();
   };
 
   if (isLoading) {
     return <Loading />;
-  }
-
-  if (isThereIsScore > -1) {
-    return <ScoreComponents pretestScore={isThereIsScore} />;
   }
 
   return (
@@ -115,7 +115,7 @@ const Pretest = () => {
             </p>
           )}
         </div>
-        {QuizData.map((question) => (
+        {DataFinalTest.map((question) => (
           <div key={question.id} className="my-4">
             <span className="flex">
               <p>{question.id}.</p>
@@ -157,4 +157,4 @@ const Pretest = () => {
   );
 };
 
-export default Pretest;
+export default FinalTest;

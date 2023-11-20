@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": "Apa nama ibu kota Jawa Barat ?",
+    "question": "Apa nama ibu kota Indonesia ?",
     "choices": ["Malang", "Yogyakarta", "Jakarta", "Surabaya"],
     "answer": "Jakarta",
     "score": 25
@@ -15,14 +15,14 @@
   },
   {
     "id": 3,
-    "question": "Alat yang funsi utamanya untuk duduk adalah ?",
+    "question": "Alat yang fungsi utamanya untuk duduk adalah ?",
     "choices": ["Kasur", "Kursi", "Gelas", "Meja"],
     "answer": "Kursi",
     "score": 25
   },
   {
     "id": 4,
-    "question": "Jika kita lapat, maka kita harus ?",
+    "question": "Jika kita lapar, maka kita harus ?",
     "choices": ["Makan", "Mancing", "Minum", "Marah"],
     "answer": "Makan",
     "score": 25

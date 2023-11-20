@@ -33,6 +33,12 @@ body {
   }
 }
 
+@layer components {
+  .dashboard-card-container {
+    @apply bg-gradient-to-br from-primary-violet to-violet-500 text-slate-200 rounded-xl shadow-md min-h-[300px] p-4 relative;
+  }
+}
+
 .player-wrapper {
   width: 100%;
   position: relative;

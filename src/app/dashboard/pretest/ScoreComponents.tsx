@@ -1,26 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const ScoreComponents = ({
-  setPretestButton,
-}: {
-  setPretestButton: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
-  const studentScore = JSON.parse(
-    sessionStorage.getItem("student-score") as string
-  );
-
+const ScoreComponents = ({ pretestScore }: { pretestScore: number }) => {
   return (
-    <div className="dashboard-content-container mb-4">
-      <h1 className="font-bold">
-        Score pretest anda : {studentScore[0].pretest_score}
-      </h1>
-      {/* <p className="my-2">ingin mengerjakan ulang soal pretest ?</p> */}
-      {/* <button
-        className="btn btn-primary"
-        onClick={() => setPretestButton(false)}
-      >
-        Kerjakan ulang soal
-      </button> */}
+    <div className="dashboard-content-container mb-4 flex flex-col justify-center items-center">
+      <h1 className="font-bold">Score pretest anda : </h1>
+      <h1 className="font-bold text-4xl my-4">{pretestScore}</h1>
     </div>
   );
 };
