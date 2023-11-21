@@ -53,16 +53,16 @@ const Navbar = () => {
               </Link>
 
               <Link
-                href={"/about"}
+                href={"/teori"}
                 className={clsx(
                   "cursor-pointer text-base-text",
                   "hover:underline",
-                  pathname == "/about"
+                  pathname == "/teori"
                     ? "font-bold text-primary-green mt-0.5"
                     : ""
                 )}
               >
-                Tentang
+                Teori
               </Link>
 
               <Link
@@ -79,6 +79,19 @@ const Navbar = () => {
               </Link>
 
               <Link
+                href={"/about"}
+                className={clsx(
+                  "cursor-pointer text-base-text",
+                  "hover:underline",
+                  pathname == "/about"
+                    ? "font-bold text-primary-green mt-0.5"
+                    : ""
+                )}
+              >
+                Tentang
+              </Link>
+
+              {/* <Link
                 href={"/contact"}
                 className={clsx(
                   "cursor-pointer text-base-text",
@@ -89,7 +102,7 @@ const Navbar = () => {
                 )}
               >
                 Kontak
-              </Link>
+              </Link> */}
             </div>
             <div className="navbar-end">
               <Link href={"/login"} className="hidden lg:flex">

@@ -39,6 +39,12 @@ body {
   }
 }
 
+@layer components {
+  .title-sub-content {
+    @apply font-bold text-primary-violet text-title-sub-section my-4;
+  }
+}
+
 .player-wrapper {
   width: 100%;
   position: relative;

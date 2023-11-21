@@ -36,19 +36,23 @@ const Footer = () => {
             </Link>
           </nav>
           <nav className="text-white">
-            <header className="font-extrabold text-white">COMPANY</header>
+            <header className="font-extrabold text-white">PRABICARA</header>
             <Link href="/" className="link link-hover">
               Beranda
             </Link>
-            <Link href="/about" className="link link-hover">
-              Tentang kami
+            <Link href="/teori" className="link link-hover">
+              Teori
             </Link>
             <Link href="/lessons" className="link link-hover">
               Pembelajaran
             </Link>
-            <Link href="/contact" className="link link-hover">
-              Kontak
+            <Link href="/about" className="link link-hover">
+              Tentang kami
             </Link>
+
+            {/* <Link href="/contact" className="link link-hover">
+              Kontak
+            </Link> */}
           </nav>
         </footer>
         <div className="bg-base-300">

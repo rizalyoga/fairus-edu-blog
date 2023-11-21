@@ -13,7 +13,7 @@ const LessonsPage = () => {
     <div className="bg-base-100 pt-20">
       <div className="content-container px-4 flex justify-center flex-col items-center lg:px-0">
         <h1 className="font-bold text-title-section text-center pt-12 pb-10 text-primary-green">
-          Lessons
+          Pembelajaran
         </h1>
         <p className="text-center text-base-text pb-10 md:w-[80%]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer

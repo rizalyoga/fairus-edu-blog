@@ -7,7 +7,7 @@ const About = () => {
         <div className="about w-full m-auto pb-16 lg:w-[80%]">
           <div className="about-us pt-12">
             <h1 className="text-title-section font-bold text-primary-green text-center">
-              About Us
+              Tentang Kami
             </h1>
             <p className="py-10 text-center text-base-content text-lg">
               Established in 2010 and approved as an official institution of the
@@ -30,7 +30,7 @@ const About = () => {
             </p>
           </div>
           <div className="Mission text-lg">
-            <h1 className="text-title-sub-section py-10 font-bold text-base-content text-center">
+            <h1 className="text-title-sub-section pb-10 font-bold text-base-content text-center">
               Missions
             </h1>
             <ol className="list-decimal text-base-content px-4">

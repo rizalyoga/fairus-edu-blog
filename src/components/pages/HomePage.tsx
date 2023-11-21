@@ -3,10 +3,12 @@ import Hero from "../hero/Hero";
 import { BsPersonWorkspace, BsPersonVcardFill } from "react-icons/bs";
 import { PiExamFill } from "react-icons/pi";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import AboutImage from "public/assets/home-first.webp";
 import BreathingImage from "public/assets/home-second.webp";
 import VowelImage from "public/assets/home-third.webp";
+import SuccesImage from "public/assets/home-3.jpeg";
+import ActivityImage from "public/assets/home-4.jpg";
 import clsx from "clsx";
 
 const HomePage = () => {
@@ -218,7 +220,7 @@ const HomePage = () => {
               </Link> */}
             </div>
             <Image
-              src={BreathingImage}
+              src={ActivityImage}
               width={600}
               height={600}
               alt="ilustration"
@@ -233,7 +235,7 @@ const HomePage = () => {
             )}
           >
             <Image
-              src={VowelImage}
+              src={SuccesImage}
               width={600}
               height={600}
               alt="ilustration"

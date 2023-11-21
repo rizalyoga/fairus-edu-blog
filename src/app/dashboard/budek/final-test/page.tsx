@@ -6,7 +6,7 @@ import ConfirmationModal from "@/components/modal/ConfirmationModal";
 import Toast from "@/components/toast/Toast";
 import Loading from "@/components/loading/Loading";
 import DataFinalTest from "@/data/final-test/vokal-a.json";
-import { finalTstPost } from "@/data/finalTestPost";
+import { finalTestPost } from "@/data/finalTestPost";
 import VokalAFinalTest from "@/data/final-test/vokal-a.json";
 
 interface UserAnswers {
@@ -67,12 +67,11 @@ const FinalTest = () => {
     const payload = {
       id: dataStudent?.id,
       username: dataStudent?.username,
-      pretest_score: totalScore,
-      course_name: "vokal-a",
-      code_column: "vokal_a_final_score",
+      final_test_score: totalScore,
+      lessons_name: "vokal_a_final_score",
     };
 
-    finalTstPost(payload)
+    finalTestPost(payload)
       .then((res) => {
         setResponseSubmit(res);
       })

@@ -101,8 +101,8 @@ const Login = () => {
           >
             Login
           </h1>
-          <p className="text-sm text-secondary-text mb-8 mt-2 text-center">
-            Enter your username and password below
+          <p className="text-sm text-secondary-text mb-7 mt-2 text-center">
+            Masukkan username dan password anda pada kolom di bawah ini.
           </p>
           <form
             onSubmit={handleSubmit}
@@ -159,9 +159,9 @@ const Login = () => {
             )}
           </form>
           <p className="text-base text-secondary-text mt-5">
-            Don&apos;t have an account ?
+            Belum mempunyai akun ?
             <span className="text-primary-cyan hover:underline cursor-pointer">
-              <Link href="/register">{" Sign Up"}</Link>
+              <Link href="/register">{" Daftar"}</Link>
             </span>
           </p>
         </div>

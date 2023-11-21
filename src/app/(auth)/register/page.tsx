@@ -112,10 +112,11 @@ const Register = () => {
               "dark:text-slate-400"
             )}
           >
-            Register
+            Registrasi
           </h1>
           <p className="text-sm text-secondary-text mb-8 mt-2 text-center">
-            Enter your username, firstname, lastname, email and password below
+            Masukkan username, nama depan, nama belakang, email, dan password
+            anda.
           </p>
           <form
             onSubmit={handleSubmit}
@@ -215,7 +216,7 @@ const Register = () => {
             )}
           </form>
           <p className="text-base text-secondary-text mt-5">
-            Already have an account ?
+            Sudah mempunyai akun ?
             <span className="text-primary-cyan hover:underline cursor-pointer">
               <Link href="/login">{" Login"}</Link>
             </span>

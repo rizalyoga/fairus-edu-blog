@@ -88,7 +88,7 @@ const FinalTest = () => {
           JSON.stringify([
             {
               ...studentScoreData[0],
-              vokal_a_final_score: payload.final_test_score,
+              [payload.lessons_name]: payload.final_test_score,
             },
           ])
         );

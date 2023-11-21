@@ -17,7 +17,7 @@ export const finalTestPost = async (payload: FianlTestSubmitProps) => {
   );
 
   if (response.ok) {
-    return `Hasil final test anda adalah ${payload.final_test_score} dan telah berhasil disimpan`;
+    return `Hasil final test anda adalah ${payload.final_test_score} poin dan telah berhasil disimpan`;
   } else {
     return "Maaf terjadi kesalahan dalam proses menyimpan data. Silahkan coba lagi.";
   }
