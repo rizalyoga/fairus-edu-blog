@@ -31,16 +31,16 @@ const Budek = () => {
           <VideoPlayer contentVideo={questions} />
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200 my-2">
+      {/* <div className="collapse collapse-arrow bg-base-200 my-2">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">Final Test</div>
         <div className="collapse-content">
           <article className="prose">
-            {/* <h1 className="mb-4">Final Test</h1> */}
+            <h1 className="mb-4">Final Test</h1>
             <FinalTestForm />
           </article>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

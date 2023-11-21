@@ -12,8 +12,8 @@ const VocalCard = ({ studentScore }: { studentScore: DataScoreInterface }) => {
           <span className="py-4 border-b-2 w-full text-center">
             <h3>Nilai Video Test </h3>
             <h1 className="font-bold text-4xl text-center">
-              {studentScore.video_vokal_a_score
-                ? studentScore.video_vokal_a_score
+              {studentScore?.video_vokal_a_score
+                ? studentScore?.video_vokal_a_score
                 : 0}
             </h1>
           </span>
@@ -21,8 +21,8 @@ const VocalCard = ({ studentScore }: { studentScore: DataScoreInterface }) => {
           <span className="py-4 w-full text-center">
             <h3>Nilai Final Test </h3>
             <h1 className="font-bold text-4xl text-center">
-              {studentScore.vokal_a_final_score
-                ? studentScore.vokal_a_final_score
+              {studentScore?.vokal_a_final_score
+                ? studentScore?.vokal_a_final_score
                 : 0}
             </h1>
           </span>
@@ -45,8 +45,8 @@ const VocalCard = ({ studentScore }: { studentScore: DataScoreInterface }) => {
           <span className="py-4 border-b-2 w-full text-center">
             <h3>Nilai Video Test </h3>
             <h1 className="font-bold text-4xl text-center">
-              {studentScore.video_vokal_i_score
-                ? studentScore.video_vokal_i_score
+              {studentScore?.video_vokal_i_score
+                ? studentScore?.video_vokal_i_score
                 : 0}
             </h1>
           </span>
@@ -54,8 +54,8 @@ const VocalCard = ({ studentScore }: { studentScore: DataScoreInterface }) => {
           <span className="py-4 w-full text-center">
             <h3>Nilai Final Test </h3>
             <h1 className="font-bold text-4xl text-center">
-              {studentScore.vokal_i_final_score
-                ? studentScore.vokal_i_final_score
+              {studentScore?.vokal_i_final_score
+                ? studentScore?.vokal_i_final_score
                 : 0}
             </h1>
           </span>
@@ -70,8 +70,8 @@ const VocalCard = ({ studentScore }: { studentScore: DataScoreInterface }) => {
           <span className="py-4 border-b-2 w-full text-center">
             <h3>Nilai Video Test </h3>
             <h1 className="font-bold text-4xl text-center">
-              {studentScore.video_vokal_u_score
-                ? studentScore.video_vokal_u_score
+              {studentScore?.video_vokal_u_score
+                ? studentScore?.video_vokal_u_score
                 : 0}
             </h1>
           </span>
@@ -79,8 +79,8 @@ const VocalCard = ({ studentScore }: { studentScore: DataScoreInterface }) => {
           <span className="py-4 w-full text-center">
             <h3>Nilai Final Test </h3>
             <h1 className="font-bold text-4xl text-center">
-              {studentScore.vokal_u_final_score
-                ? studentScore.vokal_u_final_score
+              {studentScore?.vokal_u_final_score
+                ? studentScore?.vokal_u_final_score
                 : 0}
             </h1>
           </span>
@@ -95,8 +95,8 @@ const VocalCard = ({ studentScore }: { studentScore: DataScoreInterface }) => {
           <span className="py-4 border-b-2 w-full text-center">
             <h3>Nilai Video Test </h3>
             <h1 className="font-bold text-4xl text-center">
-              {studentScore.video_vokal_e_score
-                ? studentScore.video_vokal_e_score
+              {studentScore?.video_vokal_e_score
+                ? studentScore?.video_vokal_e_score
                 : 0}
             </h1>
           </span>
@@ -104,8 +104,8 @@ const VocalCard = ({ studentScore }: { studentScore: DataScoreInterface }) => {
           <span className="py-4 w-full text-center">
             <h3>Nilai Final Test </h3>
             <h1 className="font-bold text-4xl text-center">
-              {studentScore.vokal_e_final_score
-                ? studentScore.vokal_e_final_score
+              {studentScore?.vokal_e_final_score
+                ? studentScore?.vokal_e_final_score
                 : 0}
             </h1>
           </span>
@@ -120,8 +120,8 @@ const VocalCard = ({ studentScore }: { studentScore: DataScoreInterface }) => {
           <span className="py-4 border-b-2 w-full text-center">
             <h3>Nilai Video Test </h3>
             <h1 className="font-bold text-4xl text-center">
-              {studentScore.video_vokal_o_score
-                ? studentScore.video_vokal_o_score
+              {studentScore?.video_vokal_o_score
+                ? studentScore?.video_vokal_o_score
                 : 0}
             </h1>
           </span>
@@ -129,8 +129,8 @@ const VocalCard = ({ studentScore }: { studentScore: DataScoreInterface }) => {
           <span className="py-4 w-full text-center">
             <h3>Nilai Final Test </h3>
             <h1 className="font-bold text-4xl text-center">
-              {studentScore.vokal_o_final_score
-                ? studentScore.vokal_o_final_score
+              {studentScore?.vokal_o_final_score
+                ? studentScore?.vokal_o_final_score
                 : 0}
             </h1>
           </span>

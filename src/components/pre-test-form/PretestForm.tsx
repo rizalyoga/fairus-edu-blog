@@ -1,19 +1,21 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import QuizData from "@/data/pretest/budek.json";
 import clsx from "clsx";
 import ConfirmationModal from "@/components/modal/ConfirmationModal";
 import Toast from "@/components/toast/Toast";
-import Loading from "../loading";
+import Loading from "@/components/loading/Loading";
 import { pretestPost } from "@/data/pretestPost";
+import { getLessonNamePretest } from "@/helper/GetLessonsNameFromPathname";
 import ScoreComponents from "./ScoreComponents";
 
 interface UserAnswers {
   [questionId: number]: string;
 }
 
-const Pretest = () => {
+const PretestForm = () => {
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
   const [score, setScore] = useState<number>(0);
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -21,12 +23,14 @@ const Pretest = () => {
   const [isThereIsScore, setIsThereIsScore] = useState(-1);
   const [responseSubmit, setResponseSubmit] = useState("");
 
+  const pathname = usePathname();
+
   useEffect(() => {
     const dataStudentScore = JSON.parse(
       sessionStorage.getItem("student-score") as string
     );
 
-    setIsThereIsScore(dataStudentScore?.[0].pretest_score);
+    setIsThereIsScore(dataStudentScore?.[0]?.pretest_score);
   }, []);
 
   const handleAnswer = (questionId: number, selectedAnswer: string) => {
@@ -70,13 +74,13 @@ const Pretest = () => {
         setScore((totalScore += QuizData[i].score));
       }
     }
-
-    // alert(`Your score : ${totalScore}`);
+    const lessonsName = getLessonNamePretest(pathname);
 
     const payload = {
       id: dataStudent?.id,
       username: dataStudent?.username,
       pretest_score: totalScore,
+      lessons_name: lessonsName,
     };
 
     pretestPost(payload)
@@ -93,9 +97,9 @@ const Pretest = () => {
     return <Loading />;
   }
 
-  if (isThereIsScore > -1) {
-    return <ScoreComponents pretestScore={isThereIsScore} />;
-  }
+  //   if (isThereIsScore > -1) {
+  //     return <ScoreComponents pretestScore={isThereIsScore} />;
+  //   }
 
   return (
     <>
@@ -108,7 +112,7 @@ const Pretest = () => {
       />
       <div className="dashboard-content-container mb-4">
         <div className="flex justify-between">
-          <h2 className="text-xl font-bold mb-2">Pretest Page</h2>
+          <h2 className="text-xl font-bold mb-2">Pretest</h2>
           {score > 0 && (
             <p>
               Your Score: <span className="font-bold">{score}</span>
@@ -157,4 +161,4 @@ const Pretest = () => {
   );
 };
 
-export default Pretest;
+export default PretestForm;

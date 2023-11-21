@@ -7,7 +7,7 @@ import DashboardLoading from "@/components/loading/DashboardLoading";
 import VocalCard from "@/components/cards/dashboard-card/VocalCard";
 import ConsonantCard from "@/components/cards/dashboard-card/ConsonantCard";
 import { DataScoreInterface } from "@/types/types";
-import Link from "next/link";
+// import Link from "next/link";
 
 const Dashboard = () => {
   const [studentScores, setStudentScores] = useState<DataScoreInterface[]>([]);
@@ -48,21 +48,22 @@ const Dashboard = () => {
     <div className="dashboard-content-container">
       <h1 className="text-title-sub-section font-bold">Daftar Nilai</h1>
 
-      {studentScores.length > 0 ? (
-        <div
-          className={clsx(
-            "card-container my-4 grid gap-6",
-            "sm:grid-cols-2",
-            "md:grid-cols-2",
-            "lg:grid-cols-2",
-            "xl:grid-cols-3"
-          )}
-        >
-          <>
-            <VocalCard studentScore={studentScores?.[0]} />
-            <ConsonantCard studentScore={studentScores?.[0]} />
-          </>
-        </div>
+      <div
+        className={clsx(
+          "card-container my-4 grid gap-6",
+          "sm:grid-cols-2",
+          "md:grid-cols-2",
+          "lg:grid-cols-2",
+          "xl:grid-cols-3"
+        )}
+      >
+        <>
+          <VocalCard studentScore={studentScores?.[0]} />
+          <ConsonantCard studentScore={studentScores?.[0]} />
+        </>
+      </div>
+      {/* {studentScores.length > 0 ? (
+        <h1>dashboard</h1>
       ) : (
         <div className="w-full">
           <h1 className="my-4">Silahkan kerjakan pretest terlebih dahulu.</h1>
@@ -70,7 +71,7 @@ const Dashboard = () => {
             Pretest
           </Link>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

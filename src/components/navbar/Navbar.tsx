@@ -36,9 +36,10 @@ const Navbar = () => {
                 )}
               >
                 {/* <FaSchoolFlag className="-mt-2.5" />{" "} */}
-                <p className=" font-bold">Fairus.</p>
+                <p className=" font-bold">Prabicara.</p>
               </Link>
             </div>
+
             <div className="navbar-center gap-6 hidden lg:flex">
               <Link
                 href={"/"}
@@ -48,7 +49,7 @@ const Navbar = () => {
                   pathname == "/" ? "font-bold text-primary-green mt-0.5" : ""
                 )}
               >
-                Home
+                Beranda
               </Link>
 
               <Link
@@ -61,8 +62,9 @@ const Navbar = () => {
                     : ""
                 )}
               >
-                About
+                Tentang
               </Link>
+
               <Link
                 href={"/lessons"}
                 className={clsx(
@@ -73,8 +75,9 @@ const Navbar = () => {
                     : ""
                 )}
               >
-                Lessons
+                Pembelajaran
               </Link>
+
               <Link
                 href={"/contact"}
                 className={clsx(
@@ -85,7 +88,7 @@ const Navbar = () => {
                     : ""
                 )}
               >
-                Contact
+                Kontak
               </Link>
             </div>
             <div className="navbar-end">

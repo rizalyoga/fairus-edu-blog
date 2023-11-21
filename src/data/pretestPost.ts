@@ -6,6 +6,7 @@ interface PretestSubmitProps {
   id: number;
   username: string;
   pretest_score: number;
+  lessons_name: string;
 }
 
 export const pretestPost = async (payload: PretestSubmitProps) => {

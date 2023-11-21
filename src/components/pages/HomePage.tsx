@@ -23,7 +23,7 @@ const HomePage = () => {
               "md:text-title"
             )}
           >
-            We Are Experts in Elearning
+            Apa itu Bina Bicara?
           </h2>
           <div
             className={clsx(
@@ -39,15 +39,16 @@ const HomePage = () => {
               className="rounded-lg lg:basis-1/2"
             />
             <div className="lg:basis-1/2">
-              <p className="font-bold mb-6">ABOUT</p>
+              {/* <p className="font-bold mb-6">ABOUT</p> */}
               <p className="text-base-text mb-6">
-                We are experts in the field of children&apos;s education and
-                therapy special needs and developing children&apos;s potential.
-                As a foundation provider of educational and therapeutic
-                assistance services, we have trained and experienced
-                professionals to help children reach their best potential.
+                Bina Bicara Anak Tunarungu merupakan sebuah intervensi edukatif
+                yang dirancang untuk meningkatkan kemampuan berbicara dan
+                komunikasi pada anak-anak dengan gangguan pendengaran. Program
+                ini menyediakan instruksi dan latihan khusus untuk membantu
+                peserta didik dalam memahami bahasa lisan dan menggunakan suara
+                mereka efektif.
               </p>
-              <Link
+              {/* <Link
                 href="/about"
                 className={clsx(
                   "btn btn-secondary-content font-bold text-primary-green",
@@ -55,7 +56,7 @@ const HomePage = () => {
                 )}
               >
                 EXPLORE
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
@@ -68,7 +69,7 @@ const HomePage = () => {
               "md:text-title"
             )}
           >
-            Getting started online
+            Tahapan Pembelajaran
           </h2>
           <div
             className={clsx(
@@ -78,35 +79,35 @@ const HomePage = () => {
             )}
           >
             <div className="flex items-center gap-6">
-              <BsPersonVcardFill className="text-7xl text-white lg:text-8xl" />
+              <BsPersonVcardFill className="text-7xl text-white lg:text-9xl" />
               <span>
                 <h5 className="font-bold text-white text-title-sub-section">
-                  Register and Login
+                  Registrasi Akun
                 </h5>
                 <p className="text-base-text text-slate-200">
-                  Register your account and start logging in.
+                  Registrasi akun anda dan mulai login.
                 </p>
               </span>
             </div>
             <div className="flex items-center gap-6">
-              <BsPersonWorkspace className="text-7xl text-white" />
+              <BsPersonWorkspace className="text-8xl text-white lg:text-9xl" />
               <span>
                 <h5 className="font-bold text-white text-title-sub-section">
-                  Learn Through Videos
+                  Belajar Melalui Video
                 </h5>
                 <p className="text-base-text text-slate-200">
-                  Start learning with the videos provided.
+                  Memulai belajar dengan materi video yang tersedia.
                 </p>
               </span>
             </div>
             <div className="flex items-center  gap-6">
-              <PiExamFill className="text-7xl text-white lg:text-8xl" />
+              <PiExamFill className="text-7xl text-white lg:text-9xl" />
               <span>
                 <h5 className="font-bold text-white text-title-sub-section">
-                  Do the Test
+                  Mengerjakan Test
                 </h5>
                 <p className="text-base-text text-slate-200">
-                  Doing pretests, quizzes and final tests.
+                  Mengerjakan pretest, kuis dan post tes
                 </p>
               </span>
             </div>
@@ -126,22 +127,22 @@ const HomePage = () => {
           >
             <div className="lg:basis-1/2">
               <h2 className="font-bold text-title-section text-primary-violet tracking-tighter mb-6">
-                Breathing Training
+                Usia berapa yang terbaik untuk terapi wicara?
               </h2>
               <p className="text-base-text mb-6">
-                This program is specifically designed to guide individuals in
-                performing focused and structured breathing exercises. Through a
-                series of personalized breathing activities and exercises, users
-                can strengthen respiratory muscles, optimize breathing patterns,
-                and ultimately improve voice clarity and fluency. With the aim
-                of helping develop a better voice.
+                Waktu terbaik untuk memulai terapi bicara tergantung pada
+                kebutuhan individual setiap anak. Namun, banyak ahli menyarankan
+                untuk memulai sejak dini jika ada kekhawatiran tentang
+                perkembangan bicara dan bahasa anak. Anak-anak bisa mendapatkan
+                manfaat dari terapi bicara sejak usia batita, karena ini adalah
+                waktu di mana mereka mulai belajar berkomunikasi.
               </p>
-              <Link
+              {/* <Link
                 href="/lessons"
                 className="btn font-bold text-primary-green hover:bg-white"
               >
                 EXPLORE
-              </Link>
+              </Link> */}
             </div>
             <Image
               src={BreathingImage}
@@ -167,24 +168,93 @@ const HomePage = () => {
             />
             <div className="lg:basis-1/2">
               <h2 className="font-bold text-title-section text-primary-violet tracking-tighter mb-6">
-                Vowel and Consonant Pronunciation Training
+                Kegiatan apa saja yang dilakukan dalam terapi wicara?
               </h2>
               <p className="text-base-text mb-6">
-                Through a series of interactive exercises and learning games,
-                users are invited to focus on developing the ability to
-                correctly articulate vowels and consonants. The program offers
-                exercises tailored to the individual&apos;s level of need,
-                helping to overcome specific challenges in sound pronunciation.
-                With a structured approach, users can gain better pronunciation
-                skills, improve clarity, and strengthen the ability to
-                communicate effectively.
+                Terapi bicara untuk anak tunarungu meliputi beberapa kegiatan
+                utama, termasuk latihan pernafasan untuk mengatur napas saat
+                berbicara, pelemasan organ bicara seperti lidah dan bibir untuk
+                fleksibilitas, pembentukan suara yang beragam, serta latihan
+                pengucapan vokal dan konsonan yang tepat. Kegiatan ini bertujuan
+                meningkatkan kejelasan dan pemahaman bicara anak.
               </p>
-              <Link
+              {/* <Link
                 href="/lessons"
                 className="btn font-bold text-primary-green hover:bg-white"
               >
                 EXPLORE
-              </Link>
+              </Link> */}
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Section 2 */}
+
+      <div className="bg-base-100 -mt-12">
+        <div className={clsx("content-container px-4", "lg:px-2", "xl:px-0")}>
+          <div
+            className={clsx(
+              "py-10 flex gap-12 justify-center items-center flex-col-reverse",
+              "lg:items-start lg:justify-between lg:flex-row"
+            )}
+          >
+            <div className="lg:basis-1/2">
+              <h2 className="font-bold text-title-section text-primary-violet tracking-tighter mb-6">
+                Berapa lama Anda membutuhkan terapi wicara?
+              </h2>
+              <p className="text-base-text mb-6">
+                Lama terapi bicara anak tunarungu bergantung pada usia saat
+                terapi dimulai, dukungan konsisten dari orang tua atau
+                pendamping, dan penggunaan serta adaptasi dengan alat bantu
+                dengar. Terapi cenderung lebih berhasil jika dimulai sejak dini
+                dan didukung secara aktif di rumah, dengan perkembangan individu
+                anak sebagai faktor utama dalam menentukan durasi terapi.
+              </p>
+              {/* <Link
+                href="/lessons"
+                className="btn font-bold text-primary-green hover:bg-white"
+              >
+                EXPLORE
+              </Link> */}
+            </div>
+            <Image
+              src={BreathingImage}
+              width={600}
+              height={600}
+              alt="ilustration"
+              className="rounded-lg lg:basis-1/2"
+            />
+          </div>
+          {/* all */}
+          <div
+            className={clsx(
+              "py-16 flex gap-12 justify-center items-center flex-col",
+              "lg:items-start lg:justify-between lg:flex-row"
+            )}
+          >
+            <Image
+              src={VowelImage}
+              width={600}
+              height={600}
+              alt="ilustration"
+              className="rounded-lg lg:basis-1/2"
+            />
+            <div className="lg:basis-1/2">
+              <h2 className="font-bold text-title-section text-primary-violet tracking-tighter mb-6">
+                Apakah terapi wicara berhasil?
+              </h2>
+              <p className="text-base-text mb-6">
+                Ya, terapi bicara memang efektif. Ini adalah metode intervensi
+                yang telah terbukti berhasil dan telah membantu anak untuk
+                meningkatkan keterampilan bahasa dan komunikasi mereka. Anda
+                bisa melihat hasilnya sendiri pada video contoh yang tersedia.
+              </p>
+              {/* <Link
+                href="/lessons"
+                className="btn font-bold text-primary-green hover:bg-white"
+              >
+                EXPLORE
+              </Link> */}
             </div>
           </div>
         </div>

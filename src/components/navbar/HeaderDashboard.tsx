@@ -2,6 +2,8 @@
 import React from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { IoLogOutOutline } from "react-icons/io5";
+import { formatString } from "@/helper/FormatStringHeader";
+import { getPathnamePage } from "@/helper/GetNamePageFromPathname";
 import clsx from "clsx";
 
 const HeaderDashboard = () => {
@@ -14,22 +16,6 @@ const HeaderDashboard = () => {
       router.push("/login");
     }
   };
-
-  function getPathnamePage(link: string): string {
-    // Menghilangkan karakter "/" di awal atau akhir jika ada
-    link = link.trim().replace(/^\/+|\/+$/g, "");
-
-    // Membagi link menjadi segmen berdasarkan tanda "/"
-    const pathSegments = link.split("/");
-
-    // Mengambil kata terakhir sebelum tanda "/"
-    if (pathSegments.length > 0) {
-      const pathNamePage = pathSegments[pathSegments.length - 1];
-      return pathNamePage.charAt(0).toUpperCase() + pathNamePage.slice(1);
-    } else {
-      return "";
-    }
-  }
 
   return (
     <div
@@ -60,8 +46,8 @@ const HeaderDashboard = () => {
           ></path>
         </svg>
       </label>
-      <h1 className="text-2xl font-semibold ml-2">
-        {getPathnamePage(pathname)}
+      <h1 className="text-md font-semibold ml-1 md:text-2xl pr-1">
+        {formatString(getPathnamePage(pathname))}
       </h1>
       <div>
         <button

@@ -15,14 +15,14 @@ const Hero = () => {
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-6xl">
           <h1 className="mb-5 text-title font-bold text-white tracking-tight leading-[60px]">
-            FAIRUS EDU.
+            Parenting Bina Bicara.
           </h1>
           <p className="mb-5 text-base-text text-white ">
-            We accompany and provide therapy for children and individuals who
-            need it. Starting with an accompanying teacher at school and
-            progressing to behavioral therapy, remedial teaching, home programs,
-            and special assessments. We also offer workshops, learning
-            consultations, and parenting support. Check our services here!
+            Selamat datang di Parenting Bina Bicara, platform pembelajaran yang
+            dirancang khusus untuk membantu orang tua dalam mendidik anak
+            tunarungu secara mandiri. Kami menyediakan materi dan video yang
+            komprehensif untuk memfasilitasi intervensi efektif dalam
+            pengembangan kemampuan berbicara anak Anda.
           </p>
           <Link href={"/login"}>
             <button
@@ -32,7 +32,7 @@ const Hero = () => {
                 "dark:border-slate-500 dark:hover:text-slate-200 dark:hover:bg-slate-600 dark:hover:border-slate-600"
               )}
             >
-              Get Started
+              Mulai Belajar
             </button>
           </Link>
         </div>

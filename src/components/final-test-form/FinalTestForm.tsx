@@ -1,13 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import ConfirmationModal from "@/components/modal/ConfirmationModal";
 import Toast from "@/components/toast/Toast";
 import Loading from "@/components/loading/Loading";
 import DataFinalTest from "@/data/final-test/vokal-a.json";
-import { finalTstPost } from "@/data/finalTestPost";
+import { finalTestPost } from "@/data/finalTestPost";
 import VokalAFinalTest from "@/data/final-test/vokal-a.json";
+import { getLessonNamePostTest } from "@/helper/GetLessonsNameFromPathname";
 
 interface UserAnswers {
   [questionId: number]: string;
@@ -19,6 +21,8 @@ const FinalTest = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [responseSubmit, setResponseSubmit] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const pathname = usePathname();
 
   const handleAnswer = (questionId: number, selectedAnswer: string) => {
     setUserAnswers((prevAnswers) => ({
@@ -62,15 +66,16 @@ const FinalTest = () => {
       }
     }
 
+    const lessonsName = getLessonNamePostTest(pathname);
+
     const payload = {
       id: dataStudent?.id,
       username: dataStudent?.username,
       final_test_score: totalScore,
-      course_name: "vokal-a",
-      code_column: "vokal_a_final_score",
+      lessons_name: lessonsName,
     };
 
-    finalTstPost(payload)
+    finalTestPost(payload)
       .then((res) => {
         setResponseSubmit(res);
 
@@ -108,7 +113,7 @@ const FinalTest = () => {
       />
       <div className="dashboard-content-container mb-4">
         <div className="flex justify-between">
-          <h2 className="text-xl font-bold mb-2">Pretest Page</h2>
+          <h2 className="text-xl font-bold mb-2">Post Test</h2>
           {score > 0 && (
             <p>
               Your Score: <span className="font-bold">{score}</span>

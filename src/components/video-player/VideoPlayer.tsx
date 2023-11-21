@@ -62,6 +62,7 @@ const VideoPlayer = ({
                 ? contentVideo?.videoUrl?.replace("/watch?v=", "/embed/")
                 : contentVideo?.videoUrl
             }
+            // url={"https://youtu.be/mGav4kAXFwQ"}
             controls
             width="100%"
             height="100%"

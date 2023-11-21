@@ -14,11 +14,17 @@ export const routes = [
     name: "Dashboard",
     icon: <SiHomeassistant className="-mt-1" />,
   },
+
   {
     path: "",
     name: "Pengenalan",
     icon: <BsPersonVideo3 className="-mt-1" />,
     submenu: [
+      {
+        path: "/dashboard/pengenalan-pretest",
+        icon: <SiPlausibleanalytics className="-mt-1" />,
+        name: "Pretest",
+      },
       {
         path: "/dashboard/budek",
         icon: "",
@@ -37,20 +43,26 @@ export const routes = [
       {
         path: "/dashboard/pelemasan-organ-bicara",
         icon: "",
-        name: "Pelemasan Organ Bicara",
+        name: "Organ Bicara",
+      },
+      {
+        path: "/dashboard/pengenalan-postest",
+        icon: <SiPlausibleanalytics className="-mt-1" />,
+        name: "Post test",
       },
     ],
   },
-  {
-    path: "/dashboard/pretest",
-    name: "Pretest",
-    icon: <SiPlausibleanalytics className="-mt-1" />,
-  },
+
   {
     path: "",
     name: "Pengucapan Huruf Vokal",
     icon: <SiAdobeillustrator className="-mt-1" />,
     submenu: [
+      {
+        path: "/dashboard/pengucapan-vokal-pretest",
+        icon: "",
+        name: "Pretest",
+      },
       {
         path: "/dashboard/vokal-a",
         icon: "",
@@ -76,6 +88,11 @@ export const routes = [
         icon: "",
         name: "Pengucapan Vokal O",
       },
+      {
+        path: "/dashboard/pengucapan-vokal-postest",
+        icon: "",
+        name: "Post test",
+      },
     ],
   },
   {
@@ -83,6 +100,11 @@ export const routes = [
     name: "Pengucapan konsonan",
     icon: <SiAdobelightroom className="-mt-1" />,
     submenu: [
+      {
+        path: "/dashboard/konsonan-pretest",
+        icon: "",
+        name: "Pretest",
+      },
       {
         path: "/dashboard/konsonan-b",
         icon: "",
@@ -137,6 +159,11 @@ export const routes = [
         path: "/dashboard/konsonan-ng",
         icon: "",
         name: "Konsonan NG",
+      },
+      {
+        path: "/dashboard/konsonan-postest",
+        icon: "",
+        name: "Post test",
       },
     ],
   },

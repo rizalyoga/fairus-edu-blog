@@ -55,7 +55,7 @@ const SidebarSubMenu = ({ submenu, name, icon }: RoutesInterfaces) => {
                     defaultChecked={false}
                     className="checkbox checkbox-primary rounded-full border-2 w-4 h-4 -mt-[1.6px]"
                   />
-                  {menu.icon} {menu.name}
+                  <p className="flex items-center gap-1">{menu.name}</p>
                   {pathname === menu.path ? (
                     <span
                       className="absolute mt-1 mb-1 inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary-violet"
