@@ -9,8 +9,10 @@ export const getDataStudent = async (payload: LoginProps) => {
   if (response.ok) {
     const newData = data.filter((student: StudentDataProps) => {
       return (
-        student.username == payload.username &&
-        student.password == payload.password
+        (student.username.toLowerCase() == payload?.username?.toLowerCase() &&
+          student.password == payload.password) ||
+        (student.email == payload.username &&
+          student.password == payload.password)
       );
     });
 

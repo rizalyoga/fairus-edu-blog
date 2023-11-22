@@ -36,7 +36,8 @@ export interface StudentDataProps {
 }
 
 export interface LoginProps {
-  username: string;
+  username?: string;
+  email?: string;
   password: string;
 }
 
@@ -52,6 +53,15 @@ export interface DataScoreInterface {
   id: number;
   username: string;
   pretest_score: number;
+  pengenalan_pretest?: number | string;
+  pengenalan_post_test?: number | string;
+  video_pembentuk_suara?: number | string;
+  video_pernapasan?: number | string;
+  video_organ_bicara?: number | string;
+  vokal_pretest?: number | string;
+  vokal_post_test?: number | string;
+  konsonan_pretest?: number | string;
+  konsonan_post_test?: number | string;
   video_vokal_a_score?: number | string; // Video score for Vowel 'A'
   vokal_a_final_score: number | string;
   video_vokal_i_score?: number | string; // Video score for Vowel 'I'

@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import clsx from "clsx";
+
 import Pengaruh from "./teori-components/Pengaruh";
 import Pelaksanaan from "./teori-components/Pelaksanaan";
 import Gangguan from "./teori-components/Gangguan";
 import Perkembangan from "./teori-components/Perkembangan";
-import clsx from "clsx";
 
 const TeoriPage = () => {
   const [content, setContent] = useState(0);
@@ -63,7 +64,7 @@ const TeoriPage = () => {
             Pelaksanaan
           </button>
         </div>
-        <div className="content-teori mt-9 mb-12 w-full lg:px-2 xl:px-0">
+        <div className="content-teori mt-16 mb-12 w-full lg:px-2 xl:px-0">
           {changeContentHandler(content)}
         </div>
       </div>

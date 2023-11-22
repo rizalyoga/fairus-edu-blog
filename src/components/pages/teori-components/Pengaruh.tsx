@@ -3,11 +3,11 @@ import React from "react";
 const Pengaruh = () => {
   return (
     <>
-      <h1 className="text-4xl  font-bold text-center lg:text-title-section">
+      <h1 className="text-4xl font-bold text-center lg:text-title-section">
         PENGARUH
       </h1>
       <div className="content-perkembangan text-start">
-        <h3 className="title-sub-content mt-6">
+        <h3 className="title-sub-content mt-8">
           Pengaruh Keberhasilan Bina Bicara
         </h3>
 

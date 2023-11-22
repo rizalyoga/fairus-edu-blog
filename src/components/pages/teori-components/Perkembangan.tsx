@@ -7,7 +7,7 @@ const Perkembangan = () => {
         PERKEMABANGAN
       </h1>
       <div className="content-perkembangan text-start">
-        <h3 className="title-sub-content mt-6">
+        <h3 className="title-sub-content mt-8">
           Perkembangan Bahasa dan Bicara
         </h3>
         <p>

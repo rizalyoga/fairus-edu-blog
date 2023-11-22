@@ -7,7 +7,7 @@ const Gangguan = () => {
         GANGGUAN
       </h1>
       <div className="content-perkembangan text-start">
-        <h3 className="title-sub-content mt-6">
+        <h3 className="title-sub-content mt-8">
           Gangguan Bicara Pada Anak Tunarungu
         </h3>
 

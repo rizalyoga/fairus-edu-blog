@@ -29,7 +29,13 @@ body {
 
 @layer components {
   .dashboard-content-container {
-    @apply bg-base-100 px-4 py-6 rounded-md shadow-md text-base-text;
+    @apply bg-base-100 px-4 py-6 rounded-md shadow-md text-base-text mb-6;
+  }
+}
+
+@layer components {
+  .dashboard-cards-wrapper {
+    @apply my-4 grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3;
   }
 }
 
@@ -42,6 +48,18 @@ body {
 @layer components {
   .title-sub-content {
     @apply font-bold text-primary-violet text-title-sub-section my-4;
+  }
+}
+
+@layer components {
+  .paragraph-wrapper {
+    @apply ml-6;
+  }
+}
+
+@layer components {
+  .list-decimal-style {
+    @apply list-decimal list-outside ml-5;
   }
 }
 
@@ -61,6 +79,10 @@ body {
 .content-container {
   margin: auto;
   max-width: 1200px;
+}
+
+.list-decimal-style li {
+  margin-bottom: 10px;
 }
 
 /* @media (max-width: 885px) {

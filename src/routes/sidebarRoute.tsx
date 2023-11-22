@@ -21,19 +21,14 @@ export const routes = [
     icon: <BsPersonVideo3 className="-mt-1" />,
     submenu: [
       {
+        path: "/dashboard/pengantar",
+        icon: "",
+        name: "Pengantar",
+      },
+      {
         path: "/dashboard/pengenalan-pretest",
         icon: <SiPlausibleanalytics className="-mt-1" />,
         name: "Pretest",
-      },
-      {
-        path: "/dashboard/budek",
-        icon: "",
-        name: "Budek",
-      },
-      {
-        path: "/dashboard/pembentuk-suara",
-        icon: "",
-        name: "Pembentuk Suara",
       },
       {
         path: "/dashboard/pernapasan",
@@ -44,6 +39,16 @@ export const routes = [
         path: "/dashboard/pelemasan-organ-bicara",
         icon: "",
         name: "Organ Bicara",
+      },
+      {
+        path: "/dashboard/pembentuk-suara",
+        icon: "",
+        name: "Pembentuk Suara",
+      },
+      {
+        path: "/dashboard/budek",
+        icon: "",
+        name: "Budek",
       },
       {
         path: "/dashboard/pengenalan-postest",

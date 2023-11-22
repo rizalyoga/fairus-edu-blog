@@ -2,6 +2,7 @@
 
 import { useEffect, Suspense } from "react";
 import { useRouter } from "next/navigation";
+
 import Sidebar from "@/components/sidebar/Sidebar";
 import HeaderDashboard from "@/components/navbar/HeaderDashboard";
 import Loading from "./loading";

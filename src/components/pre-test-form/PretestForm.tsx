@@ -2,13 +2,15 @@
 
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import QuizData from "@/data/pretest/budek.json";
 import clsx from "clsx";
-import ConfirmationModal from "@/components/modal/ConfirmationModal";
-import Toast from "@/components/toast/Toast";
-import Loading from "@/components/loading/Loading";
+
 import { pretestPost } from "@/data/pretestPost";
 import { getLessonNamePretest } from "@/helper/GetLessonsNameFromPathname";
+
+import Toast from "@/components/toast/Toast";
+import Loading from "@/components/loading/Loading";
+import ConfirmationModal from "@/components/modal/ConfirmationModal";
+import QuizData from "@/data/pretest/budek.json";
 import ScoreComponents from "./ScoreComponents";
 
 interface UserAnswers {

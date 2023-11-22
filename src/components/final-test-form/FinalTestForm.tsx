@@ -3,13 +3,15 @@
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+
+import { finalTestPost } from "@/data/finalTestPost";
+import { getLessonNamePostTest } from "@/helper/GetLessonsNameFromPathname";
+
 import ConfirmationModal from "@/components/modal/ConfirmationModal";
-import Toast from "@/components/toast/Toast";
 import Loading from "@/components/loading/Loading";
 import DataFinalTest from "@/data/final-test/vokal-a.json";
-import { finalTestPost } from "@/data/finalTestPost";
 import VokalAFinalTest from "@/data/final-test/vokal-a.json";
-import { getLessonNamePostTest } from "@/helper/GetLessonsNameFromPathname";
+import Toast from "@/components/toast/Toast";
 
 interface UserAnswers {
   [questionId: number]: string;

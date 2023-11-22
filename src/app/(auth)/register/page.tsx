@@ -1,10 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import clsx from "clsx";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
+import clsx from "clsx";
+import Link from "next/link";
+
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+
 import { addNewStudent } from "@/data/studentRegister";
+
 import Toast from "@/components/toast/Toast";
 
 const Register = () => {
@@ -215,6 +218,11 @@ const Register = () => {
               />
             )}
           </form>
+          {registerMessage && (
+            <p className="text-red-400 mt-4 text-center dark:text-red-400">
+              *{registerMessage}
+            </p>
+          )}
           <p className="text-base text-secondary-text mt-5">
             Sudah mempunyai akun ?
             <span className="text-primary-cyan hover:underline cursor-pointer">
