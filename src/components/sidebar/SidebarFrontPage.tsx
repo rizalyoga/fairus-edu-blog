@@ -51,7 +51,7 @@ const SidebarFrontPage = ({ isOpen, onClose }: any) => {
               href="/about"
               className={pathname == "/about" ? activeLinkStyle : ""}
             >
-              About
+              Tentang Kami
             </Link>
           </li>
 

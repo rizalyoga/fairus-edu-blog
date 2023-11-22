@@ -7,7 +7,7 @@ const Pelaksanaan = () => {
         PELAKSANAAN
       </h1>
       <div className="content-perkembangan text-start">
-        <h3 className="title-sub-content mt-6">Pelaksanaan Bina Bicara</h3>
+        <h3 className="title-sub-content mt-8">Pelaksanaan Bina Bicara</h3>
 
         <p>
           Pelaksanaan bina bicara pada anak tunarungu di rumah dapat lebih

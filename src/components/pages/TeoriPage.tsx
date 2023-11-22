@@ -63,7 +63,7 @@ const TeoriPage = () => {
             Pelaksanaan
           </button>
         </div>
-        <div className="content-teori mt-9 mb-12 w-full lg:px-2 xl:px-0">
+        <div className="content-teori mt-16 mb-12 w-full lg:px-2 xl:px-0">
           {changeContentHandler(content)}
         </div>
       </div>

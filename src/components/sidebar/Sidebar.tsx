@@ -9,6 +9,7 @@ import SidebarSubMenu from "./SidebarSubMenu";
 import { routes } from "@/routes/sidebarRoute";
 import { StudentDataProps } from "@/types/types";
 import clsx from "clsx";
+import { capitalizeFirstLetter } from "@/helper/FirstCapitalLetter";
 
 interface StudentData extends StudentDataProps {
   token: string;
@@ -46,7 +47,9 @@ const Sidebar = () => {
         <li className="mb-2 mt-1 font-bold text-xl">
           <Link href={"/dashboard"} className="hover:bg-base-100">
             <BsPersonCircle className="text-3xl -mt-1" />
-            {`${studentData?.firstname} ${studentData?.lastname}`}
+            {`${capitalizeFirstLetter(
+              studentData?.firstname as string
+            )} ${capitalizeFirstLetter(studentData?.lastname as string)}`}
           </Link>
         </li>
         {routes.map((route, idx) => {

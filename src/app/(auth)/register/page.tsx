@@ -215,6 +215,11 @@ const Register = () => {
               />
             )}
           </form>
+          {registerMessage && (
+            <p className="text-red-400 mt-4 text-center dark:text-red-400">
+              *{registerMessage}
+            </p>
+          )}
           <p className="text-base text-secondary-text mt-5">
             Sudah mempunyai akun ?
             <span className="text-primary-cyan hover:underline cursor-pointer">

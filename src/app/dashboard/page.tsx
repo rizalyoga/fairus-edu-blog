@@ -1,13 +1,15 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+// import Link from "next/link";
 import clsx from "clsx";
 import { getDataScoreStudent } from "@/data/getDataStudentScoreById";
-import DashboardLoading from "@/components/loading/DashboardLoading";
+import { DataScoreInterface } from "@/types/types";
+
 import VocalCard from "@/components/cards/dashboard-card/VocalCard";
 import ConsonantCard from "@/components/cards/dashboard-card/ConsonantCard";
-import { DataScoreInterface } from "@/types/types";
-// import Link from "next/link";
+import IntroductionCard from "@/components/cards/dashboard-card/IntroductionCard";
+import DashboardLoading from "@/components/loading/DashboardLoading";
 
 const Dashboard = () => {
   const [studentScores, setStudentScores] = useState<DataScoreInterface[]>([]);
@@ -48,6 +50,7 @@ const Dashboard = () => {
     <div className="dashboard-content-container">
       <h1 className="text-title-sub-section font-bold">Daftar Nilai</h1>
 
+      <h4 className="font-bold mt-4 mb-2">Materi Pengenalan</h4>
       <div
         className={clsx(
           "card-container my-4 grid gap-6",
@@ -57,10 +60,32 @@ const Dashboard = () => {
           "xl:grid-cols-3"
         )}
       >
-        <>
-          <VocalCard studentScore={studentScores?.[0]} />
-          <ConsonantCard studentScore={studentScores?.[0]} />
-        </>
+        <IntroductionCard studentScore={studentScores?.[0]} />
+      </div>
+
+      <h4 className="font-bold mt-10 mb-2">Pengucapan Huruf Vokal</h4>
+      <div
+        className={clsx(
+          "card-container my-4 grid gap-6",
+          "sm:grid-cols-2",
+          "md:grid-cols-2",
+          "lg:grid-cols-2",
+          "xl:grid-cols-3"
+        )}
+      >
+        <VocalCard studentScore={studentScores?.[0]} />
+      </div>
+      <h4 className="font-bold mt-10 mb-2">Pengucapan Huruf Konsonan</h4>
+      <div
+        className={clsx(
+          "card-container my-4 grid gap-6",
+          "sm:grid-cols-2",
+          "md:grid-cols-2",
+          "lg:grid-cols-2",
+          "xl:grid-cols-3"
+        )}
+      >
+        <ConsonantCard studentScore={studentScores?.[0]} />
       </div>
       {/* {studentScores.length > 0 ? (
         <h1>dashboard</h1>

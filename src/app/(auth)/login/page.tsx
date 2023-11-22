@@ -40,9 +40,11 @@ const Login = () => {
       .then((e) => {
         if (e) {
           setLoginMessage("Selamat anda berhasil login");
+          const { password, ...eWithoutPassword } = e;
+
           sessionStorage.setItem(
             "student",
-            JSON.stringify({ ...e, token: `token${new Date()}` })
+            JSON.stringify({ ...eWithoutPassword, token: `token${new Date()}` })
           );
           setTimeout(() => {
             router.push("/dashboard");
@@ -109,7 +111,7 @@ const Login = () => {
             className="flex flex-col gap-4 text-slate-400 w-full"
           >
             <span className="flex flex-col">
-              <label className="text-base">USERNAME</label>
+              <label className="text-base">USERNAME or EMAIL</label>
               <input
                 className={clsx(
                   "input input-bordered rounded-md placeholder:text-base text-primary-text py-3 px-2 mt-2",
@@ -117,7 +119,7 @@ const Login = () => {
                 )}
                 name="username"
                 type="text"
-                placeholder="username"
+                placeholder="username / email"
                 required
                 onChange={handleChange}
               />
