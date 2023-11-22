@@ -29,7 +29,7 @@ body {
 
 @layer components {
   .dashboard-content-container {
-    @apply bg-base-100 px-4 py-6 rounded-md shadow-md text-base-text;
+    @apply bg-base-100 px-4 py-6 rounded-md shadow-md text-base-text mb-6;
   }
 }
 
@@ -51,6 +51,18 @@ body {
   }
 }
 
+@layer components {
+  .paragraph-wrapper {
+    @apply ml-6;
+  }
+}
+
+@layer components {
+  .list-decimal-style {
+    @apply list-decimal list-outside ml-5;
+  }
+}
+
 .player-wrapper {
   width: 100%;
   position: relative;
@@ -67,6 +79,10 @@ body {
 .content-container {
   margin: auto;
   max-width: 1200px;
+}
+
+.list-decimal-style li {
+  margin-bottom: 10px;
 }
 
 /* @media (max-width: 885px) {

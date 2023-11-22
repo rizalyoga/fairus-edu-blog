@@ -13,8 +13,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Fairus Edu",
-  description: "Fairus Education Purpose",
+  title: "Prabicara",
+  description:
+    "Prabicara adalah platform pembelajaran yang dirancang khusus untuk membantu orang tua dalam mendidik anak tunarungu secara mandiri.",
 };
 
 export default function RootLayout({
