@@ -2,10 +2,13 @@
 
 import React, { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { IoLogOutOutline } from "react-icons/io5";
+import clsx from "clsx";
+
 import { formatString } from "@/helper/FormatStringHeader";
 import { getPathnamePage } from "@/helper/GetNamePageFromPathname";
-import clsx from "clsx";
+
+import { IoLogOutOutline } from "react-icons/io5";
+
 import ConfirmationModal from "../modal/ConfirmationModal";
 
 const HeaderDashboard = () => {

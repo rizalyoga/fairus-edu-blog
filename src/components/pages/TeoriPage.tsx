@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import clsx from "clsx";
+
 import Pengaruh from "./teori-components/Pengaruh";
 import Pelaksanaan from "./teori-components/Pelaksanaan";
 import Gangguan from "./teori-components/Gangguan";
 import Perkembangan from "./teori-components/Perkembangan";
-import clsx from "clsx";
 
 const TeoriPage = () => {
   const [content, setContent] = useState(0);

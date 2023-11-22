@@ -1,15 +1,18 @@
 import React from "react";
-import Hero from "../hero/Hero";
-import { BsPersonWorkspace, BsPersonVcardFill } from "react-icons/bs";
-import { PiExamFill } from "react-icons/pi";
 import Image from "next/image";
 // import Link from "next/link";
+import clsx from "clsx";
+
+import { PiExamFill } from "react-icons/pi";
+import { BsPersonWorkspace, BsPersonVcardFill } from "react-icons/bs";
+
+import Hero from "../hero/Hero";
+
 import AboutImage from "public/assets/home-first.webp";
 import BreathingImage from "public/assets/home-second.webp";
 import VowelImage from "public/assets/home-third.webp";
 import SuccesImage from "public/assets/home-3.jpeg";
 import ActivityImage from "public/assets/home-4.jpg";
-import clsx from "clsx";
 
 const HomePage = () => {
   return (
@@ -109,7 +112,7 @@ const HomePage = () => {
                   Mengerjakan Test
                 </h5>
                 <p className="text-base-text text-slate-200">
-                  Mengerjakan pretest, kuis dan post tes
+                  Mengerjakan pretest, kuis dan post tes.
                 </p>
               </span>
             </div>

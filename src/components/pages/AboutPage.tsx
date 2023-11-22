@@ -22,7 +22,7 @@ const About = () => {
           </div>
           <div className="vision text-lg">
             <h1 className="text-title-sub-section font-bold text-base-content text-center">
-              Vision
+              Visi
             </h1>
             <p className="text-center py-10 px-10 text-base-content">
               Become a friend of parents accompanying children with special
@@ -31,7 +31,7 @@ const About = () => {
           </div>
           <div className="Mission text-lg">
             <h1 className="text-title-sub-section pb-10 font-bold text-base-content text-center">
-              Missions
+              Misi
             </h1>
             <ol className="list-decimal text-base-content px-4">
               <li>

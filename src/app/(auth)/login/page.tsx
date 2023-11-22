@@ -1,10 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 import clsx from "clsx";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+
 import { getDataStudent } from "@/data/getDataStudent";
+
 import Toast from "@/components/toast/Toast";
 
 const Login = () => {

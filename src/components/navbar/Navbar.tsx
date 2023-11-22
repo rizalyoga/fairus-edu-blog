@@ -1,9 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+import clsx from "clsx";
+
 import { CgMenuRightAlt } from "react-icons/cg";
+
 import SidebarFrontPage from "../sidebar/SidebarFrontPage";
 
 const Navbar = () => {
@@ -46,7 +49,9 @@ const Navbar = () => {
                 className={clsx(
                   "cursor-pointer text-base-text",
                   "hover:underline",
-                  pathname == "/" ? "font-bold text-primary-green mt-0.5" : ""
+                  pathname == "/"
+                    ? "font-bold text-primary-green text-[1.3rem]"
+                    : ""
                 )}
               >
                 Beranda
@@ -58,7 +63,7 @@ const Navbar = () => {
                   "cursor-pointer text-base-text",
                   "hover:underline",
                   pathname == "/teori"
-                    ? "font-bold text-primary-green mt-0.5"
+                    ? "font-bold text-primary-green text-[1.3rem]"
                     : ""
                 )}
               >
@@ -71,7 +76,7 @@ const Navbar = () => {
                   "cursor-pointer text-base-text",
                   "hover:underline",
                   pathname == "/lessons"
-                    ? "font-bold text-primary-green mt-0.5"
+                    ? "font-bold text-primary-green text-[1.3rem]"
                     : ""
                 )}
               >
@@ -84,7 +89,7 @@ const Navbar = () => {
                   "cursor-pointer text-base-text",
                   "hover:underline",
                   pathname == "/about"
-                    ? "font-bold text-primary-green mt-0.5"
+                    ? "font-bold text-primary-green text-[1.3rem] "
                     : ""
                 )}
               >

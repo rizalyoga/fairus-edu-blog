@@ -3,13 +3,16 @@
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import clsx from "clsx";
+
 import { AiOutlineClose } from "react-icons/ai";
 import { BsPersonCircle } from "react-icons/bs";
-import SidebarSubMenu from "./SidebarSubMenu";
-import { routes } from "@/routes/sidebarRoute";
 import { StudentDataProps } from "@/types/types";
-import clsx from "clsx";
+
 import { capitalizeFirstLetter } from "@/helper/FirstCapitalLetter";
+import { routes } from "@/routes/sidebarRoute";
+
+import SidebarSubMenu from "./SidebarSubMenu";
 
 interface StudentData extends StudentDataProps {
   token: string;
