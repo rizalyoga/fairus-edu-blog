@@ -8,7 +8,7 @@ const IntroductionCard = ({
 }) => {
   return (
     <>
-      <h4 className="font-bold mt-4 mb-2">Materi Pengenalan</h4>
+      <h4 className="font-bold mt-10 mb-2">Materi Pengenalan</h4>
       <div className="dashboard-cards-wrapper">
         {/* PRETEST & POST TEST */}
         <div className="dashboard-card-container">
