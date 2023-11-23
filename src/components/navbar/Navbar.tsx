@@ -33,13 +33,11 @@ const Navbar = () => {
               <Link
                 href="/"
                 className={clsx(
-                  "normal-case text-4xl text-primary-green flex items-center gap-2 ",
-                  "hover:bg-white",
+                  "normal-case text-4xl text-primary-green",
                   "dark:hover:bg-base-100"
                 )}
               >
-                {/* <FaSchoolFlag className="-mt-2.5" />{" "} */}
-                <p className=" font-bold">Prabicara.</p>
+                <p className="font-bold">Prabicara.</p>
               </Link>
             </div>
 
@@ -47,10 +45,10 @@ const Navbar = () => {
               <Link
                 href={"/"}
                 className={clsx(
-                  "cursor-pointer text-base-text",
+                  "cursor-pointer text-base-text -mt-0.5",
                   "hover:underline",
                   pathname == "/"
-                    ? "font-bold text-primary-green text-[1.3rem]"
+                    ? "font-bold text-primary-green text-[1.35rem]"
                     : ""
                 )}
               >
@@ -63,7 +61,7 @@ const Navbar = () => {
                   "cursor-pointer text-base-text",
                   "hover:underline",
                   pathname == "/teori"
-                    ? "font-bold text-primary-green text-[1.3rem]"
+                    ? "font-bold text-primary-green text-[1.35rem]"
                     : ""
                 )}
               >
@@ -76,7 +74,7 @@ const Navbar = () => {
                   "cursor-pointer text-base-text",
                   "hover:underline",
                   pathname == "/lessons"
-                    ? "font-bold text-primary-green text-[1.3rem]"
+                    ? "font-bold text-primary-green text-[1.35rem]"
                     : ""
                 )}
               >
@@ -89,7 +87,7 @@ const Navbar = () => {
                   "cursor-pointer text-base-text",
                   "hover:underline",
                   pathname == "/about"
-                    ? "font-bold text-primary-green text-[1.3rem] "
+                    ? "font-bold text-primary-green text-[1.35rem] "
                     : ""
                 )}
               >
