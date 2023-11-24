@@ -8,6 +8,7 @@ interface ModalQuizProps {
   setContinuePlayVideo: () => void;
   questions: QuestionVideoType[] | undefined;
   currentTime: number;
+  addScore: (score: number) => void;
 }
 
 const ModalQuiz = ({
@@ -16,6 +17,7 @@ const ModalQuiz = ({
   setContinuePlayVideo,
   questions,
   currentTime,
+  addScore,
 }: ModalQuizProps) => {
   const [questionData, setQuestionData] = useState<
     QuestionVideoType[] | undefined
@@ -39,11 +41,13 @@ const ModalQuiz = ({
 
   const submitAnswerHandling = (answer: string) => {
     if (answer == questionData?.[0].trueAnswer) {
-      console.log("selamat jawabanmu benar 🎊");
+      addScore(questionData?.[0]?.point);
     } else {
-      console.log("maaf jawabanmu salah 😢");
+      addScore(0);
     }
-    closeModal(), setContinuePlayVideo();
+
+    closeModal();
+    setContinuePlayVideo();
   };
 
   return (
@@ -51,11 +55,12 @@ const ModalQuiz = ({
       <div
         className={clsx(
           "modal-box max-w-xl",
-          "md:-mt-80",
-          "lg:-mt-24 lg:ml-48"
+          // "md:-mt-48",
+          "lg:-mt-20 lg:ml-48"
         )}
       >
         <h3 className="font-bold text-lg">Silahkan jawab pertanyaan berikut</h3>
+
         {!questionData?.[0] ? (
           <div className="w-full flex justify-center items-center my-4">
             <span className="loading loading-spinner loading-lg text-success"></span>

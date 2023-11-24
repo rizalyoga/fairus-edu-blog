@@ -1,6 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
+
 import ReactPlayer from "react-player";
 import ModalQuiz from "../modal/ModalQuiz";
+
+import { SaveScoreToSessionStorage } from "@/helper/SaveScoreToSessionStorage";
+import { quizTestPost } from "@/data/quizTestPost";
 import { QuestionVideoInterface } from "@/types/types";
 
 const VideoPlayer = ({
@@ -8,11 +13,14 @@ const VideoPlayer = ({
 }: {
   contentVideo: QuestionVideoInterface | null;
 }) => {
+  const pathname = usePathname();
+
   const videoRef = useRef<ReactPlayer | null>(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isDomLoad, setIsDomLoad] = useState(false);
+  const [studentScore, setStudentScore] = useState<number[]>([]);
 
   const handleTimeUpdate = (e: any) => {
     setCurrentTime(e.playedSeconds);
@@ -23,7 +31,7 @@ const VideoPlayer = ({
   };
 
   const setContinuePlayVideo = () => {
-    setIsPlaying((playing) => !playing);
+    setIsPlaying(true);
   };
 
   useEffect(() => {
@@ -38,18 +46,41 @@ const VideoPlayer = ({
         );
       });
 
-      if (currentQuestion && !isPlaying) {
+      if (currentQuestion?.id! > studentScore.length) {
         // Pause video otomatis
         if (videoRef.current) {
-          videoRef.current.seekTo(currentQuestion.second, "seconds");
+          videoRef.current.seekTo(currentQuestion?.second!, "seconds");
           videoRef.current.getInternalPlayer().pauseVideo();
+          setIsPlaying(false);
         }
 
         // Tampilkan modal dengan pertanyaan dari currentQuestion
         setIsOpenModal(true);
       }
     }
-  }, [currentTime, isPlaying, contentVideo]);
+  }, [currentTime, isPlaying, contentVideo, studentScore]);
+
+  // Function for save final score to session storage & database
+  useEffect(() => {
+    if (studentScore.length == 3) {
+      SaveScoreToSessionStorage(
+        studentScore.reduce((a, b) => a + b, 0),
+        pathname
+      );
+
+      quizTestPost(
+        studentScore.reduce((a, b) => a + b, 0),
+        pathname
+      );
+    }
+  }, [studentScore, studentScore.length, pathname]);
+
+  const addScore = (point: number) => {
+    let answerScore = studentScore;
+    answerScore.push(point);
+
+    setStudentScore(answerScore);
+  };
 
   return (
     <>
@@ -86,6 +117,7 @@ const VideoPlayer = ({
         setContinuePlayVideo={setContinuePlayVideo}
         questions={contentVideo?.questions}
         currentTime={currentTime}
+        addScore={addScore}
       />
     </>
   );
