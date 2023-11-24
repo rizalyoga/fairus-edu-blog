@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import VideoPlayer from "@/components/video-player/VideoPlayer";
 import { usePathname } from "next/navigation";
 import { VideoQuestion } from "@/data/VideoQuestion";
 import { QuestionVideoInterface } from "@/types/types";
-import FinalTestForm from "@/components/final-test-form/FinalTestForm";
+
+// import FinalTestForm from "@/components/final-test-form/FinalTestForm";
+import VideoPlayer from "@/components/video-player/VideoPlayer";
 
 const Budek = () => {
   const pathname = usePathname();

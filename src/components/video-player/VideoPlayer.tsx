@@ -77,7 +77,7 @@ const VideoPlayer = ({
       )}
       <div className="flex justify-center items-center">
         <p className="font-bold text-center mt-4">
-          Current Time: {currentTime.toFixed(2)} seconds
+          Waktu video : {currentTime.toFixed(2)} detik
         </p>
       </div>
       <ModalQuiz

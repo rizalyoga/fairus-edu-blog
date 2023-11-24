@@ -49,7 +49,11 @@ const ModalQuiz = ({
   return (
     <dialog id="my_modal_1" className="modal">
       <div
-        className={clsx("modal-box -mt-64", "md:-mt-80", "lg:-mt-24 lg:ml-48")}
+        className={clsx(
+          "modal-box max-w-xl",
+          "md:-mt-80",
+          "lg:-mt-24 lg:ml-48"
+        )}
       >
         <h3 className="font-bold text-lg">Silahkan jawab pertanyaan berikut</h3>
         {!questionData?.[0] ? (
@@ -66,9 +70,9 @@ const ModalQuiz = ({
                     <button
                       key={choice}
                       className={clsx(
-                        "btn w-full my-1 text-white bg-primary-green",
-                        "hover:text-primary-text",
-                        "dark:hover:bg-slate-300"
+                        "w-full my-1 text-primary-text bg-base-300 border p-2 rounded-md text-start transition",
+                        "hover:text-white hover:bg-primary-green",
+                        "dark:text-slate-300 dark:border-slate-400"
                       )}
                       onClick={() => submitAnswerHandling(choice)}
                     >
