@@ -12,6 +12,7 @@ export interface RoutesInterfaces {
 }
 
 export type QuestionVideoType = {
+  id: number;
   second: number;
   point: number;
   question: string;

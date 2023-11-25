@@ -6,7 +6,7 @@ import Penutup from "./Penutup";
 const VokalE = () => {
   return (
     <div className="dashboard-content-container text-base">
-      <h1 className="text-title-sub-section font-bold">
+      <h1 className="text-title-sub-section font-bold text-primary-green">
         Pengucapan Huruf Vokal E
       </h1>
       <div id="pendahuluan">

@@ -1,6 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
+
 import ReactPlayer from "react-player";
 import ModalQuiz from "../modal/ModalQuiz";
+import Toast from "../toast/Toast";
+
+import { SaveScoreToSessionStorage } from "@/helper/SaveScoreToSessionStorage";
+import { quizTestPost } from "@/data/quizTestPost";
 import { QuestionVideoInterface } from "@/types/types";
 
 const VideoPlayer = ({
@@ -8,11 +14,15 @@ const VideoPlayer = ({
 }: {
   contentVideo: QuestionVideoInterface | null;
 }) => {
+  const pathname = usePathname();
+
   const videoRef = useRef<ReactPlayer | null>(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isDomLoad, setIsDomLoad] = useState(false);
+  const [studentScore, setStudentScore] = useState<number[]>([]);
+  const [responseSubmitQuiz, setResponseSubmitQuiz] = useState("");
 
   const handleTimeUpdate = (e: any) => {
     setCurrentTime(e.playedSeconds);
@@ -23,7 +33,7 @@ const VideoPlayer = ({
   };
 
   const setContinuePlayVideo = () => {
-    setIsPlaying((playing) => !playing);
+    setIsPlaying(true);
   };
 
   useEffect(() => {
@@ -38,18 +48,41 @@ const VideoPlayer = ({
         );
       });
 
-      if (currentQuestion && !isPlaying) {
+      if (currentQuestion?.id! > studentScore.length) {
         // Pause video otomatis
         if (videoRef.current) {
-          videoRef.current.seekTo(currentQuestion.second, "seconds");
+          videoRef.current.seekTo(currentQuestion?.second!, "seconds");
           videoRef.current.getInternalPlayer().pauseVideo();
+          setIsPlaying(false);
         }
 
         // Tampilkan modal dengan pertanyaan dari currentQuestion
         setIsOpenModal(true);
       }
     }
-  }, [currentTime, isPlaying, contentVideo]);
+  }, [currentTime, isPlaying, contentVideo, studentScore]);
+
+  // Function for save final score to session storage & database
+  useEffect(() => {
+    if (studentScore.length == 3) {
+      SaveScoreToSessionStorage(
+        studentScore.reduce((a, b) => a + b, 0),
+        pathname
+      );
+
+      quizTestPost(
+        studentScore.reduce((a, b) => a + b, 0),
+        pathname
+      ).then((res) => setResponseSubmitQuiz(res));
+    }
+  }, [studentScore, studentScore.length, pathname]);
+
+  const addScore = (point: number) => {
+    let answerScore = studentScore;
+    answerScore.push(point);
+
+    setStudentScore(answerScore);
+  };
 
   return (
     <>
@@ -77,7 +110,7 @@ const VideoPlayer = ({
       )}
       <div className="flex justify-center items-center">
         <p className="font-bold text-center mt-4">
-          Current Time: {currentTime.toFixed(2)} seconds
+          Waktu video : {currentTime.toFixed(2)} detik
         </p>
       </div>
       <ModalQuiz
@@ -86,7 +119,9 @@ const VideoPlayer = ({
         setContinuePlayVideo={setContinuePlayVideo}
         questions={contentVideo?.questions}
         currentTime={currentTime}
+        addScore={addScore}
       />
+      {responseSubmitQuiz && <Toast message={responseSubmitQuiz} />}
     </>
   );
 };

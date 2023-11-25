@@ -3,11 +3,11 @@ import React from "react";
 import Pendahuluan from "./Pendahuluan";
 import Penutup from "./Penutup";
 
-const VokalI = () => {
+const KonsonanC = () => {
   return (
     <div className="dashboard-content-container text-base">
       <h1 className="text-title-sub-section font-bold text-primary-green">
-        Pengucapan Huruf Vokal I
+        Pengucapan Huruf Konsonan M
       </h1>
       <div id="pendahuluan">
         <h3 className="font-bold py-4  text-base-text">A. Pendahuluan</h3>
@@ -25,4 +25,4 @@ const VokalI = () => {
   );
 };
 
-export default VokalI;
+export default KonsonanC;

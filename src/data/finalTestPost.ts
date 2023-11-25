@@ -1,13 +1,13 @@
 const url = process.env.NEXT_PUBLIC_APP_LINK_API;
 
-interface FianlTestSubmitProps {
+interface FinalTestSubmitProps {
   id: number;
   username: string;
   final_test_score: number;
   lessons_name: string;
 }
 
-export const finalTestPost = async (payload: FianlTestSubmitProps) => {
+export const finalTestPost = async (payload: FinalTestSubmitProps) => {
   const response = await fetch(
     `${url}?action=finalTestSubmit&course=${payload.lessons_name}`,
     {

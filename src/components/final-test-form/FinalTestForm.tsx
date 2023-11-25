@@ -6,6 +6,7 @@ import clsx from "clsx";
 
 import { finalTestPost } from "@/data/finalTestPost";
 import { getLessonNamePostTest } from "@/helper/GetLessonsNameFromPathname";
+import { SaveScoreToSessionStorage } from "@/helper/SaveScoreToSessionStorage";
 
 import ConfirmationModal from "@/components/modal/ConfirmationModal";
 import Loading from "@/components/loading/Loading";
@@ -80,20 +81,20 @@ const FinalTest = () => {
     finalTestPost(payload)
       .then((res) => {
         setResponseSubmit(res);
+        SaveScoreToSessionStorage(payload.final_test_score, pathname);
+        // const studentScoreData = JSON.parse(
+        //   sessionStorage.getItem("student-score") as string
+        // );
 
-        const studentScoreData = JSON.parse(
-          sessionStorage.getItem("student-score") as string
-        );
-
-        sessionStorage.setItem(
-          "student-score",
-          JSON.stringify([
-            {
-              ...studentScoreData[0],
-              [payload.lessons_name]: payload.final_test_score,
-            },
-          ])
-        );
+        // sessionStorage.setItem(
+        //   "student-score",
+        //   JSON.stringify([
+        //     {
+        //       ...studentScoreData[0],
+        //       [payload.lessons_name]: payload.final_test_score,
+        //     },
+        //   ])
+        // );
       })
       .then(() => setIsLoading((loading) => !loading));
 

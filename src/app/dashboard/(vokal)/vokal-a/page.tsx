@@ -2,11 +2,12 @@ import React from "react";
 
 import Pendahuluan from "./Pendahuluan";
 import Penutup from "./Penutup";
+import Kegiatan from "./Kegiatan";
 
 const VokalA = () => {
   return (
     <div className="dashboard-content-container text-base">
-      <h1 className="text-title-sub-section font-bold">
+      <h1 className="text-title-sub-section font-bold text-primary-green">
         Pengucapan Huruf Vokal A
       </h1>
       <div id="pendahuluan">
@@ -15,7 +16,7 @@ const VokalA = () => {
       </div>
       <div id="kegiatan-inti">
         <h3 className="font-bold py-4 text-base-text">B. Kegiatan inti</h3>
-        <div className="paragraph-wrapper">...</div>
+        <Kegiatan />
       </div>
       <div id="penutup">
         <h3 className="font-bold py-4 text-base-text">C. Penutup</h3>
