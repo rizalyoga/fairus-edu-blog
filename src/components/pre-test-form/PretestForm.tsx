@@ -6,6 +6,7 @@ import clsx from "clsx";
 
 import { pretestPost } from "@/data/pretestPost";
 import { getLessonNamePretest } from "@/helper/GetLessonsNameFromPathname";
+import { SaveScoreToSessionStorage } from "@/helper/SaveScoreToSessionStorage";
 
 import Toast from "@/components/toast/Toast";
 import Loading from "@/components/loading/Loading";
@@ -88,6 +89,7 @@ const PretestForm = () => {
     pretestPost(payload)
       .then((res) => {
         setResponseSubmit(res!);
+        SaveScoreToSessionStorage(payload.pretest_score, pathname);
       })
       .then(() => setIsLoading((loading) => !loading))
       .then(() => setIsThereIsScore(totalScore));

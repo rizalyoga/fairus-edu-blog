@@ -3,6 +3,7 @@ import { usePathname } from "next/navigation";
 
 import ReactPlayer from "react-player";
 import ModalQuiz from "../modal/ModalQuiz";
+import Toast from "../toast/Toast";
 
 import { SaveScoreToSessionStorage } from "@/helper/SaveScoreToSessionStorage";
 import { quizTestPost } from "@/data/quizTestPost";
@@ -21,6 +22,7 @@ const VideoPlayer = ({
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isDomLoad, setIsDomLoad] = useState(false);
   const [studentScore, setStudentScore] = useState<number[]>([]);
+  const [responseSubmitQuiz, setResponseSubmitQuiz] = useState("");
 
   const handleTimeUpdate = (e: any) => {
     setCurrentTime(e.playedSeconds);
@@ -71,7 +73,7 @@ const VideoPlayer = ({
       quizTestPost(
         studentScore.reduce((a, b) => a + b, 0),
         pathname
-      );
+      ).then((res) => setResponseSubmitQuiz(res));
     }
   }, [studentScore, studentScore.length, pathname]);
 
@@ -119,6 +121,7 @@ const VideoPlayer = ({
         currentTime={currentTime}
         addScore={addScore}
       />
+      {responseSubmitQuiz && <Toast message={responseSubmitQuiz} />}
     </>
   );
 };
