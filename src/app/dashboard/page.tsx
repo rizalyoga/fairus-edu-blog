@@ -83,7 +83,7 @@ const Dashboard = () => {
           onChange={(e) => setStateContentDashboard(Number(e.target.value))}
         >
           <option className="text-base-text" value={0}>
-            All
+            Semua
           </option>
           <option className="text-base-text" value={1}>
             Pengenalan

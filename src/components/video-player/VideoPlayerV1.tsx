@@ -26,44 +26,41 @@ const VideoPlayer = ({
 
   const handleTimeUpdate = (e: VideoTimeInterface) => {
     setCurrentTime(e.playedSeconds);
-
-    // Check if there's a question at the current time
-    if (contentVideo) {
-      const currentQuestion = contentVideo.questions.find((question) => {
-        return (
-          currentTime >= question.second && currentTime <= question.second + 1
-        );
-      });
-
-      if (
-        currentQuestion &&
-        !isOpenModal &&
-        currentQuestion.id > studentScore.length
-      ) {
-        // Pause video automatically
-        if (videoRef.current) {
-          videoRef.current.seekTo(currentQuestion.second, "seconds");
-          videoRef.current.getInternalPlayer().pauseVideo();
-          setIsPlaying(false);
-        }
-
-        // Display modal with question from currentQuestion
-        setIsOpenModal(true);
-      }
-    }
   };
 
   const addScore = (point: number) => {
     setStudentScore((prevScores) => [...prevScores, point]);
   };
 
-  // Handle final score submission
   useEffect(() => {
     if (!isDomLoad) {
       setIsDomLoad(true);
     }
 
-    if (studentScore.length === 3) {
+    if (isDomLoad && contentVideo) {
+      const currentQuestion = contentVideo.questions.find((question) => {
+        return (
+          currentTime >= question.second && currentTime <= question.second + 1
+        );
+      });
+
+      if (currentQuestion?.id! > studentScore.length) {
+        // Pause video otomatis
+        if (videoRef.current) {
+          videoRef.current.seekTo(currentQuestion?.second!, "seconds");
+          videoRef.current.getInternalPlayer().pauseVideo();
+          setIsPlaying(false);
+        }
+
+        // Tampilkan modal dengan pertanyaan dari currentQuestion
+        setIsOpenModal(true);
+      }
+    }
+  }, [currentTime, isPlaying, contentVideo, studentScore, isDomLoad]);
+
+  // Function for save final score to session storage & database
+  useEffect(() => {
+    if (studentScore.length == 3) {
       SaveScoreToSessionStorage(
         studentScore.reduce((a, b) => a + b, 0),
         pathname
@@ -74,7 +71,7 @@ const VideoPlayer = ({
         pathname
       ).then((res) => setResponseSubmitQuiz(res));
     }
-  }, [studentScore, studentScore.length, pathname, isDomLoad]);
+  }, [studentScore, studentScore.length, pathname]);
 
   return (
     <>

@@ -2,6 +2,7 @@ import React from "react";
 
 import Pendahuluan from "./Pendahuluan";
 import Penutup from "./Penutup";
+import Kegiatan from "./Kegiatan";
 
 const VokalE = () => {
   return (
@@ -15,7 +16,7 @@ const VokalE = () => {
       </div>
       <div id="kegiatan-inti">
         <h3 className="font-bold py-4 text-base-text">B. Kegiatan inti</h3>
-        <div className="paragraph-wrapper">...</div>
+        <Kegiatan />
       </div>
       <div id="penutup">
         <h3 className="font-bold py-4 text-base-text">C. Penutup</h3>

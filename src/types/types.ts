@@ -50,10 +50,18 @@ export interface PrestestProps {
   score: number;
 }
 
+export interface VideoTimeInterface {
+  playedSeconds: number;
+  played: number;
+  loadedSeconds: number;
+  loaded: number;
+}
+
 export interface DataScoreInterface {
   id: number;
   username: string;
   pretest_score: number;
+  video_assesmen_score?: number | string;
   pengenalan_pretest?: number | string;
   pengenalan_post_test?: number | string;
   video_pembentuk_suara?: number | string;

@@ -1,31 +1,41 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
-import { finalTestPost } from "@/data/finalTestPost";
-import { getLessonNamePostTest } from "@/helper/GetLessonsNameFromPathname";
+import { pretestPost } from "@/data/pretestPost";
+import { getLessonNamePretest } from "@/helper/GetLessonsNameFromPathname";
 import { SaveScoreToSessionStorage } from "@/helper/SaveScoreToSessionStorage";
 
-import ConfirmationModal from "@/components/modal/ConfirmationModal";
-import Loading from "@/components/loading/Loading";
-import DataFinalTest from "@/data/final-test/vokal-a.json";
-import VokalAFinalTest from "@/data/final-test/vokal-a.json";
 import Toast from "@/components/toast/Toast";
+import Loading from "@/components/loading/Loading";
+import ConfirmationModal from "@/components/modal/ConfirmationModal";
+// import ScoreComponents from "./ScoreComponents";
+
+import ConsonantPretestQuestions from "@/data/pretest/ConsonantPretestQuestions.json";
 
 interface UserAnswers {
   [questionId: number]: string;
 }
 
-const FinalTest = () => {
+const PretestConsonantForm = () => {
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
   const [score, setScore] = useState<number>(0);
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [responseSubmit, setResponseSubmit] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isThereIsScore, setIsThereIsScore] = useState(-1);
+  const [responseSubmit, setResponseSubmit] = useState("");
 
   const pathname = usePathname();
+
+  useEffect(() => {
+    const dataStudentScore = JSON.parse(
+      sessionStorage.getItem("student-score") as string
+    );
+
+    setIsThereIsScore(dataStudentScore?.[0]?.pretest_score);
+  }, []);
 
   const handleAnswer = (questionId: number, selectedAnswer: string) => {
     setUserAnswers((prevAnswers) => ({
@@ -63,40 +73,27 @@ const FinalTest = () => {
     let totalScore = 0;
     const dataStudent = JSON.parse(sessionStorage.getItem("student") as string);
 
-    for (let i = 0; i < VokalAFinalTest.length; i++) {
-      if (userAnswers[i + 1] === VokalAFinalTest[i].answer) {
-        setScore((totalScore += VokalAFinalTest[i].score));
+    for (let i = 0; i < ConsonantPretestQuestions.length; i++) {
+      if (userAnswers[i + 1] === ConsonantPretestQuestions[i].answer) {
+        setScore((totalScore += ConsonantPretestQuestions[i].score));
       }
     }
-
-    const lessonsName = getLessonNamePostTest(pathname);
+    const lessonsName = getLessonNamePretest(pathname);
 
     const payload = {
       id: dataStudent?.id,
       username: dataStudent?.username,
-      final_test_score: totalScore,
+      pretest_score: totalScore,
       lessons_name: lessonsName,
     };
 
-    finalTestPost(payload)
+    pretestPost(payload)
       .then((res) => {
-        setResponseSubmit(res);
-        SaveScoreToSessionStorage(payload.final_test_score, pathname);
-        // const studentScoreData = JSON.parse(
-        //   sessionStorage.getItem("student-score") as string
-        // );
-
-        // sessionStorage.setItem(
-        //   "student-score",
-        //   JSON.stringify([
-        //     {
-        //       ...studentScoreData[0],
-        //       [payload.lessons_name]: payload.final_test_score,
-        //     },
-        //   ])
-        // );
+        setResponseSubmit(res!);
+        SaveScoreToSessionStorage(payload.pretest_score, pathname);
       })
-      .then(() => setIsLoading((loading) => !loading));
+      .then(() => setIsLoading((loading) => !loading))
+      .then(() => setIsThereIsScore(totalScore));
 
     isOpenModalHandler();
   };
@@ -104,6 +101,10 @@ const FinalTest = () => {
   if (isLoading) {
     return <Loading />;
   }
+
+  //   if (isThereIsScore > -1) {
+  //     return <ScoreComponents pretestScore={isThereIsScore} />;
+  //   }
 
   return (
     <>
@@ -116,14 +117,14 @@ const FinalTest = () => {
       />
       <div className="dashboard-content-container mb-4">
         <div className="flex justify-between">
-          <h2 className="text-xl font-bold mb-2">Post Test</h2>
+          <h2 className="text-xl font-bold mb-2">Pretest</h2>
           {score > 0 && (
             <p>
               Your Score: <span className="font-bold">{score}</span>
             </p>
           )}
         </div>
-        {DataFinalTest.map((question) => (
+        {ConsonantPretestQuestions.map((question) => (
           <div key={question.id} className="my-4">
             <span className="flex">
               <p>{question.id}.</p>
@@ -165,4 +166,4 @@ const FinalTest = () => {
   );
 };
 
-export default FinalTest;
+export default PretestConsonantForm;

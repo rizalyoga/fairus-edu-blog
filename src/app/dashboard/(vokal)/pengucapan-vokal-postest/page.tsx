@@ -1,11 +1,12 @@
 import React from "react";
-import FinalTestForm from "@/components/final-test-form/FinalTestForm";
+
+import FinalTestVokalForm from "@/components/final-test-form/FinalTestVokalForm";
 
 const VokalPosttest = () => {
   return (
     <div className="dashboard-content-container">
       <h1 className="font-bold">Pengucapan Huruf Vokal</h1>
-      <FinalTestForm />
+      <FinalTestVokalForm />
     </div>
   );
 };

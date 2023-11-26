@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "question": "Berikut yang merupakan huruf konsonan adalah ?",
+    "choices": ["E", "B", "U", "I"],
+    "answer": "B",
+    "score": 25
+  },
+  {
+    "id": 2,
+    "question": "Bagian tubuh yang digunakan untuk mendengar adalah ?",
+    "choices": ["Kulit", "Tangan", "Telinga", "Mulut"],
+    "answer": "Telinga",
+    "score": 25
+  },
+  {
+    "id": 3,
+    "question": "Fungsi utama kursi adalah ?",
+    "choices": ["Dilempar", "Rebahan", "Duduk", "Tidur"],
+    "answer": "Duduk",
+    "score": 25
+  },
+  {
+    "id": 4,
+    "question": "Berikut yang bukan huruf konsonan adalah ?",
+    "choices": ["J", "C", "A", "B"],
+    "answer": "A",
+    "score": 25
+  }
+]

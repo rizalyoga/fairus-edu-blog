@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "question": "Berikut yang merupakan materi belajar huruf konsonan adalah ?",
+    "choices": [
+      "Belajar pembentukan suara",
+      "Pelemasan organ dalam",
+      "Berlatih mengucapkan kata dengan huruf A",
+      "Berlatih mengucapkan kata dengan huruf J"
+    ],
+    "answer": "Berlatih mengucapkan kata dengan huruf J",
+    "score": 25
+  },
+  {
+    "id": 2,
+    "question": "Bagian tubuh yang digunakan untuk mengecap adalah ?",
+    "choices": ["Kulit", "Mulut", "Telinga", "Tangan"],
+    "answer": "Mulut",
+    "score": 25
+  },
+  {
+    "id": 3,
+    "question": "Alat yang fungsi utamanya untuk duduk adalah ?",
+    "choices": ["Kasur", "Kursi", "Gelas", "Meja"],
+    "answer": "Kursi",
+    "score": 25
+  },
+  {
+    "id": 4,
+    "question": "Berikut contoh kalimat yang munggunakan huruf konsonan B sebagai awalan kata adalah ?",
+    "choices": ["Besi", "Meja", "Pagar", "Jember"],
+    "answer": "Besi",
+    "score": 25
+  }
+]

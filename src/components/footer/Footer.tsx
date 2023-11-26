@@ -46,9 +46,12 @@ const Footer = () => {
             <Link href="/lessons" className="link link-hover">
               Pembelajaran
             </Link>
-            <Link href="/about" className="link link-hover">
-              Tentang kami
+            <Link href="/contact" className="link link-hover">
+              Kontak kami
             </Link>
+            {/* <Link href="/about" className="link link-hover">
+              Tentang kami
+            </Link> */}
 
             {/* <Link href="/contact" className="link link-hover">
               Kontak

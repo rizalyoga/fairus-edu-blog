@@ -21,14 +21,14 @@ export const routes = [
     icon: <BsPersonVideo3 className="-mt-1" />,
     submenu: [
       {
-        path: "/dashboard/pengantar",
-        icon: "",
-        name: "Pengantar",
-      },
-      {
         path: "/dashboard/pengenalan-pretest",
         icon: <SiPlausibleanalytics className="-mt-1" />,
         name: "Pretest",
+      },
+      {
+        path: "/dashboard/assesmen",
+        icon: "",
+        name: "Assesmen",
       },
       {
         path: "/dashboard/pernapasan",
@@ -45,11 +45,11 @@ export const routes = [
         icon: "",
         name: "Pembentuk Suara",
       },
-      {
-        path: "/dashboard/budek",
-        icon: "",
-        name: "Budek",
-      },
+      // {
+      //   path: "/dashboard/budek",
+      //   icon: "",
+      //   name: "Budek",
+      // },
       {
         path: "/dashboard/pengenalan-postest",
         icon: <SiPlausibleanalytics className="-mt-1" />,
@@ -71,27 +71,27 @@ export const routes = [
       {
         path: "/dashboard/vokal-a",
         icon: "",
-        name: "Pengucapan Vokal A",
+        name: "Vokal A",
       },
       {
         path: "/dashboard/vokal-i",
         icon: "",
-        name: "Pengucapan Vokal I",
+        name: "Vokal I",
       },
       {
         path: "/dashboard/vokal-u",
         icon: "",
-        name: "Pengucapan Vokal U",
+        name: "Vokal U",
       },
       {
         path: "/dashboard/vokal-e",
         icon: "",
-        name: "Pengucapan Vokal E",
+        name: "Vokal E",
       },
       {
         path: "/dashboard/vokal-o",
         icon: "",
-        name: "Pengucapan Vokal O",
+        name: "Vokal O",
       },
       {
         path: "/dashboard/pengucapan-vokal-postest",

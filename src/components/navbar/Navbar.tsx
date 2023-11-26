@@ -81,7 +81,7 @@ const Navbar = () => {
                 Pembelajaran
               </Link>
 
-              <Link
+              {/* <Link
                 href={"/about"}
                 className={clsx(
                   "cursor-pointer text-base-text",
@@ -92,9 +92,9 @@ const Navbar = () => {
                 )}
               >
                 Tentang
-              </Link>
+              </Link> */}
 
-              {/* <Link
+              <Link
                 href={"/contact"}
                 className={clsx(
                   "cursor-pointer text-base-text",
@@ -105,7 +105,7 @@ const Navbar = () => {
                 )}
               >
                 Kontak
-              </Link> */}
+              </Link>
             </div>
             <div className="navbar-end">
               <Link href={"/login"} className="hidden lg:flex">

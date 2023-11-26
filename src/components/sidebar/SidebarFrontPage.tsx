@@ -46,23 +46,23 @@ const SidebarFrontPage = ({ isOpen, onClose }: any) => {
             </Link>
           </li>
 
-          <li className="text-2xl py-2" onClick={onClose}>
+          {/* <li className="text-2xl py-2" onClick={onClose}>
             <Link
               href="/about"
               className={pathname == "/about" ? activeLinkStyle : ""}
             >
               Tentang Kami
             </Link>
-          </li>
+          </li> */}
 
-          {/* <li className="text-2xl py-2" onClick={onClose}>
+          <li className="text-2xl py-2" onClick={onClose}>
             <Link
               href="/contact"
               className={pathname == "/contact" ? activeLinkStyle : ""}
             >
-              Contact
+              Kontak kami
             </Link>
-          </li> */}
+          </li>
 
           <li className="text-2xl py-2" onClick={onClose}>
             <Link

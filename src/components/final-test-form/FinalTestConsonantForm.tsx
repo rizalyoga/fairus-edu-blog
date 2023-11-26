@@ -1,40 +1,31 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
-import { pretestPost } from "@/data/pretestPost";
-import { getLessonNamePretest } from "@/helper/GetLessonsNameFromPathname";
+import { finalTestPost } from "@/data/finalTestPost";
+import { getLessonNamePostTest } from "@/helper/GetLessonsNameFromPathname";
 import { SaveScoreToSessionStorage } from "@/helper/SaveScoreToSessionStorage";
 
-import Toast from "@/components/toast/Toast";
-import Loading from "@/components/loading/Loading";
 import ConfirmationModal from "@/components/modal/ConfirmationModal";
-import QuizData from "@/data/pretest/budek.json";
-import ScoreComponents from "./ScoreComponents";
+import Loading from "@/components/loading/Loading";
+import Toast from "@/components/toast/Toast";
+
+import ConsonantPostTestQuestoins from "@/data/final-test/ConsonantPostTestQuestions.json";
 
 interface UserAnswers {
   [questionId: number]: string;
 }
 
-const PretestForm = () => {
+const FinalTestConsonantForm = () => {
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
   const [score, setScore] = useState<number>(0);
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isThereIsScore, setIsThereIsScore] = useState(-1);
   const [responseSubmit, setResponseSubmit] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const pathname = usePathname();
-
-  useEffect(() => {
-    const dataStudentScore = JSON.parse(
-      sessionStorage.getItem("student-score") as string
-    );
-
-    setIsThereIsScore(dataStudentScore?.[0]?.pretest_score);
-  }, []);
 
   const handleAnswer = (questionId: number, selectedAnswer: string) => {
     setUserAnswers((prevAnswers) => ({
@@ -72,27 +63,27 @@ const PretestForm = () => {
     let totalScore = 0;
     const dataStudent = JSON.parse(sessionStorage.getItem("student") as string);
 
-    for (let i = 0; i < QuizData.length; i++) {
-      if (userAnswers[i + 1] === QuizData[i].answer) {
-        setScore((totalScore += QuizData[i].score));
+    for (let i = 0; i < ConsonantPostTestQuestoins.length; i++) {
+      if (userAnswers[i + 1] === ConsonantPostTestQuestoins[i].answer) {
+        setScore((totalScore += ConsonantPostTestQuestoins[i].score));
       }
     }
-    const lessonsName = getLessonNamePretest(pathname);
+
+    const lessonsName = getLessonNamePostTest(pathname);
 
     const payload = {
       id: dataStudent?.id,
       username: dataStudent?.username,
-      pretest_score: totalScore,
+      final_test_score: totalScore,
       lessons_name: lessonsName,
     };
 
-    pretestPost(payload)
+    finalTestPost(payload)
       .then((res) => {
-        setResponseSubmit(res!);
-        SaveScoreToSessionStorage(payload.pretest_score, pathname);
+        setResponseSubmit(res);
+        SaveScoreToSessionStorage(payload.final_test_score, pathname);
       })
-      .then(() => setIsLoading((loading) => !loading))
-      .then(() => setIsThereIsScore(totalScore));
+      .then(() => setIsLoading((loading) => !loading));
 
     isOpenModalHandler();
   };
@@ -100,10 +91,6 @@ const PretestForm = () => {
   if (isLoading) {
     return <Loading />;
   }
-
-  //   if (isThereIsScore > -1) {
-  //     return <ScoreComponents pretestScore={isThereIsScore} />;
-  //   }
 
   return (
     <>
@@ -116,14 +103,14 @@ const PretestForm = () => {
       />
       <div className="dashboard-content-container mb-4">
         <div className="flex justify-between">
-          <h2 className="text-xl font-bold mb-2">Pretest</h2>
+          <h2 className="text-xl font-bold mb-2">Post Test</h2>
           {score > 0 && (
             <p>
               Your Score: <span className="font-bold">{score}</span>
             </p>
           )}
         </div>
-        {QuizData.map((question) => (
+        {ConsonantPostTestQuestoins.map((question) => (
           <div key={question.id} className="my-4">
             <span className="flex">
               <p>{question.id}.</p>
@@ -165,4 +152,4 @@ const PretestForm = () => {
   );
 };
 
-export default PretestForm;
+export default FinalTestConsonantForm;

@@ -34,7 +34,7 @@ export const quizTestPost = async (
   );
 
   if (response.ok) {
-    return `Hasil final test anda adalah ${studentQuizScore} poin dan telah berhasil disimpan`;
+    return `Hasil quiz tes anda adalah ${studentQuizScore} poin dan telah berhasil disimpan`;
   } else {
     return "Maaf terjadi kesalahan dalam proses menyimpan data. Silahkan coba lagi.";
   }
