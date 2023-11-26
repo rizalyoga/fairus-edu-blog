@@ -214,7 +214,7 @@ const Register = () => {
                   "hover:bg-slate-500"
                 )}
                 type="submit"
-                value="Register"
+                value="Registrasi"
               />
             )}
           </form>
@@ -226,7 +226,7 @@ const Register = () => {
           <p className="text-base text-secondary-text mt-5">
             Sudah mempunyai akun ?
             <span className="text-primary-cyan hover:underline cursor-pointer">
-              <Link href="/login">{" Login"}</Link>
+              <Link href="/login">{" Masuk"}</Link>
             </span>
           </p>
         </div>
