@@ -4,7 +4,13 @@ const Penutup = () => {
   return (
     <div className="paragraph-wrapper">
       <p>Form Assesmen</p>
-      <p>Download</p>
+      <a
+        href="https://docs.google.com/document/d/1euFiXuvsbXvlJjLS8i5osIxKI-YKzhSPOm1UTmBOKF8/edit?usp=sharing"
+        target="_blank"
+        className="text-blue-500 hover:underline"
+      >
+        Download
+      </a>
       <p>Ringkasan</p>
       <br />
       <ul className="list-decimal-style ">

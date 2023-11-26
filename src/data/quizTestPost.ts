@@ -18,6 +18,9 @@ export const quizTestPost = async (
   const studentQuizScore = finalScore(quiz_test_score);
   const studentData = JSON.parse(sessionStorage.getItem("student") as string);
 
+  console.log(pathname);
+  console.log(lessons_name);
+
   const newData = {
     id: studentData.id,
     username: studentData.username,
@@ -34,7 +37,7 @@ export const quizTestPost = async (
   );
 
   if (response.ok) {
-    return `Hasil final test anda adalah ${studentQuizScore} poin dan telah berhasil disimpan`;
+    return `Hasil quiz tes anda adalah ${studentQuizScore} poin dan telah berhasil disimpan`;
   } else {
     return "Maaf terjadi kesalahan dalam proses menyimpan data. Silahkan coba lagi.";
   }

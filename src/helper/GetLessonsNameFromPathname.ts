@@ -26,6 +26,8 @@ export const getLessonNamePostTest = (pathname: string) => {
 
 export const getLessonNameVideoQuiz = (pathname: string) => {
   switch (pathname) {
+    case "/dashboard/assesmen":
+      return "video_assesmen_score";
     case "/dashboard/pernapasan":
       return "video_pernapasan";
     case "/dashboard/pembentuk-suara":

@@ -48,9 +48,9 @@ const Login = () => {
             "student",
             JSON.stringify({ ...eWithoutPassword, token: `token${new Date()}` })
           );
-          setTimeout(() => {
-            router.push("/dashboard");
-          }, 2000);
+          router.push("/dashboard");
+          // setTimeout(() => {
+          // }, 2000);
         } else {
           setLoginMessage("Mohon periksa kembali username atau password anda");
         }

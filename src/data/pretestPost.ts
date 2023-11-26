@@ -14,7 +14,7 @@ export const pretestPost = async (payload: PretestSubmitProps) => {
   });
 
   if (response.ok) {
-    return "Hasil pretest anda telah berhasil disimpan.";
+    return `Hasil pretest anda mendapat ${payload.pretest_score} poin, dan telah berhasil disimpan.`;
   } else {
     return "Maaf terjadi kesalahan. Silahkan coba lagi.";
   }

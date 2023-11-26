@@ -16,10 +16,11 @@ const LessonsPage = () => {
           Pembelajaran
         </h1>
         <p className="text-center text-base-text pb-10 md:w-[80%]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-          consectetur nibh sed facilisis efficitur. Nam fringilla imperdiet
-          feugiat. Mauris facilisis diam nulla. Nam fringilla imperdiet feugiat.
-          Mauris facilisis diam nulla. Nam fringilla imperdiet feugiat.
+          Pembelajaran bina bicara meliputi assesmen awal, latihan pernapasan,
+          pelemasan organ bicara untuk artikulasi yang jelas, teknik pembentukan
+          suara yang resonan, pengucapan huruf vokal dan konsonan. Materi ini
+          dirancang untuk meningkatkan kemampuan berbicara secara menyeluruh dan
+          simak video panduan untuk mengakses materi tersebut.
         </p>
 
         {isDomLoad && (
@@ -38,52 +39,54 @@ const LessonsPage = () => {
         )}
 
         <h4 className="text-center font-bold text-3xl">
-          The steps to start class
+          Langkah - langkah untuk memulai pembelajaran
         </h4>
 
         <div className="grid gap-6 py-10 sm:grid-cols-2">
           <span>
             <h4 className="font-bold text-primary-green text-xl">
-              1 – Register Account
+              1 – Mendaftar akun
             </h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-              provident quia omnis nam recusandae dolorum. Deleniti saepe cumque
-              omnis magnam, rem neque, accusamus possimus ullam, asperiores
-              facere molestias nemo similique?
+              Lakukan registrasi apabila belum memiliki akun. Proses ini
+              melibatkan pengisian data diri seperti nama, email dan pembuatan
+              kata sandi. Pastikan semua informasi diisi dengan benar untuk
+              memudahkan verifikasi dan akses ke semua fitur website.
             </p>
           </span>
           <span>
             <h4 className="font-bold text-primary-green text-xl">
-              2 – Do The Pretest
+              2 – Mengerjakan pretes
             </h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-              provident quia omnis nam recusandae dolorum. Deleniti saepe cumque
-              omnis magnam, rem neque, accusamus possimus ullam, asperiores
-              facere molestias nemo similique?
+              Sebelum memulai pembelajaran, lakukan pretest untuk mengetahui
+              tingkat pemahaman awal Anda tentang materi. Pretest ini penting
+              untuk menyesuaikan konten pembelajaran agar sesuai dengan
+              kebutuhan dan kemampuan Anda.
             </p>
           </span>
           <span>
             <h4 className="font-bold text-primary-green text-xl">
-              3 – Learn from the videos that are available
+              3 – Belajar dari video yang tersedia
             </h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-              provident quia omnis nam recusandae dolorum. Deleniti saepe cumque
-              omnis magnam, rem neque, accusamus possimus ullam, asperiores
-              facere molestias nemo similique?
+              Ada tiga menu pembelajaran utama. Pertama, &apos;Pengenalan&apos;
+              yang berisi materi pengantar, pembentukan suara, pernapasan, dan
+              organ bicara. Penting untuk mengikuti setiap video pembelajaran
+              secara berurutan untuk memahami materi dengan lengkap. Materi ini
+              disajikan dalam format video yang interaktif dan mudah dipahami.
             </p>
           </span>
           <span>
             <h4 className="font-bold text-primary-green text-xl">
-              4 – Do The Quiz And Final Test
+              4 – Mengerjakan kuis dan posttes
             </h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-              provident quia omnis nam recusandae dolorum. Deleniti saepe cumque
-              omnis magnam, rem neque, accusamus possimus ullam, asperiores
-              facere molestias nemo similique?
+              Setelah menyelesaikan semua materi, ikuti kuis dan post-test yang
+              tersedia. Tes ini bertujuan untuk mengevaluasi pemahaman Anda atas
+              materi yang telah dipelajari. Hasil dari tes ini akan membantu
+              menentukan sejauh mana kemajuan belajar Anda dan area mana yang
+              perlu peningkatan.
             </p>
           </span>
         </div>

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "question": "Apa nama ibu kota Malaysia ?",
+    "choices": ["Jakarta", "Kuala lumpur", "Malang", "Yogyakarta"],
+    "answer": "Kuala lumpur",
+    "score": 25
+  },
+  {
+    "id": 2,
+    "question": "Bagian tubuh yang digunakan untuk mendengar adalah ?",
+    "choices": ["Kulit", "Tangan", "Telinga", "Mulut"],
+    "answer": "Telinga",
+    "score": 25
+  },
+  {
+    "id": 3,
+    "question": "Fungsi utama kursi adalah ?",
+    "choices": ["Dilempar", "Rebahan", "Duduk", "Tidur"],
+    "answer": "Duduk",
+    "score": 25
+  },
+  {
+    "id": 4,
+    "question": "Jika kita lelah, maka kita harus ?",
+    "choices": ["Minum", "Marah", "Tidur", "Mancing"],
+    "answer": "Tidur",
+    "score": 25
+  }
+]

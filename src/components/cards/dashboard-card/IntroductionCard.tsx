@@ -36,6 +36,23 @@ const IntroductionCard = ({
           </span>
         </div>
 
+        {/* ASSESMEN */}
+        <div className="dashboard-card-container">
+          <h1 className="font-bold text-title-sub-section text-center">
+            Assesmen
+          </h1>
+          <span className="w-full mt-4 flex flex-col justify-center items-center font-bold">
+            <span className="py-4 w-full h-full text-center flex flex-col justify-center items-center">
+              <h3 className="font-bold text-xl mb-6">Nilai Kuis Video :</h3>
+              <h1 className="font-bold text-8xl text-center">
+                {studentScore?.video_assesmen_score
+                  ? studentScore?.video_assesmen_score
+                  : 0}
+              </h1>
+            </span>
+          </span>
+        </div>
+
         {/* PEMBENTUK SUARA */}
         <div className="dashboard-card-container">
           <h1 className="font-bold text-title-sub-section text-center">

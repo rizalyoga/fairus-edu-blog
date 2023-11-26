@@ -11,14 +11,15 @@ import { SaveScoreToSessionStorage } from "@/helper/SaveScoreToSessionStorage";
 import Toast from "@/components/toast/Toast";
 import Loading from "@/components/loading/Loading";
 import ConfirmationModal from "@/components/modal/ConfirmationModal";
-import QuizData from "@/data/pretest/budek.json";
-import ScoreComponents from "./ScoreComponents";
+// import ScoreComponents from "./ScoreComponents";
+
+import IntroPretestQuestions from "@/data/pretest/IntroPretestQuestions.json";
 
 interface UserAnswers {
   [questionId: number]: string;
 }
 
-const PretestForm = () => {
+const PretestIntroForm = () => {
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
   const [score, setScore] = useState<number>(0);
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -72,9 +73,9 @@ const PretestForm = () => {
     let totalScore = 0;
     const dataStudent = JSON.parse(sessionStorage.getItem("student") as string);
 
-    for (let i = 0; i < QuizData.length; i++) {
-      if (userAnswers[i + 1] === QuizData[i].answer) {
-        setScore((totalScore += QuizData[i].score));
+    for (let i = 0; i < IntroPretestQuestions.length; i++) {
+      if (userAnswers[i + 1] === IntroPretestQuestions[i].answer) {
+        setScore((totalScore += IntroPretestQuestions[i].score));
       }
     }
     const lessonsName = getLessonNamePretest(pathname);
@@ -123,7 +124,7 @@ const PretestForm = () => {
             </p>
           )}
         </div>
-        {QuizData.map((question) => (
+        {IntroPretestQuestions.map((question) => (
           <div key={question.id} className="my-4">
             <span className="flex">
               <p>{question.id}.</p>
@@ -165,4 +166,4 @@ const PretestForm = () => {
   );
 };
 
-export default PretestForm;
+export default PretestIntroForm;

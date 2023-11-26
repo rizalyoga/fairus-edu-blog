@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
 import { QuestionVideoType } from "@/types/types";
 import clsx from "clsx";
 
 interface ModalQuizProps {
   isOpen: boolean;
-  closeModal: () => void;
-  setContinuePlayVideo: () => void;
   questions: QuestionVideoType[] | undefined;
   currentTime: number;
   addScore: (score: number) => void;
+  setIsPlaying: Dispatch<SetStateAction<boolean>>;
+  setIsOpenModal: Dispatch<SetStateAction<boolean>>;
 }
 
 const ModalQuiz = ({
   isOpen,
-  closeModal,
-  setContinuePlayVideo,
   questions,
   currentTime,
   addScore,
+  setIsPlaying,
+  setIsOpenModal,
 }: ModalQuizProps) => {
   const [questionData, setQuestionData] = useState<
     QuestionVideoType[] | undefined
@@ -46,8 +46,8 @@ const ModalQuiz = ({
       addScore(0);
     }
 
-    closeModal();
-    setContinuePlayVideo();
+    setIsPlaying(true);
+    setIsOpenModal(false);
   };
 
   return (
