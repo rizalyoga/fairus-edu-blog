@@ -6,68 +6,88 @@ export const VideoQuestion = [
     questions: [
       {
         id: 1,
-        second: 3,
+        second: 150,
         question:
-          "di bawah ini yang merupakan teknik umum dalam melatih pengucapan vokal-a adalah ?",
+          "Apa tujuan dari melakukan assessment sebelum memulai terapi bicara atau Bina Bicara?",
         choices: [
-          "Mulut Terbuka: Pertama-tama, mulailah dengan membuka mulut Anda lebar. Pastikan bibir Anda tidak terlalu merapatkan, sehingga ada cukup ruang untuk suara keluar.",
-          "Orang tua mampu melatih pengucapan vocal /a/ di awal, tengah, dan akhir pada anak sesuai dengan petunjuk.",
-          "Rasakan Getaran: Anak-anak diajak untuk merasakan getaran di leher saat mengucapkan 'a'.",
+          "Untuk mengetahui permasalahan atau kesulitan pada masing-masing anak dalam berbicara",
+          "Untuk menguji kekuatan suara anak",
+          "Untuk menilai kemampuan anak dalam membaca",
         ],
         trueAnswer:
-          "Mulut Terbuka: Pertama-tama, mulailah dengan membuka mulut Anda lebar. Pastikan bibir Anda tidak terlalu merapatkan, sehingga ada cukup ruang untuk suara keluar.",
+          "Untuk mengetahui permasalahan atau kesulitan pada masing-masing anak dalam berbicara",
         point: 35,
       },
       {
         id: 2,
-        second: 6,
-        question: "url ini adalah ?",
-        choices: ["vokal-a", "vokal-c", "vokal-d"],
-        trueAnswer: "vokal-a",
+        second: 442,
+        question:
+          "Kelainan organ bicara apa yang menyebabkan kesulitan berbicara karena hasil bicaranya akan sengau dan tidak jelas?",
+        choices: [
+          "Kelainan organ lidah pendek",
+          "Kelainan organ langit-langit bercelah",
+          "Kelainan organ gigi rangkap",
+        ],
+        trueAnswer: "Kelainan organ langit-langit bercelah",
         point: 35,
       },
       {
         id: 3,
-        second: 9,
-        question: "Apa warna baju anak di video ?",
-        choices: ["hitam", "hijau", "abu-abu"],
-        trueAnswer: "hijau",
+        second: 612,
+        question: "Apa fungsi dari cermin dalam terapi bicara?",
+        choices: [
+          "Sebagai alat umpan balik antara speech therapist dan anak",
+          "Untuk melatih anak mengucapkan konsonan",
+          "Sebagai alat untuk menguji pendengaran anak",
+        ],
+        trueAnswer: "Sebagai alat umpan balik antara speech therapist dan anak",
         point: 35,
       },
     ],
   },
   {
     path: "pernapasan",
-    videoUrl: "https://youtu.be/QBRM4u4xj0Q",
+    videoUrl: "https://youtu.be/E6Nd4x1pMu8",
     questions: [
       {
         id: 1,
-        second: 3,
+        second: 367,
         question:
-          "di bawah ini yang merupakan teknik umum dalam melatih pengucapan vokal-a adalah ?",
+          "Teknik apa yang ditunjukkan dalam video untuk melatih pernafasan dada?",
         choices: [
-          "Mulut Terbuka: Pertama-tama, mulailah dengan membuka mulut Anda lebar. Pastikan bibir Anda tidak terlalu merapatkan, sehingga ada cukup ruang untuk suara keluar.",
-          "Orang tua mampu melatih pengucapan vocal /a/ di awal, tengah, dan akhir pada anak sesuai dengan petunjuk.",
-          "Rasakan Getaran: Anak-anak diajak untuk merasakan getaran di leher saat mengucapkan 'a'.",
+          "Menaruh tangan di belakang kepala dan bernapas secara perlahan",
+          "Membusungkan perut saat menghirup udara",
+          "Menghirup dan menghembuskan udara dengan posisi dada mengembang dan mengempis",
         ],
         trueAnswer:
-          "Mulut Terbuka: Pertama-tama, mulailah dengan membuka mulut Anda lebar. Pastikan bibir Anda tidak terlalu merapatkan, sehingga ada cukup ruang untuk suara keluar.",
+          "Menghirup dan menghembuskan udara dengan posisi dada mengembang dan mengempis",
         point: 35,
       },
       {
         id: 2,
-        second: 6,
-        question: "url ini adalah ?",
-        choices: ["vokal-a", "vokal-c", "vokal-d"],
-        trueAnswer: "vokal-a",
+        second: 675,
+        question:
+          "Apa saja jenis-jenis pernafasan yang dijelaskan dalam video?",
+        choices: [
+          "Pernafasan bahu, pernafasan dada, pernafasan perut, dan pernafasan sisi",
+          "Pernafasan dada, pernafasan perut, pernafasan diafragma, dan pernafasan punggung",
+          "Pernafasan atas, pernafasan tengah, pernafasan bawah, dan pernafasan lengkap",
+        ],
+        trueAnswer:
+          "Pernafasan bahu, pernafasan dada, pernafasan perut, dan pernafasan sisi",
         point: 35,
       },
       {
         id: 3,
-        second: 9,
-        question: "Apa warna baju anak di video ?",
-        choices: ["hitam", "hijau", "abu-abu"],
-        trueAnswer: "hijau",
+        second: 1175,
+        question:
+          "Latihan apa yang ditunjukkan dalam video untuk membantu anak mengucapkan konsonan 's'?",
+        choices: [
+          "Meniup gelembung sabun",
+          "Meniup melalui hidung",
+          "Meniup melesit",
+        ],
+        trueAnswer: "Meniup melesit",
         point: 35,
       },
     ],
@@ -78,32 +98,38 @@ export const VideoQuestion = [
     questions: [
       {
         id: 1,
-        second: 3,
+        second: 198,
         question:
-          "di bawah ini yang merupakan teknik umum dalam melatih pengucapan vokal-a adalah ?",
+          "Apa tujuan dari latihan pelemasan organ bicara bibir yang ditunjukkan dalam video?",
         choices: [
-          "Mulut Terbuka: Pertama-tama, mulailah dengan membuka mulut Anda lebar. Pastikan bibir Anda tidak terlalu merapatkan, sehingga ada cukup ruang untuk suara keluar.",
-          "Orang tua mampu melatih pengucapan vocal /a/ di awal, tengah, dan akhir pada anak sesuai dengan petunjuk.",
-          "Rasakan Getaran: Anak-anak diajak untuk merasakan getaran di leher saat mengucapkan 'a'.",
+          "Untuk melatih anak mengucapkan konsonan labiodental",
+          "Untuk melatih anak mengucapkan konsonan bilabial seperti 'b', 'p', 'm'",
+          "Untuk melatih anak mengucapkan vokal seperti 'a', 'e', 'i', 'o', 'u'",
         ],
         trueAnswer:
-          "Mulut Terbuka: Pertama-tama, mulailah dengan membuka mulut Anda lebar. Pastikan bibir Anda tidak terlalu merapatkan, sehingga ada cukup ruang untuk suara keluar.",
+          "Untuk melatih anak mengucapkan konsonan bilabial seperti 'b', 'p', 'm'",
         point: 35,
       },
       {
         id: 2,
-        second: 6,
-        question: "url ini adalah ?",
-        choices: ["vokal-a", "vokal-c", "vokal-d"],
-        trueAnswer: "vokal-a",
+        second: 310,
+        question:
+          "Latihan pelemasan organ bicara lidah dalam video ini bertujuan untuk membantu anak-anak mengucapkan konsonan:",
+        choices: [
+          "Bilabial seperti 'b', 'p', 'm'",
+          "Labiodental seperti 'l', 'n'. ‘t’. ‘d’",
+          "Vokal seperti 'a', 'e', 'i', 'o', 'u'",
+        ],
+        trueAnswer: "Labiodental seperti 'l', 'n'. ‘t’. ‘d’",
         point: 35,
       },
       {
         id: 3,
-        second: 9,
-        question: "Apa warna baju anak di video ?",
-        choices: ["hitam", "hijau", "abu-abu"],
-        trueAnswer: "hijau",
+        second: 390,
+        question:
+          "Untuk membantu anak mengucapkan vokal 'a', 'e', 'i', 'o', 'u' dengan benar, latihan organ bicara apa yang diperlukan?",
+        choices: ["Lidah", "Bibir", "Rahang"],
+        trueAnswer: "Rahang",
         point: 35,
       },
     ],
@@ -114,32 +140,42 @@ export const VideoQuestion = [
     questions: [
       {
         id: 1,
-        second: 3,
+        second: 210,
         question:
-          "di bawah ini yang merupakan teknik umum dalam melatih pengucapan vokal-a adalah ?",
+          "Dalam video, proses pembentukan suara dijelaskan sebagai getaran pita suara yang disebabkan oleh udara dari paru-paru. Ge lombang suara ini kemudian melewati:",
         choices: [
-          "Mulut Terbuka: Pertama-tama, mulailah dengan membuka mulut Anda lebar. Pastikan bibir Anda tidak terlalu merapatkan, sehingga ada cukup ruang untuk suara keluar.",
-          "Orang tua mampu melatih pengucapan vocal /a/ di awal, tengah, dan akhir pada anak sesuai dengan petunjuk.",
-          "Rasakan Getaran: Anak-anak diajak untuk merasakan getaran di leher saat mengucapkan 'a'.",
+          "Lorong faring menuju ke lorong hidung dan mulut",
+          "Otot-otot pernafasan dan diafragma",
+          "Sistem saraf pusat dan otak",
         ],
-        trueAnswer:
-          "Mulut Terbuka: Pertama-tama, mulailah dengan membuka mulut Anda lebar. Pastikan bibir Anda tidak terlalu merapatkan, sehingga ada cukup ruang untuk suara keluar.",
+        trueAnswer: "Lorong faring menuju ke lorong hidung dan mulut",
         point: 35,
       },
       {
         id: 2,
-        second: 6,
-        question: "url ini adalah ?",
-        choices: ["vokal-a", "vokal-c", "vokal-d"],
-        trueAnswer: "vokal-a",
+        second: 272,
+        question:
+          "Untuk melatih pembentukan suara secara formal, video menyarankan untuk:",
+        choices: [
+          "Melakukan percakapan sederhana",
+          "Bernyanyi dengan suara keras",
+          "Membaca teks dengan cepat",
+        ],
+        trueAnswer: "Melakukan percakapan sederhana",
         point: 35,
       },
       {
         id: 3,
-        second: 9,
-        question: "Apa warna baju anak di video ?",
-        choices: ["hitam", "hijau", "abu-abu"],
-        trueAnswer: "hijau",
+        second: 302,
+        question:
+          "Apa tujuan dari latihan pembentukan suara yang melibatkan merasakan getaran pada dada atau leher? ",
+        choices: [
+          "Untuk menguatkan otot-otot pernafasan",
+          "Untuk membantu anak-anak memahami bagaimana suara dihasilkan",
+          "Untuk meningkatkan volume suara",
+        ],
+        trueAnswer:
+          "Untuk membantu anak-anak memahami bagaimana suara dihasilkan",
         point: 35,
       },
     ],
@@ -322,7 +358,7 @@ export const VideoQuestion = [
   // KONSONAN
   {
     path: "konsonan-b",
-    videoUrl: "",
+    videoUrl: "https://youtu.be/pc5OHdAiMSE",
     questions: [
       {
         id: 1,
@@ -466,7 +502,7 @@ export const VideoQuestion = [
   },
   {
     path: "konsonan-k",
-    videoUrl: "",
+    videoUrl: "https://youtu.be/G-eW_3IHGpU",
     questions: [
       {
         id: 1,
@@ -538,7 +574,7 @@ export const VideoQuestion = [
   },
   {
     path: "konsonan-n",
-    videoUrl: "",
+    videoUrl: "https://youtu.be/tDIqHYUSsok",
     questions: [
       {
         id: 1,
@@ -610,7 +646,7 @@ export const VideoQuestion = [
   },
   {
     path: "konsonan-s",
-    videoUrl: "",
+    videoUrl: "https://youtu.be/vqfbBfMrIi8",
     questions: [
       {
         id: 1,
@@ -646,7 +682,7 @@ export const VideoQuestion = [
   },
   {
     path: "konsonan-t",
-    videoUrl: "",
+    videoUrl: "https://youtu.be/l_AAZpNoiKE",
     questions: [
       {
         id: 1,

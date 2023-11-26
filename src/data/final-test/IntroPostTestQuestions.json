@@ -1,40 +1,122 @@
 [
   {
     "id": 1,
-    "question": "Berikut yang bukan materi pengenalan adalah ?",
+    "question": "Dalam proses pembentukan suara, getaran pita suara yang disebabkan oleh udara dari paru-paru kemudian dimodifikasi oleh alat artikulasi. Alat artikulasi utama yang terlibat dalam proses ini adalah: ",
     "choices": [
-      "Belajar pembentukan suara",
-      "Pelemasan organ dalam",
-      "Berlatih mengucapkan kata dengan huruf vokal A",
-      "Belajar pernapasan"
+      "Lidah, bibir, dan gigi",
+      "Paru-paru, trakea, dan bronkus",
+      "Pita suara, faring, dan epiglotis",
+      "Rongga hidung, faring, dan mulut"
     ],
-    "answer": "Berlatih mengucapkan kata dengan huruf vokal A",
-    "score": 25
+    "answer": "Lidah, bibir, dan gigi",
+    "score": 10
   },
   {
     "id": 2,
-    "question": "Bagian tubuh yang digunakan untuk mengecap adalah ?",
-    "choices": ["Kulit", "Mulut", "Telinga", "Tangan"],
-    "answer": "Mulut",
-    "score": 25
+    "question": "Tujuan utama dari pelatihan pernafasan dada adalah:",
+    "choices": [
+      "Mengembangkan paru-paru bagian atas",
+      "Menguatkan otot-otot perut",
+      "Mengatur turunnya tulang rusuk",
+      "Melatih kedua sisi paru-paru"
+    ],
+    "answer": "Mengatur turunnya tulang rusuk",
+    "score": 10
   },
   {
     "id": 3,
-    "question": "Alat yang fungsi utamanya untuk duduk adalah ?",
-    "choices": ["Kasur", "Kursi", "Gelas", "Meja"],
-    "answer": "Kursi",
-    "score": 25
+    "question": "Latihan organ bicara bibir bertujuan untuk membantu anak-anak mengucapkan konsonan:",
+    "choices": [
+      "Bilabial seperti 'p', 'b', dan 'm'",
+      "Biodental seperti 't' dan 'd'",
+      "Velar seperti 'k' dan 'g'",
+      "Alveolar seperti 's' dan 'z'"
+    ],
+    "answer": "Bilabial seperti 'p', 'b', dan 'm'",
+    "score": 10
   },
   {
     "id": 4,
-    "question": "Berikut yang merupakan materi pengenalan adalah  ?",
+    "question": "Apa tujuan utama dari treatment dalam program terapi bicara 'Bina Bicara'?",
     "choices": [
-      "Belajar mengucapkan huruf E",
-      "Belajar pernapasan",
-      "Berlatih mengucapkan kata dengan huruf vokal",
-      "Belajar pengucapan huruf J"
+      "Untuk memahami bagaimana bunyi dihasilkan",
+      "Untuk mengidentifikasi kata-kata yang sulit diucapkan",
+      "Untuk mengembangkan dasar ucapan yang benar",
+      "Untuk membedakan antara ucapan yang berbeda"
     ],
-    "answer": "Belajar pernapasan",
-    "score": 25
+    "answer": "Untuk mengembangkan dasar ucapan yang benar",
+    "score": 10
+  },
+  {
+    "id": 5,
+    "question": "Apa tujuan utama dari penilaian (assessment) dalam program 'Bina Bicara' untuk anak-anak dengan hambatan pendengaran? ",
+    "choices": [
+      "Mengembangkan dasar ucapan yang benar",
+      "Membentuk bunyi bahasa",
+      "Mengidentifikasi kata-kata yang dapat atau tidak dapat diucapkan dengan baik oleh anak ",
+      "Membedakan antara ucapan yang berbeda"
+    ],
+    "answer": "Mengidentifikasi kata-kata yang dapat atau tidak dapat diucapkan dengan baik oleh anak ",
+    "score": 10
+  },
+  {
+    "id": 6,
+    "question": "Apa manfaat utama dari pelatihan pernafasan bahu?",
+    "choices": [
+      "Mengembangkan paru-paru bagian atas",
+      "Menguatkan otot-otot perut",
+      "Mengatur turunnya tulang rusuk",
+      "Melatih kedua sisi paru-paru"
+    ],
+    "answer": "Mengembangkan paru-paru bagian atas",
+    "score": 10
+  },
+  {
+    "id": 7,
+    "question": "Tujuan utama dari latihan organ bicara lidah adalah untuk membantu anak-anak mengucapkan konsonan:",
+    "choices": [
+      "Bilabial seperti 'p', 'b', dan 'm'",
+      "Biodental seperti 't' dan 'd'",
+      "Velar seperti 'k' dan 'g'",
+      "Alveolar seperti 's' dan 'z'"
+    ],
+    "answer": "Biodental seperti 't' dan 'd'",
+    "score": 10
+  },
+  {
+    "id": 8,
+    "question": "Dalam program 'Bina Bicara', mengapa penting untuk mengenali organ bicara seperti bibir, rahang, lidah, langit-langit keras dan lunak, serta uvula? ",
+    "choices": [
+      "Mengembangkan dasar ucapan yang benar ",
+      "Membentuk bunyi bahasa",
+      "Memahami bagaimana bunyi dihasilkan",
+      "Membedakan antara ucapan yang berbeda"
+    ],
+    "answer": "Memahami bagaimana bunyi dihasilkan",
+    "score": 10
+  },
+  {
+    "id": 9,
+    "question": "Latihan pernafasan dan artikulasi dalam 'Bina Bicara' melibatkan menirukan ucapan dengan merasakan getaran. Tujuan utama dari latihan ini adalah untuk membantu anak-anak:",
+    "choices": [
+      "Memahami bagaimana suara dihasilkan",
+      "Menguatkan otot-otot pernafasan",
+      "Meningkatkan volume suara",
+      "Mempercepat laju bicara"
+    ],
+    "answer": "Memahami bagaimana suara dihasilkan",
+    "score": 10
+  },
+  {
+    "id": 10,
+    "question": "Pelatihan pernafasan perut bermanfaat untuk: ",
+    "choices": [
+      "Mengembangkan paru-paru bagian atas",
+      "Menguatkan otot-otot perut",
+      "Mengatur turunnya tulang rusuk",
+      "Melatih kedua sisi paru-paru"
+    ],
+    "answer": "Menguatkan otot-otot perut",
+    "score": 10
   }
 ]

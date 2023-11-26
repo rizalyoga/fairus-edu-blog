@@ -18,9 +18,6 @@ export const quizTestPost = async (
   const studentQuizScore = finalScore(quiz_test_score);
   const studentData = JSON.parse(sessionStorage.getItem("student") as string);
 
-  console.log(pathname);
-  console.log(lessons_name);
-
   const newData = {
     id: studentData.id,
     username: studentData.username,
