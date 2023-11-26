@@ -158,7 +158,7 @@ const Login = () => {
                   "hover:bg-slate-500"
                 )}
                 type="submit"
-                value="Log In"
+                value="Masuk"
               />
             )}
           </form>

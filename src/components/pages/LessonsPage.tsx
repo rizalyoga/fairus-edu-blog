@@ -2,13 +2,15 @@
 
 import ReactPlayer from "react-player";
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 const LessonsPage = () => {
   const [isDomLoad, setIsDomLoad] = useState(false);
 
   useEffect(() => {
-    setIsDomLoad(true);
-  }, []);
+    if (!isDomLoad) setIsDomLoad(true);
+  }, [isDomLoad]);
+
   return (
     <div className="bg-base-100 pt-20">
       <div className="content-container px-4 flex justify-center flex-col items-center lg:px-0">
@@ -26,7 +28,7 @@ const LessonsPage = () => {
         {isDomLoad && (
           <div className="player-wrapper mb-10">
             <ReactPlayer
-              url="https://www.youtube.com/watch?v=u8kxL-1ZGzU"
+              url="https://youtu.be/QBRM4u4xj0Q"
               controls
               width="100%"
               height="100%"
@@ -90,6 +92,12 @@ const LessonsPage = () => {
             </p>
           </span>
         </div>
+        <Link
+          href="/login"
+          className="mb-10 w-full btn bg-primary-green text-white hover:text-primary-text dark:hover:text-white"
+        >
+          Mulai Belajar
+        </Link>
       </div>
     </div>
   );
