@@ -9,13 +9,13 @@ const ContactPage = () => {
       <div className={clsx("content-container px-4", "lg:px-2", "xl:px-0")}>
         <div className="m-auto md:w-[70%]">
           <h1 className="text-title-section pt-12 pb-10 font-bold text-primary-green text-center">
-            Kontak
+            Kontak Kami
           </h1>
           <p className="text-center text-lg">
             Kami Prabicara sangat senang Anda mengunjungi halaman website kami.
-            Tim dukungan kami di sini untuk membantu Anda dengan segala
-            pertanyaan, masalah, atau masukan yang Anda miliki. Silakan hubungi
-            kami dengan salah nomor tim kami yang paling sesuai untuk Anda, dan
+            Tim dukungan kami di sini untuk membantu anda dengan segala
+            pertanyaan, masalah, atau masukan yang anda miliki. Silakan hubungi
+            kami dengan salah satu nomor tim kami yang paling sesuai untuk anda, dan
             kami akan berusaha memberikan bantuan secepat mungkin.
           </p>
         </div>
