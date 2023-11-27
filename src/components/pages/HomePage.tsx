@@ -7,6 +7,7 @@ import { PiExamFill } from "react-icons/pi";
 import { BsPersonWorkspace, BsPersonVcardFill } from "react-icons/bs";
 
 import Hero from "../hero/Hero";
+import VideoPlayerLandingPage from "../video-player/VideoPlayerLandingPage";
 
 import AboutImage from "public/assets/home-first.webp";
 import BreathingImage from "public/assets/home-second.webp";
@@ -262,6 +263,7 @@ const HomePage = () => {
               </Link> */}
             </div>
           </div>
+          <VideoPlayerLandingPage videoLink="https://www.youtube.com/watch?v=uzCUdR5iFjk" />
         </div>
       </div>
     </>

@@ -28,7 +28,7 @@ const LessonsPage = () => {
         {isDomLoad && (
           <div className="player-wrapper mb-10">
             <ReactPlayer
-              url="https://youtu.be/QBRM4u4xj0Q"
+              url="https://www.youtube.com/watch?v=PyLOK8VGkcc"
               controls
               width="100%"
               height="100%"
