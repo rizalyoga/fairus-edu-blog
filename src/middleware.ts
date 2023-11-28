@@ -1,13 +1,24 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { cookies } from "next/headers";
 
-export const config = {
-  matcher: "/dashboard/:path*",
-};
+const afterAuth = ["/login", "/register"];
 
 export function middleware(request: NextRequest) {
-  // const auth = sessionStorage.getItem("student");
-  // if (!auth) {
-  //   return NextResponse.redirect(new URL("/login", request.url));
-  // }
+  const cookieStore = cookies();
+  const { pathname } = request.nextUrl;
+
+  const USER_AUTH = cookieStore.get("user_auth");
+
+  if (!USER_AUTH && pathname.includes("/dashboard")) {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
+
+  if (USER_AUTH && afterAuth.includes(pathname)) {
+    return NextResponse.redirect(new URL("/dashboard", request.url));
+  }
 }
+
+// export const config = {
+//   matcher: "/dashboard/:path*",
+// };

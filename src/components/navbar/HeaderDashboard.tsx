@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import clsx from "clsx";
+import { deleteCookie } from "cookies-next";
 
 import { formatString } from "@/helper/FormatStringHeader";
 import { getPathnamePage } from "@/helper/GetNamePageFromPathname";
@@ -22,6 +23,7 @@ const HeaderDashboard = () => {
 
   const functionHandler = () => {
     sessionStorage.clear();
+    deleteCookie("user_auth");
     router.push("/login");
   };
 
