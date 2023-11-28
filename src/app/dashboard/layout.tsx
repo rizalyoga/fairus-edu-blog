@@ -1,7 +1,5 @@
 "use client";
-
-import { useEffect, Suspense } from "react";
-import { useRouter } from "next/navigation";
+import { Suspense } from "react";
 
 import Sidebar from "@/components/sidebar/Sidebar";
 import HeaderDashboard from "@/components/navbar/HeaderDashboard";
@@ -12,14 +10,6 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const router = useRouter();
-
-  useEffect(() => {
-    const auth = sessionStorage.getItem("student");
-    if (!auth) {
-      router.push("/login");
-    }
-  }, [router]);
   return (
     <section>
       {/* Include shared UI here e.g. a header or sidebar */}

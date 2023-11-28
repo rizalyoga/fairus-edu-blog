@@ -1,10 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import clsx from "clsx";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { setCookie } from "cookies-next";
 
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { getDataStudent } from "@/data/getDataStudent";
 
 import Toast from "@/components/toast/Toast";
@@ -28,19 +29,13 @@ const Login = () => {
     });
   };
 
-  useEffect(() => {
-    const auth = sessionStorage.getItem("student");
-    if (auth) {
-      router.push("/dashboard");
-    }
-  }, [router]);
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading((loading) => !loading);
     getDataStudent(login)
       .then((e) => {
         if (e) {
+          setCookie("user_auth", "LOGIN_SUCCESS", { path: "/" });
           setLoginMessage("Selamat anda berhasil login");
           const { password, ...eWithoutPassword } = e;
 
@@ -49,8 +44,6 @@ const Login = () => {
             JSON.stringify({ ...eWithoutPassword, token: `token${new Date()}` })
           );
           router.push("/dashboard");
-          // setTimeout(() => {
-          // }, 2000);
         } else {
           setLoginMessage("Mohon periksa kembali username atau password anda");
         }

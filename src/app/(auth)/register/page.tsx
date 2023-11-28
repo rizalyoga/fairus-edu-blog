@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import clsx from "clsx";
 import Link from "next/link";
@@ -32,13 +32,6 @@ const Register = () => {
       [e.target.name]: value,
     });
   };
-
-  useEffect(() => {
-    const auth = sessionStorage.getItem("student");
-    if (auth) {
-      router.push("/dashboard");
-    }
-  }, [router]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
