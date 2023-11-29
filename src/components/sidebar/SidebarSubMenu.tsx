@@ -5,10 +5,14 @@ import { usePathname } from "next/navigation";
 
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { RoutesInterfaces } from "@/types/types";
+import { getStudentScoreFromSessionStorage } from "@/helper/GetStudentScoreFromSeesionStorage";
 
 const SidebarSubMenu = ({ submenu, name, icon }: RoutesInterfaces) => {
   const pathname = usePathname();
   const [isExpanded, setIsExpanded] = useState(false);
+  const studentScoreData = getStudentScoreFromSessionStorage();
+
+  console.log(studentScoreData);
 
   useEffect(() => {
     if (
@@ -51,7 +55,7 @@ const SidebarSubMenu = ({ submenu, name, icon }: RoutesInterfaces) => {
                 >
                   <input
                     type="checkbox"
-                    // checked={true}
+                    checked={studentScoreData[menu?.columnName] ? true : false}
                     readOnly
                     defaultChecked={false}
                     className="checkbox checkbox-primary rounded-full border-2 w-4 h-4 -mt-[1.6px]"
