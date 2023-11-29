@@ -28,7 +28,7 @@ const SidebarSubMenu = ({ submenu, name, icon }: RoutesInterfaces) => {
       );
       setStudentScoreData(dataScore?.[0]);
     }
-  }, [isExpanded]);
+  }, [isExpanded, pathname]);
 
   return (
     <div className="flex flex-col">
