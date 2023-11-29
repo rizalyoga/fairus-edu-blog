@@ -6,7 +6,7 @@ import clsx from "clsx";
 import { setCookie } from "cookies-next";
 
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { getDataStudent } from "@/data/getDataStudent";
+import { getDataStudent } from "@/data/studentLogin";
 
 import Toast from "@/components/toast/Toast";
 
@@ -37,11 +37,13 @@ const Login = () => {
         if (e) {
           setCookie("user_auth", "LOGIN_SUCCESS", { path: "/" });
           setLoginMessage("Selamat anda berhasil login");
-          const { password, ...eWithoutPassword } = e;
 
           sessionStorage.setItem(
             "student",
-            JSON.stringify({ ...eWithoutPassword, token: `token${new Date()}` })
+            JSON.stringify({
+              ...e,
+              token: `token${new Date()}`,
+            })
           );
           router.push("/dashboard");
         } else {
