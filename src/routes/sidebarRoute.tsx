@@ -72,31 +72,31 @@ export const routes = [
       {
         path: "/dashboard/vokal-a",
         icon: "",
-        name: "Pengucapan Vokal A",
+        name: "Vokal A",
         columnName: "video_vokal_a_score",
       },
       {
         path: "/dashboard/vokal-i",
         icon: "",
-        name: "Pengucapan Vokal I",
+        name: "Vokal I",
         columnName: "video_vokal_i_score",
       },
       {
         path: "/dashboard/vokal-u",
         icon: "",
-        name: "Pengucapan Vokal U",
+        name: "Vokal U",
         columnName: "video_vokal_u_score",
       },
       {
         path: "/dashboard/vokal-e",
         icon: "",
-        name: "Pengucapan Vokal E",
+        name: "Vokal E",
         columnName: "video_vokal_e_score",
       },
       {
         path: "/dashboard/vokal-o",
         icon: "",
-        name: "Pengucapan Vokal O",
+        name: "Vokal O",
         columnName: "video_vokal_o_score",
       },
       {
