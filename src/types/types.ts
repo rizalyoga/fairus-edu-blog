@@ -2,6 +2,7 @@ type RoutesType = {
   path: string;
   name: string;
   icon: React.ReactNode;
+  columnName: string;
 };
 
 export interface RoutesInterfaces {

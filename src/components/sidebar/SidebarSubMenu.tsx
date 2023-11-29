@@ -1,4 +1,5 @@
-"use clientz2";
+"use client";
+
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,6 +10,7 @@ import { RoutesInterfaces } from "@/types/types";
 const SidebarSubMenu = ({ submenu, name, icon }: RoutesInterfaces) => {
   const pathname = usePathname();
   const [isExpanded, setIsExpanded] = useState(false);
+  const [studentScoreData, setStudentScoreData] = useState();
 
   useEffect(() => {
     if (
@@ -18,6 +20,15 @@ const SidebarSubMenu = ({ submenu, name, icon }: RoutesInterfaces) => {
     )
       setIsExpanded(true);
   }, [pathname, submenu]);
+
+  useEffect(() => {
+    if (typeof window) {
+      const dataScore = JSON.parse(
+        sessionStorage.getItem("student-score") as string
+      );
+      setStudentScoreData(dataScore?.[0]);
+    }
+  }, [isExpanded]);
 
   return (
     <div className="flex flex-col">
@@ -51,7 +62,9 @@ const SidebarSubMenu = ({ submenu, name, icon }: RoutesInterfaces) => {
                 >
                   <input
                     type="checkbox"
-                    // checked={true}
+                    checked={
+                      studentScoreData?.[menu?.columnName] ? true : false
+                    }
                     readOnly
                     defaultChecked={false}
                     className="checkbox checkbox-primary rounded-full border-2 w-4 h-4 -mt-[1.6px]"
