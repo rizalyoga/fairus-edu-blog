@@ -7,6 +7,7 @@ import Link from "next/link";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 import { addNewStudent } from "@/data/studentRegister";
+import { SubmitRegistrationCheck } from "@/helper/SubmitRegsitrationCheck";
 
 import Toast from "@/components/toast/Toast";
 
@@ -16,6 +17,7 @@ const Register = () => {
   const [isShowPassword, setIsShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [registerMessage, setRegisterMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [register, setRegister] = useState({
     username: "",
     firstname: "",
@@ -36,6 +38,7 @@ const Register = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading((loading) => !loading);
+
     const newDataStudent = {
       username: register.username.replace(/\s/g, ""),
       firstname: register.firstname,
@@ -48,16 +51,51 @@ const Register = () => {
 
     if (newDataStudent.username.length < 6) {
       setRegisterMessage("Mohon maaf panjang username minimal 6 karakter");
+      setErrorMessage("Mohon maaf panjang username minimal 6 karakter");
       setIsLoading((loading) => !loading);
+      cleanRegisterMessage();
+    } else if (!newDataStudent.username.charAt(0).match(/^[a-zA-Z]/)) {
+      setRegisterMessage(
+        "Mohon maaf karakter pertama Username harus berupa huruf"
+      );
+      setErrorMessage(
+        "Mohon maaf karakter pertama Username harus berupa huruf"
+      );
+      setIsLoading((loading) => !loading);
+      cleanRegisterMessage();
     } else if (newDataStudent.firstname.length < 3) {
       setRegisterMessage("Mohon maaf panjang fistname minimal 3 karakter");
+      setErrorMessage("Mohon maaf panjang fistname minimal 3 karakter");
       setIsLoading((loading) => !loading);
+      cleanRegisterMessage();
+    } else if (newDataStudent.firstname.match(/[^a-zA-Z]/g)) {
+      setRegisterMessage(
+        "Mohon maaf fistname memiliki karakter selain huruf alfabet"
+      );
+      setErrorMessage(
+        "Mohon maaf fistname memiliki karakter selain huruf alfabet"
+      );
+      setIsLoading((loading) => !loading);
+      cleanRegisterMessage();
     } else if (newDataStudent.lastname.length < 3) {
       setRegisterMessage("Mohon maaf panjang lastname minimal 3 karakter");
+      setErrorMessage("Mohon maaf panjang lastname minimal 3 karakter");
       setIsLoading((loading) => !loading);
+      cleanRegisterMessage();
+    } else if (newDataStudent.lastname.match(/[^a-zA-Z]/g)) {
+      setRegisterMessage(
+        "Mohon maaf lastname memiliki karakter selain huruf alfabet"
+      );
+      setErrorMessage(
+        "Mohon maaf lastname memiliki karakter selain huruf alfabet"
+      );
+      setIsLoading((loading) => !loading);
+      cleanRegisterMessage();
     } else if (newDataStudent.password.length < 8) {
       setRegisterMessage("Mohon maaf panjang password minimal 8 karakter");
+      setErrorMessage("Mohon maaf panjang password minimal 8 karakter");
       setIsLoading((loading) => !loading);
+      cleanRegisterMessage();
     } else {
       addNewStudent(newDataStudent).then((e) => {
         setRegisterMessage(e);
@@ -81,6 +119,12 @@ const Register = () => {
 
   const showPasswordVisible = () => {
     setIsShowPassword((visible) => !visible);
+  };
+
+  const cleanRegisterMessage = () => {
+    setTimeout(() => {
+      setRegisterMessage("");
+    }, 2000);
   };
 
   return (
@@ -211,9 +255,9 @@ const Register = () => {
               />
             )}
           </form>
-          {registerMessage && (
+          {errorMessage && (
             <p className="text-red-400 mt-4 text-center dark:text-red-400">
-              *{registerMessage}
+              *{errorMessage}
             </p>
           )}
           <p className="text-base text-secondary-text mt-5">
