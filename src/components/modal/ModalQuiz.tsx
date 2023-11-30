@@ -52,13 +52,7 @@ const ModalQuiz = ({
 
   return (
     <dialog id="my_modal_1" className="modal">
-      <div
-        className={clsx(
-          "modal-box max-w-xl",
-          // "md:-mt-48",
-          "lg:-mt-20 lg:ml-48"
-        )}
-      >
+      <div className={clsx("modal-box max-w-xl", "lg:-mt-20 lg:ml-48")}>
         <h3 className="font-bold text-lg">Silahkan jawab pertanyaan berikut</h3>
 
         {!questionData?.[0] ? (
