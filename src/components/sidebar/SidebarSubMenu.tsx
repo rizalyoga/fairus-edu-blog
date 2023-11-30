@@ -66,7 +66,6 @@ const SidebarSubMenu = ({ submenu, name, icon }: RoutesInterfaces) => {
                       studentScoreData?.[menu?.columnName] ? true : false
                     }
                     readOnly
-                    defaultChecked={false}
                     className="checkbox checkbox-primary rounded-full border-2 w-4 h-4 -mt-[1.6px]"
                   />
                   <p className="flex items-center gap-1">{menu.name}</p>

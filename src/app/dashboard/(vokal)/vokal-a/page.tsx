@@ -2,7 +2,7 @@ import React from "react";
 
 import Pendahuluan from "./Pendahuluan";
 import Penutup from "./Penutup";
-import Kegiatan from "./Kegiatan";
+import Kegiatan from "../Kegiatan";
 
 const VokalA = () => {
   return (
