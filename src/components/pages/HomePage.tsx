@@ -36,6 +36,7 @@ const HomePage = () => {
               width={600}
               height={600}
               alt="ilustration"
+              placeholder="blur"
               className="rounded-lg lg:basis-1/2"
             />
             <div className="lg:basis-1/2">

@@ -33,6 +33,7 @@ const TherapyContent = () => {
                   width={600}
                   height={600}
                   alt="ilustration"
+                  placeholder="blur"
                   className="rounded-lg mb-8 lg:basis-1/2 lg:hidden"
                 />
               </div>
@@ -50,6 +51,7 @@ const TherapyContent = () => {
               width={600}
               height={600}
               alt="ilustration"
+              placeholder="blur"
               className="rounded-lg hidden lg:basis-1/2 lg:block"
             />
           </div>
@@ -65,6 +67,7 @@ const TherapyContent = () => {
               width={600}
               height={600}
               alt="ilustration"
+              placeholder="blur"
               className="rounded-lg hidden lg:basis-1/2 lg:block"
             />
             <div className="lg:basis-1/2">
@@ -77,6 +80,7 @@ const TherapyContent = () => {
                   width={600}
                   height={600}
                   alt="ilustration"
+                  placeholder="blur"
                   className="rounded-lg mb-8 lg:basis-1/2 lg:hidden"
                 />
               </div>
@@ -112,6 +116,7 @@ const TherapyContent = () => {
                   width={600}
                   height={600}
                   alt="ilustration"
+                  placeholder="blur"
                   className="rounded-lg mb-8 lg:basis-1/2 lg:hidden"
                 />
               </div>
@@ -129,6 +134,7 @@ const TherapyContent = () => {
               width={600}
               height={600}
               alt="ilustration"
+              placeholder="blur"
               className="rounded-lg hidden lg:basis-1/2 lg:block"
             />
           </div>
@@ -144,6 +150,7 @@ const TherapyContent = () => {
               width={600}
               height={600}
               alt="ilustration"
+              placeholder="blur"
               className="rounded-lg hidden lg:block lg:basis-1/2"
             />
             <div className="lg:basis-1/2">
@@ -156,6 +163,7 @@ const TherapyContent = () => {
                   width={600}
                   height={600}
                   alt="ilustration"
+                  placeholder="blur"
                   className="rounded-lg mb-8 lg:basis-1/2 lg:hidden"
                 />
               </div>

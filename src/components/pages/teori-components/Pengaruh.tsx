@@ -1,8 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Pengaruh = () => {
   return (
-    <>
+    <motion.div
+      initial={{ y: 10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -10, opacity: 0 }}
+      transition={{ duration: 0.2 }}
+    >
       <h1 className="text-4xl font-bold text-center lg:text-title-section">
         PENGARUH
       </h1>
@@ -113,7 +119,7 @@ const Pengaruh = () => {
           <br />
         </ul>
       </div>
-    </>
+    </motion.div>
   );
 };
 
