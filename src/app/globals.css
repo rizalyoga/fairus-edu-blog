@@ -90,3 +90,11 @@ body {
     overflow: hidden;
   }
 } */
+
+.progress-bar {
+  margin-top: -10px;
+  height: 8px;
+  background: #95d354;
+  transform-origin: 0%;
+  z-index: 100;
+}

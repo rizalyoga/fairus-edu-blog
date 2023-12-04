@@ -1,8 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Gangguan = () => {
   return (
-    <>
+    <motion.div
+      initial={{ y: 10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -10, opacity: 0 }}
+      transition={{ duration: 0.2 }}
+    >
       <h1 className="text-4xl  font-bold text-center lg:text-title-section">
         GANGGUAN
       </h1>
@@ -92,7 +98,7 @@ const Gangguan = () => {
           komunikatif untuk mendukung perkembangan bicara dan bahasa mereka.
         </p>
       </div>
-    </>
+    </motion.div>
   );
 };
 

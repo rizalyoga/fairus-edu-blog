@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion, useSpring, useScroll } from "framer-motion";
 
 import clsx from "clsx";
 
@@ -12,10 +13,17 @@ import SidebarFrontPage from "../sidebar/SidebarFrontPage";
 const Navbar = () => {
   const pathname = usePathname();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
+
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   return (
     !pathname.includes("dashboard") && (
@@ -130,6 +138,7 @@ const Navbar = () => {
               </button>
             </div>
           </div>
+          <motion.div className="progress-bar" style={{ scaleX }} />
         </div>
       </>
     )

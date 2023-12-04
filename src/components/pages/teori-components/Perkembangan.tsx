@@ -1,8 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Perkembangan = () => {
   return (
-    <>
+    <motion.div
+      initial={{ y: 10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -10, opacity: 0 }}
+      transition={{ duration: 0.2 }}
+    >
       <h1 className="text-4xl  font-bold text-center lg:text-title-section">
         PERKEMABANGAN
       </h1>
@@ -192,7 +198,7 @@ const Perkembangan = () => {
           <li>Menggunakan kalimat dengan 4–8 kata dalam satu kalimat</li>
         </ul>
       </div>
-    </>
+    </motion.div>
   );
 };
 
