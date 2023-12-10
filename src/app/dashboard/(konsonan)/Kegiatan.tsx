@@ -28,10 +28,10 @@ const Kegiatan = () => {
         Perhatikan materi video berikut, dan kerjakan soal yang terdapat dalam
         video.
       </p>
-      <div className="md:hidden">
+      {/* <div className="md:hidden">
         <VideoPlayer contentVideo={questions} />
-      </div>
-      <div className="collapse collapse-arrow bg-base-200 hidden md:grid">
+      </div> */}
+      <div className="collapse collapse-arrow bg-base-200">
         <input type="checkbox" name="my-accordion-2" defaultValue="cheked" />
         <div className="collapse-title bg-primary-green text-xl font-medium text-white">
           Materi Video
