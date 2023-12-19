@@ -6,7 +6,7 @@ const DashboardLoading = () => {
 
   return (
     <div className="dashboard-content-container">
-      <h1 className="text-title-sub-section font-bold">Daftar Nilai</h1>
+      {/* <h1 className="text-title-sub-section font-bold">Daftar Nilai</h1> */}
       <div
         className={clsx(
           "card-container my-4 grid gap-6",

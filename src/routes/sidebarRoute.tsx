@@ -3,21 +3,30 @@ import {
   SiAdobelightroom,
   SiHomeassistant,
   SiPlausibleanalytics,
+  SiGitextensions,
+  SiGooglescholar,
+  SiPowerbi,
 } from "react-icons/si";
 
-import { BsPersonVideo3 } from "react-icons/bs";
+// import { BsPersonVideo3 } from "react-icons/bs";
 
 export const routes = [
   {
     path: "/dashboard",
-    name: "Dashboard",
-    icon: <SiHomeassistant className="-mt-1" />,
+    name: "Panduan",
+    icon: <SiGitextensions className="-mt-1" />,
+  },
+
+  {
+    path: "/dashboard/nilai",
+    name: "Daftar Nilai",
+    icon: <SiPowerbi className="-mt-1" />,
   },
 
   {
     path: "",
     name: "Pengenalan",
-    icon: <BsPersonVideo3 className="-mt-1" />,
+    icon: <SiGooglescholar className="-mt-1" />,
     submenu: [
       {
         path: "/dashboard/pengenalan-pretest",

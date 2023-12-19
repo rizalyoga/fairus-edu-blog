@@ -43,6 +43,12 @@ export interface LoginProps {
   password: string;
 }
 
+export interface panduanProps {
+  id: number;
+  name: string;
+  url: string;
+}
+
 export interface PrestestProps {
   id: number;
   question: string;

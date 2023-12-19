@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Pendahuluan Website",
+    "url": "/dashboard/pendahuluan"
+  },
+  {
+    "id": 2,
+    "name": "Panduan Pengguna",
+    "url": "/dashboard/panduan-pengguna"
+  },
+  {
+    "id": 3,
+    "name": "Pretest Pengenalan",
+    "url": "/dashboard/pengenalan-pretest"
+  },
+  {
+    "id": 4,
+    "name": "Pelatihan Tahap 1 Pengenalan",
+    "url": "/dashboard/assesmen"
+  },
+  {
+    "id": 5,
+    "name": "Post Test Pengenalan",
+    "url": "/dashboard/pengenalan-postest"
+  },
+  {
+    "id": 6,
+    "name": "Pretest Huruf Vokal",
+    "url": "/dashboard/pengucapan-vokal-pretest"
+  },
+  {
+    "id": 7,
+    "name": "Pelatihan Tahap 2 Huruf Vokal",
+    "url": "/dashboard/vokal-a"
+  },
+  {
+    "id": 8,
+    "name": "Post Test Huruf Vokal",
+    "url": "/dashboard/pengucapan-vokal-postest"
+  },
+  {
+    "id": 9,
+    "name": "Pretest Huruf Konsonan",
+    "url": "/dashboard/konsonan-pretest"
+  },
+  {
+    "id": 10,
+    "name": "Pelatihan Tahap 3 Huruf Konsonan",
+    "url": "/dashboard/konsonan-b"
+  },
+  {
+    "id": 11,
+    "name": "Post Test Huruf Konsonan",
+    "url": "/dashboard/konsonan-postest"
+  }
+]
