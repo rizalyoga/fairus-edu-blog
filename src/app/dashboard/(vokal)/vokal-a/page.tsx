@@ -11,7 +11,7 @@ const VokalA = () => {
         Pengucapan Huruf Vokal A
       </h1>
       <div id="pendahuluan">
-        <h3 className="font-bold py-4  text-base-text">A. Pendahuluan</h3>
+        <h3 className="font-bold py-4 text-base-text">A. Pendahuluan</h3>
         <Pendahuluan />
       </div>
       <div id="kegiatan-inti">

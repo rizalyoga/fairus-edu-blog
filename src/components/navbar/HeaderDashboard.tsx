@@ -2,13 +2,14 @@
 
 import React, { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
 import clsx from "clsx";
 import { deleteCookie } from "cookies-next";
 
 import { formatString } from "@/helper/FormatStringHeader";
 import { getPathnamePage } from "@/helper/GetNamePageFromPathname";
 
-import { IoLogOutOutline } from "react-icons/io5";
+import { IoLogOutOutline, IoHome } from "react-icons/io5";
 
 import ConfirmationModal from "../modal/ConfirmationModal";
 
@@ -67,9 +68,22 @@ const HeaderDashboard = () => {
           </svg>
         </label>
         <h1 className="text-md font-semibold ml-1 md:text-2xl pr-1">
-          {formatString(getPathnamePage(pathname))}
+          {pathname === "/dashboard"
+            ? "Panduan Web"
+            : formatString(getPathnamePage(pathname))}
         </h1>
         <div>
+          <Link
+            href={"/dashboard"}
+            className={clsx(
+              "btn btn-ghost bg-primary-violet text-white font-bold mr-2",
+              "hover:text-primary-text",
+              "dark:hover:text-white"
+            )}
+            title="Panduan"
+          >
+            <IoHome className="text-2xl" />
+          </Link>
           <button
             className={clsx(
               "btn btn-ghost bg-primary-violet text-white font-bold",
@@ -77,7 +91,7 @@ const HeaderDashboard = () => {
               "dark:hover:text-white"
             )}
             onClick={() => isOpenHandler()}
-            title="logout"
+            title="Logout"
           >
             <IoLogOutOutline className="text-2xl" />
           </button>

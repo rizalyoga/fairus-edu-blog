@@ -111,7 +111,7 @@ const FinalTestConsonantForm = () => {
           )}
         </div>
         {ConsonantPostTestQuestoins.map((question) => (
-          <div key={question.id} className="my-4">
+          <div key={question.id} className="mb-8">
             <span className="flex">
               <p>{question.id}.</p>
               <p className="ml-2">{question.question}</p>
