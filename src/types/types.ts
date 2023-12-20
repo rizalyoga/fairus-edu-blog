@@ -1,4 +1,4 @@
-type RoutesType = {
+export type RoutesType = {
   path: string;
   name: string;
   icon: React.ReactNode;
@@ -47,6 +47,7 @@ export interface panduanProps {
   id: number;
   name: string;
   url: string;
+  subMenu?: RoutesType[];
 }
 
 export interface PrestestProps {

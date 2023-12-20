@@ -22,8 +22,15 @@ const Dashboard = () => {
     setPelatihan(pelatiahnRoutes);
 
     setTimeout(() => {
-      setLoading(false);
-    }, 1500);
+      setLoading(true);
+
+      const timeoutId = setTimeout(() => {
+        setLoading(false);
+      }, 800);
+
+      // Clear the timeout when the component unmounts or when modalOpen changes
+      return () => clearTimeout(timeoutId);
+    }, 1000);
   }, []);
 
   if (loading) {
@@ -62,6 +69,7 @@ const Dashboard = () => {
               id={content.id}
               name={content.name}
               url={content.url}
+              subMenu={content.subMenu}
             />
           ))}
       </div>
