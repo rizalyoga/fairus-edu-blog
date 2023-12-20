@@ -9,15 +9,28 @@ import ModalPanduan from "@/components/modal/ModalPanduan";
 const PanduanCard = (props: panduanProps) => {
   const [isOpenModal, setIsOpenModal] = useState("close");
 
+  const setColor = (modulName: string) => {
+    if (modulName.includes("Pengenalan")) {
+      return "bg-red-400";
+    } else if (modulName.includes("Vokal")) {
+      return "bg-yellow-400";
+    } else if (modulName.includes("Konsonan")) {
+      return "bg-blue-400";
+    } else {
+      return "bg-primary-violet";
+    }
+  };
+
   return (
     <>
       {props?.subMenu ? (
         <>
           <div
             className={clsx(
-              "border rounded-lg p-4 min-h-[200px] bg-primary-violet text-white transition cursor-pointer",
+              "border rounded-lg p-4 min-h-[200px] text-white transition cursor-pointer",
               "hover:shadow-md hover:bg-primary-pink hover:font-bold hover:underline",
-              "dark:border-slate-400"
+              "dark:border-slate-400",
+              setColor(props.name)
             )}
             onClick={() => setIsOpenModal("open")}
           >
@@ -40,9 +53,10 @@ const PanduanCard = (props: panduanProps) => {
         <Link
           href={props.url}
           className={clsx(
-            "border rounded-lg p-4 min-h-[200px] bg-primary-violet text-white transition",
+            "border rounded-lg p-4 min-h-[200px] text-white transition",
             "hover:shadow-md hover:bg-primary-pink hover:font-bold hover:underline",
-            "dark:border-slate-400"
+            "dark:border-slate-400",
+            setColor(props.name)
           )}
         >
           <span className="bg-primary-green w-8 h-8 rounded-full grid content-center border border-white">
