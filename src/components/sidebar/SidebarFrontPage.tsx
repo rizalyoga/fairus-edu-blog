@@ -21,7 +21,7 @@ const SidebarFrontPage = ({ isOpen, onClose }: any) => {
       ></label>
       <div className="drawer-side mt-24 ">
         <ul className="menu p-4 w-80 min-h-screen bg-base-100 text-base-content overscroll-none">
-          {/* Your sidebar content */}
+          {/* sidebar content */}
           <li className="text-2xl py-2" onClick={onClose}>
             <Link href="/" className={pathname == "/" ? activeLinkStyle : ""}>
               Beranda
@@ -69,7 +69,7 @@ const SidebarFrontPage = ({ isOpen, onClose }: any) => {
               href="/login"
               className={pathname == "/login" ? activeLinkStyle : ""}
             >
-              Login
+              Log in
             </Link>
           </li>
         </ul>

@@ -123,7 +123,7 @@ const Navbar = () => {
                     "hover:text-primary-text hover:bg-slate-600"
                   )}
                 >
-                  <p className="text-white">Login</p>
+                  <p className="text-white">Log in</p>
                 </button>
               </Link>
 

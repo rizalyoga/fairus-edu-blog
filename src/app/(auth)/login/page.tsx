@@ -75,7 +75,7 @@ const Login = () => {
   return (
     <>
       {loginMessage && <Toast message={loginMessage} />}
-      {/* {loginMessage.includes("Mohon") && <ErrorToast message={loginMessage} />} */}
+
       <div
         className={clsx(
           "flex justify-center items-center flex-col min-h-screen bg-primary-violet mt-12 ",
@@ -98,7 +98,7 @@ const Login = () => {
               "dark:text-slate-400"
             )}
           >
-            Login
+            Log in
           </h1>
           <p className="text-sm text-secondary-text mb-7 mt-2 text-center">
             Masukkan username dan password anda pada kolom di bawah ini.
@@ -108,7 +108,7 @@ const Login = () => {
             className="flex flex-col gap-4 text-slate-400 w-full"
           >
             <span className="flex flex-col">
-              <label className="text-base">USERNAME or EMAIL</label>
+              <label className="text-base">USERNAME atau EMAIL</label>
               <input
                 className={clsx(
                   "input input-bordered rounded-md placeholder:text-base text-primary-text py-3 px-2 mt-2",
@@ -161,6 +161,14 @@ const Login = () => {
             Belum mempunyai akun ?
             <span className="text-primary-cyan hover:underline cursor-pointer">
               <Link href="/register">{" Daftar"}</Link>
+            </span>
+          </p>
+          <p className="text-base text-secondary-text mt-2">
+            Lupa password ? Hubungi
+            <span className="text-primary-cyan hover:underline cursor-pointer ">
+              <Link target="_blank" href="https://wa.me/+6285853452369">
+                {" admin"}
+              </Link>
             </span>
           </p>
         </div>
