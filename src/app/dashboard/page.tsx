@@ -26,11 +26,11 @@ const Dashboard = () => {
 
       const timeoutId = setTimeout(() => {
         setLoading(false);
-      }, 800);
+      }, 500);
 
       // Clear the timeout when the component unmounts or when modalOpen changes
       return () => clearTimeout(timeoutId);
-    }, 1000);
+    }, 500);
   }, []);
 
   if (loading) {
