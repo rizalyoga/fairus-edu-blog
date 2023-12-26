@@ -38,7 +38,7 @@ export interface StudentDataProps {
 }
 
 export interface LoginProps {
-  username?: string;
+  username: string;
   email?: string;
   password: string;
 }
