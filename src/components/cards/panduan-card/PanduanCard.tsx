@@ -35,7 +35,9 @@ const PanduanCard = (props: panduanProps) => {
             onClick={() => setIsOpenModal("open")}
           >
             <span className="bg-primary-green w-8 h-8 rounded-full grid content-center border border-white">
-              <p className=" text-white text-center text-sm">{props.id}</p>
+              <p className=" text-white text-center text-lg font-semibold">
+                {props.id}
+              </p>
             </span>
             <div className="flex justify-center items-center text-center h-3/4 text-xl">
               <p className="-mt-4">{props.name}</p>
@@ -60,7 +62,9 @@ const PanduanCard = (props: panduanProps) => {
           )}
         >
           <span className="bg-primary-green w-8 h-8 rounded-full grid content-center border border-white">
-            <p className=" text-white text-center text-sm">{props.id}</p>
+            <p className=" text-white text-center text-lg font-semibold">
+              {props.id}
+            </p>
           </span>
           <div className="flex justify-center items-center text-center h-3/4 text-xl">
             <p className="-mt-4">{props.name}</p>
