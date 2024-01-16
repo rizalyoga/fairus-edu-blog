@@ -2,10 +2,10 @@ import React from "react";
 import Image from "next/image";
 import clsx from "clsx";
 
-import BreathingImage from "public/assets/home-second.webp";
-import VowelImage from "public/assets/home-third.webp";
-import SuccesImage from "public/assets/home-3.jpeg";
-import ActivityImage from "public/assets/home-4.jpg";
+import BreathingImage from "public/assets/2.jpg";
+import VowelImage from "public/assets/3.jpg";
+import SuccesImage from "public/assets/5.jpg";
+import ActivityImage from "public/assets/4.jpg";
 
 import VideoPlayerLandingPage from "@/components/video-player/VideoPlayerLandingPage";
 

@@ -10,8 +10,7 @@ const Hero = () => {
     <div
       className="hero min-h-[50rem] w-full mt-10"
       style={{
-        backgroundImage:
-          "url(https://i0.wp.com/senmagazine.co.uk/wp-content/uploads/2021/11/Depositphotos_307977302_XL-scaled-e1637008981212.jpg?fit=1159%2C559&ssl=1)",
+        backgroundImage: "url(/assets/hero.jpg)",
       }}
     >
       <div className="hero-overlay bg-opacity-70"></div>
