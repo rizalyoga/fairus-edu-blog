@@ -7,7 +7,7 @@ import Hero from "./home-page-components/hero/Hero";
 import LearningSteps from "./home-page-components/LearningSteps";
 import TherapyContent from "./home-page-components/TherapyContent";
 
-import AboutImage from "public/assets/home-first.webp";
+import AboutImage from "public/assets/1.jpg";
 
 const HomePage = () => {
   return (
