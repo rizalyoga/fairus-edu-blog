@@ -1,30 +1,94 @@
 [
   {
     "id": 1,
-    "question": "Apa nama ibu kota Indonesia ?",
-    "choices": ["Malang", "Yogyakarta", "Jakarta", "Surabaya"],
-    "answer": "Jakarta",
-    "score": 25
+    "question": "Apakah vokal /u/ termasuk vokal tanpa getaran?",
+    "choices": ["Ya", "Tidak"],
+    "answer": "Tidak",
+    "score": 10
   },
   {
     "id": 2,
-    "question": "Bagian tubuh yang digunakan untuk mengecap adalah ?",
-    "choices": ["Kulit", "Mulut", "Telinga", "Tangan"],
-    "answer": "Mulut",
-    "score": 25
+    "question": "Apakah bibir harus dibulatkan saat mengucapkan vokal /o/?",
+    "choices": ["Ya", "Tidak"],
+    "answer": "Ya",
+    "score": 10
   },
   {
     "id": 3,
-    "question": "Alat yang fungsi utamanya untuk duduk adalah ?",
-    "choices": ["Kasur", "Kursi", "Gelas", "Meja"],
-    "answer": "Kursi",
-    "score": 25
+    "question": "Apa yang menjadi fokus utama dalam pengucapan huruf vokal /a/?",
+    "choices": [
+      "Bentuk mulut yang sempit",
+      "Lidah tinggi di langit-langit",
+      "Bibir dibulatkan",
+      "Bentuk mulut seperti huruf 'eh'"
+    ],
+    "answer": "Lidah tinggi di langit-langit",
+    "score": 10
   },
   {
     "id": 4,
-    "question": "Jika kita lapar, maka kita harus ?",
-    "choices": ["Makan", "Mancing", "Minum", "Marah"],
-    "answer": "Makan",
-    "score": 25
+    "question": "Pada pengucapan vokal /e/, bagaimana letak bibir?",
+    "choices": ["Dibulatkan", "Direnggangkan", "Setengah terbuka", "Menutup"],
+    "answer": "Setengah terbuka",
+    "score": 10
+  },
+
+  {
+    "id": 5,
+    "question": "Apa yang harus dilakukan saat mengucapkan vokal /i/ agar suara jelas?",
+    "choices": [
+      "Memperlebar mulut",
+      "Menyentuh langit-langit dengan lidah",
+      "Bibir dibulatkan",
+      "Menutup mulut"
+    ],
+    "answer": "Menyentuh langit-langit dengan lidah",
+    "score": 10
+  },
+
+  {
+    "id": 6,
+    "question": "Apakah vokal /o/ termasuk vokal setengah tertutup?",
+    "choices": ["Ya", "Tidak"],
+    "answer": "Tidak",
+    "score": 10
+  },
+  {
+    "id": 7,
+    "question": "Apakah suara pada vokal /e/ bersifat bergetar?",
+    "choices": ["Ya", "Tidak"],
+    "answer": "Tidak",
+    "score": 10
+  },
+  {
+    "id": 8,
+    "question": "Cara apa yang digunakan pada latihan pelemasan organ bicara untuk vokal /u/?",
+    "choices": [
+      "Mengangkat lidah",
+      "Membuka dan menutup mulut",
+      "Menutup mulut",
+      "Membentuk bibir seperti senyum terbalik"
+    ],
+    "answer": "Membentuk bibir seperti senyum terbalik",
+    "score": 10
+  },
+  {
+    "id": 9,
+    "question": "Cara menghasilkan suara vokal /a/ mirip dengan bentuk mulut huruf apa?",
+    "choices": ["'O'", "'E'", "D", "'I'"],
+    "answer": "'O'",
+    "score": 10
+  },
+  {
+    "id": 10,
+    "question": "Teknik apa yang digunakan untuk menghasilkan suara vokal /i/?",
+    "choices": [
+      "Lidah rendah di dalam mulut",
+      "Lidah diangkat ke atas",
+      "Bibir direnggangkan",
+      "Bibir ditutup"
+    ],
+    "answer": "Lidah diangkat ke atas",
+    "score": 10
   }
 ]
