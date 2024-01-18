@@ -8,14 +8,14 @@ const PendahuluanWebsite = () => {
   return (
     <div className="dashboard-content-container text-base relative">
       <h1 className="text-title-section font-bold text-primary-green">
-        Website Prabicara
+        Website Parbicara
       </h1>
       <div className="content-page flex justify-center items-center flex-col">
         <Image
           src={Logo}
           width={240}
           height={240}
-          alt="logo-prabicara"
+          alt="logo-Parbicara"
           placeholder="blur"
           className="my-8"
         />
@@ -23,12 +23,12 @@ const PendahuluanWebsite = () => {
 
       <h3 className="text-title-sub-section font-bold">Latar Belakang</h3>
       <p className="indent-8 my-2 text-lg">
-        Situs Web Prabicara “
+        Situs Web Parbicara “
         <span className="font-semibold">Parenting Bina Bicara</span>” adalah
         platform digital inovatif yang dirancang khusus untuk mendukung orang
         tua dalam memfasilitasi perkembangan bicara dan bahasa bagi anak-anak
         tunarungu. Dengan kemudahan akses melalui laptop atau smartphone,
-        Prabicara menyediakan sumber daya kapan saja dan di mana saja,
+        Parbicara menyediakan sumber daya kapan saja dan di mana saja,
         menawarkan fleksibilitas maksimal dalam pendidikan dan terapi bahasa.
       </p>
       <br />
@@ -76,7 +76,7 @@ const PendahuluanWebsite = () => {
 
       <h3 className="text-title-sub-section font-bold">Manfaat</h3>
       <p className="mt-2 text-lg">
-        Dengan menggunakan website prabicara, orang tua dapat :
+        Dengan menggunakan website parbicara, orang tua dapat :
       </p>
       <ul className="list-disc list-outside ml-6 text-lg mt-2">
         <li>

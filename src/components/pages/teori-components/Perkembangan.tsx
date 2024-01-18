@@ -10,7 +10,7 @@ const Perkembangan = () => {
       transition={{ duration: 0.2 }}
     >
       <h1 className="text-4xl  font-bold text-center lg:text-title-section">
-        PERKEMABANGAN
+        PERKEMBANGAN
       </h1>
       <div className="content-perkembangan text-start">
         <h3 className="title-sub-content mt-8">

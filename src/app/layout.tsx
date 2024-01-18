@@ -14,9 +14,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Prabicara",
+  title: "Parbicara",
   description:
-    "Prabicara adalah platform pembelajaran yang dirancang khusus untuk membantu orang tua dalam mendidik anak tunarungu secara mandiri.",
+    "Parbicara adalah platform pembelajaran yang dirancang khusus untuk membantu orang tua dalam mendidik anak tunarungu secara mandiri.",
 };
 
 export default function RootLayout({

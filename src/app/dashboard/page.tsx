@@ -46,7 +46,7 @@ const Dashboard = () => {
         )}
       >
         <h1 className="text-title-sub-section font-bold">
-          Panduan Website Prabicara
+          Panduan Website Parbicara
         </h1>
       </div>
       <div className="my-4 grid gap-6 sm:grid-cols-2 md:grid-cols-2">

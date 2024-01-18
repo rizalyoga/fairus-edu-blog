@@ -15,7 +15,7 @@ const ContactPage = () => {
             Kontak Kami
           </h1>
           <p className="text-center text-lg">
-            Kami Prabicara sangat senang Anda mengunjungi halaman website kami.
+            Kami Parbicara sangat senang Anda mengunjungi halaman website kami.
             Tim dukungan kami di sini untuk membantu anda dengan segala
             pertanyaan, masalah, atau masukan yang anda miliki. Silakan hubungi
             kami dengan salah satu nomor tim kami yang paling sesuai untuk anda,

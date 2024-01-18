@@ -29,7 +29,7 @@ const Penutup = () => {
         <li>
           <span className="font-bold"> Latihan Pra Bicara: </span>
           Anak-anak dilatih untuk melemaskan organ bicaranya melalui latihan
-          prabicara, yaitu dengan menggerakkan bibir, lidah, dan rahang.
+          parbicara, yaitu dengan menggerakkan bibir, lidah, dan rahang.
         </li>
         <li>
           <span className="font-bold">
