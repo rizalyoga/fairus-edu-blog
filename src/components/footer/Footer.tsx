@@ -25,31 +25,31 @@ const Footer = () => {
         >
           <nav className="text-white">
             <header className="font-extrabold text-white">PEMBELAJARAN</header>
-            <Link href="/lessons" className="link link-hover">
+            <Link href="/pembelajaran" className="link link-hover">
               Pembentukan Suara
             </Link>
-            <Link href="/lessons" className="link link-hover">
+            <Link href="/pembelajaran" className="link link-hover">
               Latihan Pernapasan
             </Link>
-            <Link href="/lessons" className="link link-hover">
+            <Link href="/pembelajaran" className="link link-hover">
               Latihan Pengucapan Huruf Vokal
             </Link>
-            <Link href="/lessons" className="link link-hover">
+            <Link href="/pembelajaran" className="link link-hover">
               Latihan Pengucapan Huruf Konsonan
             </Link>
           </nav>
           <nav className="text-white">
-            <header className="font-extrabold text-white">PRABICARA</header>
+            <header className="font-extrabold text-white">PARBICARA</header>
             <Link href="/" className="link link-hover">
               Beranda
             </Link>
-            <Link href="/teori" className="link link-hover">
-              Teori
+            <Link href="/materi" className="link link-hover">
+              Materi
             </Link>
-            <Link href="/lessons" className="link link-hover">
+            <Link href="/pembelajaran" className="link link-hover">
               Pembelajaran
             </Link>
-            <Link href="/contact" className="link link-hover">
+            <Link href="/kontak" className="link link-hover">
               Kontak kami
             </Link>
             {/* <Link href="/about" className="link link-hover">
@@ -70,9 +70,9 @@ const Footer = () => {
             )}
           >
             <aside className="items-center grid-flow-col">
-              <Image src={Logo} width={40} height={40} alt="logo-prabicara" />
+              <Image src={Logo} width={40} height={40} alt="logo-parbicara" />
               <p>
-                Prabicara. <br />
+                Parbicara. <br />
                 Platform Parenting Bina Bicara.
               </p>
             </aside>

@@ -45,7 +45,7 @@ const Navbar = () => {
                   "dark:hover:bg-base-100"
                 )}
               >
-                <p className="font-bold">Prabicara.</p>
+                <p className="font-bold">Parbicara.</p>
               </Link>
             </div>
 
@@ -64,24 +64,24 @@ const Navbar = () => {
               </Link>
 
               <Link
-                href={"/teori"}
+                href={"/materi"}
                 className={clsx(
                   "cursor-pointer text-base-text",
                   "hover:underline",
-                  pathname == "/teori"
+                  pathname == "/materi"
                     ? "font-bold text-primary-green text-[1.35rem]"
                     : ""
                 )}
               >
-                Teori
+                Materi
               </Link>
 
               <Link
-                href={"/lessons"}
+                href={"/pembelajaran"}
                 className={clsx(
                   "cursor-pointer text-base-text",
                   "hover:underline",
-                  pathname == "/lessons"
+                  pathname == "/pembelajaran"
                     ? "font-bold text-primary-green text-[1.35rem]"
                     : ""
                 )}
@@ -103,11 +103,11 @@ const Navbar = () => {
               </Link> */}
 
               <Link
-                href={"/contact"}
+                href={"/kontak"}
                 className={clsx(
                   "cursor-pointer text-base-text",
                   "hover:underline",
-                  pathname == "/contact"
+                  pathname == "/kontak"
                     ? "font-bold text-primary-green mt-0.5"
                     : ""
                 )}

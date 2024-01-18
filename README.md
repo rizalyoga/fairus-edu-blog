@@ -6,9 +6,9 @@
 
 </div>
 
-# Prabicara
+# Parbicara
 
-Prabicara adalah platform pembelajaran yang dirancang khusus untuk membantu orang tua dalam mendidik anak tunarungu secara mandiri. Prabicara menyediakan materi dan video yang komprehensif untuk memfasilitasi intervensi efektif dalam pengembangan kemampuan berbicara seorang anak.
+Pabircara adalah platform pembelajaran yang dirancang khusus untuk membantu orang tua dalam mendidik anak tunarungu secara mandiri. Pabircara menyediakan materi dan video yang komprehensif untuk memfasilitasi intervensi efektif dalam pengembangan kemampuan berbicara seorang anak.
 
 ## ⛏️ Built with
 

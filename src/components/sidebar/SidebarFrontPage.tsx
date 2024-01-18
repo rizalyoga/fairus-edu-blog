@@ -30,17 +30,17 @@ const SidebarFrontPage = ({ isOpen, onClose }: any) => {
 
           <li className="text-2xl py-2" onClick={onClose}>
             <Link
-              href="/teori"
-              className={pathname == "/teori" ? activeLinkStyle : ""}
+              href="/materi"
+              className={pathname == "/materi" ? activeLinkStyle : ""}
             >
-              Teori
+              Materi
             </Link>
           </li>
 
           <li className="text-2xl py-2" onClick={onClose}>
             <Link
-              href="/lessons"
-              className={pathname == "/lessons" ? activeLinkStyle : ""}
+              href="/pembelajaran"
+              className={pathname == "/pembelajaran" ? activeLinkStyle : ""}
             >
               Pembelajaran
             </Link>
@@ -57,8 +57,8 @@ const SidebarFrontPage = ({ isOpen, onClose }: any) => {
 
           <li className="text-2xl py-2" onClick={onClose}>
             <Link
-              href="/contact"
-              className={pathname == "/contact" ? activeLinkStyle : ""}
+              href="/kontak"
+              className={pathname == "/kontak" ? activeLinkStyle : ""}
             >
               Kontak kami
             </Link>

@@ -10,7 +10,7 @@ const PanduanPengguna = () => {
       <br />
 
       <p className="indent-8 text-lg my-2">
-        Selamat datang di Prabicara, platform pembelajaran yang dirancang khusus
+        Selamat datang di Parbicara, platform pembelajaran yang dirancang khusus
         untuk mendukung Anda dalam mendampingi perkembangan bicara dan bahasa
         anak Anda. Berikut adalah langkah-langkah sederhana untuk memandu Anda
         melalui website kami:
