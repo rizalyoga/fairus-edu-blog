@@ -8,7 +8,7 @@ const SidebarFrontPage = ({ isOpen, onClose }: any) => {
 
   return (
     <div
-      className={`drawer drawer-end z-30 overscroll-none ${
+      className={`drawer drawer-end z-30 overscroll-none -mt-1 ${
         isOpen ? "drawer-open fixed top-0" : ""
       }`}
     >
