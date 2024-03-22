@@ -68,7 +68,7 @@ const Register = () => {
       setErrorMessage("Mohon maaf panjang fistname minimal 3 karakter");
       setIsLoading((loading) => !loading);
       cleanRegisterMessage();
-    } else if (newDataStudent.firstname.match(/[^a-zA-Z]/g)) {
+    } else if (newDataStudent.firstname.match(/[^a-zA-Z ]/g)) {
       setRegisterMessage(
         "Mohon maaf fistname memiliki karakter selain huruf alfabet"
       );
