@@ -11,7 +11,7 @@ import { SaveScoreToSessionStorage } from "@/helper/SaveScoreToSessionStorage";
 import Toast from "@/components/toast/Toast";
 import Loading from "@/components/loading/Loading";
 import ConfirmationModal from "@/components/modal/ConfirmationModal";
-// import ScoreComponents from "./ScoreComponents";
+import ScoreComponents from "../prepost-score-component/ScoreComponents";
 
 import ConsonantPretestQuestions from "@/data/pretest/ConsonantPretestQuestions.json";
 
@@ -24,7 +24,9 @@ const PretestConsonantForm = () => {
   const [score, setScore] = useState<number>(0);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isThereIsScore, setIsThereIsScore] = useState(-1);
+  const [isThereIsScore, setIsThereIsScore] = useState<string | number | null>(
+    null
+  );
   const [responseSubmit, setResponseSubmit] = useState("");
 
   const pathname = usePathname();
@@ -34,8 +36,8 @@ const PretestConsonantForm = () => {
       sessionStorage.getItem("student-score") as string
     );
 
-    setIsThereIsScore(dataStudentScore?.[0]?.pretest_score);
-  }, []);
+    setIsThereIsScore(dataStudentScore?.[0]?.[getLessonNamePretest(pathname)]);
+  }, [pathname]);
 
   const handleAnswer = (questionId: number, selectedAnswer: string) => {
     setUserAnswers((prevAnswers) => ({
@@ -93,7 +95,11 @@ const PretestConsonantForm = () => {
         SaveScoreToSessionStorage(payload.pretest_score, pathname);
       })
       .then(() => setIsLoading((loading) => !loading))
-      .then(() => setIsThereIsScore(totalScore));
+      .then(() =>
+        setTimeout(() => {
+          setIsThereIsScore(totalScore);
+        }, 1000)
+      );
 
     isOpenModalHandler();
   };
@@ -102,9 +108,14 @@ const PretestConsonantForm = () => {
     return <Loading />;
   }
 
-  //   if (isThereIsScore > -1) {
-  //     return <ScoreComponents pretestScore={isThereIsScore} />;
-  //   }
+  if (isThereIsScore) {
+    return (
+      <ScoreComponents
+        pretestScore={isThereIsScore}
+        setIsThereIsScore={setIsThereIsScore}
+      />
+    );
+  }
 
   return (
     <>
