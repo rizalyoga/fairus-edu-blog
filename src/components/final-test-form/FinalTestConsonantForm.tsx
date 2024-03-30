@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
@@ -11,6 +11,7 @@ import { SaveScoreToSessionStorage } from "@/helper/SaveScoreToSessionStorage";
 import ConfirmationModal from "@/components/modal/ConfirmationModal";
 import Loading from "@/components/loading/Loading";
 import Toast from "@/components/toast/Toast";
+import ScoreComponents from "../prepost-score-component/ScoreComponents";
 
 import ConsonantPostTestQuestoins from "@/data/final-test/ConsonantPostTestQuestions.json";
 
@@ -24,8 +25,19 @@ const FinalTestConsonantForm = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [responseSubmit, setResponseSubmit] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isThereIsScore, setIsThereIsScore] = useState<number | string | null>(
+    null
+  );
 
   const pathname = usePathname();
+
+  useEffect(() => {
+    const dataStudentScore = JSON.parse(
+      sessionStorage.getItem("student-score") as string
+    );
+
+    setIsThereIsScore(dataStudentScore?.[0]?.[getLessonNamePostTest(pathname)]);
+  }, [pathname]);
 
   const handleAnswer = (questionId: number, selectedAnswer: string) => {
     setUserAnswers((prevAnswers) => ({
@@ -83,13 +95,27 @@ const FinalTestConsonantForm = () => {
         setResponseSubmit(res);
         SaveScoreToSessionStorage(payload.final_test_score, pathname);
       })
-      .then(() => setIsLoading((loading) => !loading));
+      .then(() => setIsLoading((loading) => !loading))
+      .then(() =>
+        setTimeout(() => {
+          setIsThereIsScore(totalScore);
+        }, 1000)
+      );
 
     isOpenModalHandler();
   };
 
   if (isLoading) {
     return <Loading />;
+  }
+
+  if (isThereIsScore) {
+    return (
+      <ScoreComponents
+        pretestScore={isThereIsScore}
+        setIsThereIsScore={setIsThereIsScore}
+      />
+    );
   }
 
   return (

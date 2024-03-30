@@ -8,6 +8,7 @@ import { panduanProps } from "@/types/types";
 
 import DashboardLoading from "@/components/loading/DashboardLoading";
 import PanduanCard from "@/components/cards/panduan-card/PanduanCard";
+import { getDataScoreStudent } from "@/data/getDataStudentScoreById";
 
 const Dashboard = () => {
   const [panduan, setPanduan] = useState<panduanProps[]>([]);
@@ -21,16 +22,24 @@ const Dashboard = () => {
     const pelatiahnRoutes = PanduanRoute.slice(2);
     setPelatihan(pelatiahnRoutes);
 
-    setTimeout(() => {
-      setLoading(true);
+    const dataStundent = JSON.parse(
+      sessionStorage.getItem("student") as string
+    );
 
-      const timeoutId = setTimeout(() => {
-        setLoading(false);
-      }, 500);
+    const stundentScoreData = JSON.parse(
+      sessionStorage.getItem("student-score") as string
+    );
 
-      // Clear the timeout when the component unmounts or when modalOpen changes
-      return () => clearTimeout(timeoutId);
-    }, 500);
+    if (!stundentScoreData) {
+      getDataScoreStudent(dataStundent.id)
+        .then((res) => {
+          sessionStorage.setItem("student-score", JSON.stringify(res));
+        })
+
+        .then(() => setLoading(false));
+    } else {
+      setLoading(false);
+    }
   }, []);
 
   if (loading) {
