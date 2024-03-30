@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import clsx from "clsx";
@@ -17,6 +17,15 @@ const HeaderDashboard = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [isOpenModal, setIsOpenModal] = useState(false);
+
+  useEffect(() => {
+    const authUser = sessionStorage.getItem("student");
+
+    if (!authUser) {
+      deleteCookie("user_auth");
+      router.push("/login");
+    }
+  }, [router]);
 
   const isOpenHandler = () => {
     setIsOpenModal((isOpen) => !isOpen);
