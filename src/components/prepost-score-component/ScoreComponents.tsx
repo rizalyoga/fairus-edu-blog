@@ -19,8 +19,12 @@ const ScoreComponents = ({
 
   return (
     <div className="dashboard-content-container mb-4 flex flex-col justify-center items-center">
-      <h1 className="font-bold">Score pretest anda : </h1>
-      <h1 className="font-bold text-4xl my-4">{pretestScore}</h1>
+      <h1 className="font-bold">
+        Score {pathname.includes("pretest") ? "pretest" : "post test"} anda :{" "}
+      </h1>
+      <h1 className="font-bold text-4xl my-4">
+        {pretestScore === 1 ? pretestScore - 1 : pretestScore}
+      </h1>
 
       <Link href={`${pathname}`} onClick={() => setIsThereIsScore(null)}>
         <button className="btn w-full bg-primary-violet text-white hover:text-slate-700 dark:hover:text-slate-200">

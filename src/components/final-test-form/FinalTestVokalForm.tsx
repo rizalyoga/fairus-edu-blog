@@ -98,7 +98,11 @@ const FinalTest = () => {
       .then(() => setIsLoading((loading) => !loading))
       .then(() =>
         setTimeout(() => {
-          setIsThereIsScore(totalScore);
+          if (totalScore === 0) {
+            setIsThereIsScore((totalScore += 1));
+          } else {
+            setIsThereIsScore(totalScore);
+          }
         }, 1000)
       );
 
