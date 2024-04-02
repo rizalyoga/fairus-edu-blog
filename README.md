@@ -8,14 +8,38 @@
 
 # Parbicara
 
-Pabircara adalah platform pembelajaran yang dirancang khusus untuk membantu orang tua dalam mendidik anak tunarungu secara mandiri. Pabircara menyediakan materi dan video yang komprehensif untuk memfasilitasi intervensi efektif dalam pengembangan kemampuan berbicara seorang anak.
+Parbicara adalah platform pembelajaran yang dirancang khusus untuk membantu orang tua dalam mendidik anak tunarungu secara mandiri. Parbicara menyediakan materi dan video yang komprehensif untuk memfasilitasi intervensi efektif dalam pengembangan kemampuan berbicara seorang anak.
 
-## ⛏️ Built with
+## 🔗 Demo
 
-- [Next JS](https://nextjs.org/) - Next.js is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Next.js for additional features and optimizations.
-- [Node JS v20.4.0](https://nodejs.org/id) - Node.js is an open-source, cross-platform JavaScript runtime environment.
-- [NPM](https://www.npmjs.com/) - npm stands for Node Package Manager. It's a library and registry for JavaScript software packages. npm also has command-line tools to help you install the different packages and manage their dependencies.
+Parbicara website dapat diakses pada link berikut: https://prabicara.vercel.app/
 
-## 👤 Authors
+## 🔮 Fitur
+
+- Registrasi akun
+- Autentikasi akun pengguna
+- Materi pembelajaran berupa text dan video
+- Kuis pilihan ganda
+- Daftar nilai pengguna
+
+## ⛏️ Dibangun menggunakan
+
+- [Node JS v20.4.0](https://nodejs.org/id)
+- [NPM](https://www.npmjs.com/)
+- [Next-JS 14](https://nextjs.org/)
+- [Tailwind-CSS](https://tailwindcss.com/)
+- [Daisy-IU](https://daisyui.com/)
+
+## 👤 Autor
 
 - [Rizalyoga](https://github.com/rizalyoga/)
+
+## 🖼️ Tampilan
+
+### Halaman depan
+
+<img src="public/thum/homepage.png" alt="Logo" width="100%" height="auto" />
+
+### Halaman dashboard
+
+<img src="public/thum/dashboard.png" alt="Logo" width="100%" height="auto" />
