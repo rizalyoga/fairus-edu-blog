@@ -7,7 +7,11 @@ import Toast from "../toast/Toast";
 
 import { SaveScoreToSessionStorage } from "@/helper/SaveScoreToSessionStorage";
 import { quizTestPost } from "@/data/quizTestPost";
-import { QuestionVideoInterface, VideoTimeInterface } from "@/types/types";
+import {
+  QuestionVideoInterface,
+  VideoTimeInterface,
+  ScoreProps,
+} from "@/types/types";
 
 const VideoPlayer = ({
   contentVideo,
@@ -21,7 +25,7 @@ const VideoPlayer = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isDomLoad, setIsDomLoad] = useState(false);
-  const [studentScore, setStudentScore] = useState<number[]>([]);
+  const [studentScore, setStudentScore] = useState<ScoreProps[]>([]);
   const [responseSubmitQuiz, setResponseSubmitQuiz] = useState("");
 
   const handleTimeUpdate = (e: VideoTimeInterface) => {
@@ -30,16 +34,18 @@ const VideoPlayer = ({
     // Check if there's a question at the current time
     if (contentVideo) {
       const currentQuestion = contentVideo.questions.find((question) => {
+        const isSecondInStudentScore = studentScore.some(
+          (score) => score.second === question.second
+        );
+
         return (
-          currentTime >= question.second && currentTime <= question.second + 1
+          currentTime >= question.second &&
+          currentTime <= question.second + 1 &&
+          !isSecondInStudentScore
         );
       });
 
-      if (
-        currentQuestion &&
-        !isOpenModal &&
-        currentQuestion.id > studentScore.length
-      ) {
+      if (currentQuestion && !isOpenModal) {
         // Pause video automatically
         if (videoRef.current) {
           videoRef.current.seekTo(currentQuestion.second, "seconds");
@@ -53,8 +59,8 @@ const VideoPlayer = ({
     }
   };
 
-  const addScore = (point: number) => {
-    setStudentScore((prevScores) => [...prevScores, point]);
+  const addScore = (scoreProps: ScoreProps) => {
+    setStudentScore((prevScores) => [...prevScores, scoreProps]);
   };
 
   // Handle final score submission
@@ -65,12 +71,12 @@ const VideoPlayer = ({
 
     if (studentScore.length === 3) {
       SaveScoreToSessionStorage(
-        studentScore.reduce((a, b) => a + b, 0),
+        studentScore.reduce((a, b) => a + b.point, 0),
         pathname
       );
 
       quizTestPost(
-        studentScore.reduce((a, b) => a + b, 0),
+        studentScore.reduce((a, b) => a + b.point, 0),
         pathname
       ).then((res) => setResponseSubmitQuiz(res));
     }

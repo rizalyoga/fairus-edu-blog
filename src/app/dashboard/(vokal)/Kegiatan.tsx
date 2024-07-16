@@ -15,8 +15,9 @@ const Kegiatan = () => {
   );
 
   useEffect(() => {
+    const subBab = pathname.split("/").pop();
     const videoContent = VideoQuestion.filter((question) => {
-      return pathname.includes(question.path);
+      return subBab === question.path;
     });
 
     setQuestions(videoContent[0]);

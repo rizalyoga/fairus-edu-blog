@@ -1,12 +1,12 @@
 import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
-import { QuestionVideoType } from "@/types/types";
+import { QuestionVideoType, ScoreProps } from "@/types/types";
 import clsx from "clsx";
 
 interface ModalQuizProps {
   isOpen: boolean;
   questions: QuestionVideoType[] | undefined;
   currentTime: number;
-  addScore: (score: number) => void;
+  addScore: (score: ScoreProps) => void;
   setIsPlaying: Dispatch<SetStateAction<boolean>>;
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;
 }
@@ -41,9 +41,18 @@ const ModalQuiz = ({
 
   const submitAnswerHandling = (answer: string) => {
     if (answer == questionData?.[0].trueAnswer) {
-      addScore(questionData?.[0]?.point);
+      const scoreData = {
+        second: questionData?.[0].second,
+        point: questionData?.[0].point,
+      };
+
+      addScore(scoreData);
     } else {
-      addScore(0);
+      const scoreData = {
+        second: questionData?.[0].second as number,
+        point: 0,
+      };
+      addScore(scoreData);
     }
 
     setIsPlaying(true);
