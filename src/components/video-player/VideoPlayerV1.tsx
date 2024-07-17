@@ -7,7 +7,11 @@ import Toast from "../toast/Toast";
 
 import { SaveScoreToSessionStorage } from "@/helper/SaveScoreToSessionStorage";
 import { quizTestPost } from "@/data/quizTestPost";
-import { QuestionVideoInterface, VideoTimeInterface } from "@/types/types";
+import {
+  QuestionVideoInterface,
+  VideoTimeInterface,
+  ScoreProps,
+} from "@/types/types";
 
 const VideoPlayer = ({
   contentVideo,
@@ -21,14 +25,14 @@ const VideoPlayer = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isDomLoad, setIsDomLoad] = useState(false);
-  const [studentScore, setStudentScore] = useState<number[]>([]);
+  const [studentScore, setStudentScore] = useState<ScoreProps[]>([]);
   const [responseSubmitQuiz, setResponseSubmitQuiz] = useState("");
 
   const handleTimeUpdate = (e: VideoTimeInterface) => {
     setCurrentTime(e.playedSeconds);
   };
 
-  const addScore = (point: number) => {
+  const addScore = (point: ScoreProps) => {
     setStudentScore((prevScores) => [...prevScores, point]);
   };
 
@@ -62,12 +66,12 @@ const VideoPlayer = ({
   useEffect(() => {
     if (studentScore.length == 3) {
       SaveScoreToSessionStorage(
-        studentScore.reduce((a, b) => a + b, 0),
+        studentScore.reduce((a, b) => a + b.point, 0),
         pathname
       );
 
       quizTestPost(
-        studentScore.reduce((a, b) => a + b, 0),
+        studentScore.reduce((a, b) => a + b.point, 0),
         pathname
       ).then((res) => setResponseSubmitQuiz(res));
     }
