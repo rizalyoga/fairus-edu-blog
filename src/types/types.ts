@@ -27,6 +27,11 @@ export interface QuestionVideoInterface {
   questions: QuestionVideoType[];
 }
 
+export interface ScoreProps {
+  second: number;
+  point: number;
+}
+
 export interface StudentDataProps {
   username: string;
   firstname: string;

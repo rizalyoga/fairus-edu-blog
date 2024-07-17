@@ -339,7 +339,7 @@ export const VideoQuestion = [
       },
       {
         id: 2,
-        second: 10,
+        second: 15,
         question: "url ini adalah ?",
         choices: ["vokal-a", "vokal-c", "vokal-d"],
         trueAnswer: "vokal-a",
@@ -347,7 +347,7 @@ export const VideoQuestion = [
       },
       {
         id: 3,
-        second: 15,
+        second: 25,
         question: "Apa warna baju anak di video ?",
         choices: ["hitam", "hijau", "abu-abu"],
         trueAnswer: "hijau",
@@ -664,7 +664,7 @@ export const VideoQuestion = [
       },
       {
         id: 2,
-        second: 10,
+        second: 15,
         question: "url ini adalah ?",
         choices: ["vokal-a", "vokal-c", "vokal-d"],
         trueAnswer: "vokal-a",
@@ -672,7 +672,7 @@ export const VideoQuestion = [
       },
       {
         id: 3,
-        second: 15,
+        second: 25,
         question: "Apa warna baju anak di video ?",
         choices: ["hitam", "hijau", "abu-abu"],
         trueAnswer: "hijau",
@@ -736,7 +736,7 @@ export const VideoQuestion = [
       },
       {
         id: 2,
-        second: 10,
+        second: 15,
         question: "url ini adalah ?",
         choices: ["vokal-a", "vokal-c", "vokal-d"],
         trueAnswer: "vokal-a",
@@ -744,7 +744,7 @@ export const VideoQuestion = [
       },
       {
         id: 3,
-        second: 15,
+        second: 25,
         question: "Apa warna baju anak di video ?",
         choices: ["hitam", "hijau", "abu-abu"],
         trueAnswer: "hijau",

@@ -12,7 +12,10 @@ Parbicara adalah platform pembelajaran yang dirancang khusus untuk membantu oran
 
 ## 🔗 Demo
 
-Parbicara website dapat diakses pada link berikut: https://prabicara.vercel.app/
+Parbicara website dapat diakses pada link berikut: <a href="https://prabicara.vercel.app/" target="_blank">Parbicara</a>
+
+<hr/>
+Video demo parbicara: <a href="https://www.youtube.com/watch?v=PyLOK8VGkcc" target="_blank">Video Demo</a>
 
 ## 🔮 Fitur
 

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import clsx from "clsx";
 import Link from "next/link";
+import CryptoJS from "crypto-js";
 
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
@@ -43,7 +44,7 @@ const Register = () => {
       username: register.username.replace(/\s/g, ""),
       firstname: register.firstname,
       lastname: register.lastname,
-      password: register.password,
+      password: CryptoJS.SHA256(register.password).toString(CryptoJS.enc.Hex),
       email: register.email.replace(/\s/g, ""),
       id: Date.now(),
       date: new Date().toISOString().slice(0, 10),
@@ -91,7 +92,7 @@ const Register = () => {
       );
       setIsLoading((loading) => !loading);
       cleanRegisterMessage();
-    } else if (newDataStudent.password.length < 8) {
+    } else if (register.password.length < 8) {
       setRegisterMessage("Mohon maaf panjang password minimal 8 karakter");
       setErrorMessage("Mohon maaf panjang password minimal 8 karakter");
       setIsLoading((loading) => !loading);
