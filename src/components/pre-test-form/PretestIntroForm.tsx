@@ -103,7 +103,10 @@ const PretestIntroForm = () => {
             setIsThereIsScore(totalScore);
           }
         }, 1000)
-      );
+      )
+      .finally(() => {
+        setUserAnswers({});
+      });
 
     isOpenModalHandler();
   };
