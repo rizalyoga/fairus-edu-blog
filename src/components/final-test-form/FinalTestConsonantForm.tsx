@@ -104,7 +104,10 @@ const FinalTestConsonantForm = () => {
             setIsThereIsScore(totalScore);
           }
         }, 1000)
-      );
+      )
+      .finally(() => {
+        setUserAnswers({});
+      });
 
     isOpenModalHandler();
   };
